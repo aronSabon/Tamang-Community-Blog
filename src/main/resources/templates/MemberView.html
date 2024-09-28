@@ -24,7 +24,7 @@
                         <div class="row" th:object="${memberModel}">
                             <div class="col-md-4">
                                 <!-- Member Image -->
-                                <img th:src="@{'memberImages/' + *{imageName}}" alt="Member Image" class="img-thumbnail">
+                                <img th:src="@{'memberImages/' + *{imageName}}" alt="Member Image" class="img-thumbnail" alt="No Image">
                             </div>
                             <div class="col-md-8">
                                 <table class="table table-bordered">
@@ -113,7 +113,7 @@
                 <td th:text="${familyMember.middleName}"></td>
                 <td th:text="${familyMember.lastName}"></td>
                 <td>
-                    <img th:src="@{'memberImages/' + ${familyMember.imageName}}" width="50" style="border-radius: 50%;">
+                    <img th:src="@{'memberImages/' + ${familyMember.imageName}}" alt="No Image" width="50" style="border-radius: 50%;">
                 </td>
             </tr>
         </tbody>

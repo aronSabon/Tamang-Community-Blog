@@ -57,7 +57,7 @@
 												</thead>
 												<tbody>
 													<tr th:each="m:${memberList}">
-													<td><img  th:src="@{'memberImages/'+${m.firstName}+${m.contact.mobileNumber}+'.jpg'}" width="45px"  style="border-radius: 50%;"></td>
+													<td><img  th:src="@{'memberImages/'+${m.firstName}+${m.contact.mobileNumber}+'.jpg'}" width="45px"  style="border-radius: 50%;" alt="No Image"></td>
 														<td> [[${m.title + ' ' + m.firstName + (m.middleName != null ? ' ' + m.middleName : '') + ' ' + m.lastName}]]</td>
 														<td>[[${m.address.street + " "+ m.address.town}]]</td>
 														<td>[[${m.contact.mobileNumber }]]</td>
