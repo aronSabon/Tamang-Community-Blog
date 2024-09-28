@@ -84,7 +84,7 @@ public class MemberController {
 		    System.out.println("Number of family images: " + familyImages.size());
 		 }
 		member.setImageName(member.getFirstName()+member.getContact().getMobileNumber()+".jpg");
-		member.setStatus(MemberStatus.INACTIVE);
+		member.setStatus(MemberStatus.PENDING);
 		member.setFormSubmitDate(LocalDate.now());
 		System.out.println(member);
 		memberService.addMember(member);
@@ -100,7 +100,7 @@ public class MemberController {
 	private String memberLissdft() {
 		return "MemberListNew";
 	}
-	@GetMapping("/memberEdit")
+	@GetMapping("/editMember")
 	private String memberEdit(@RequestParam int id, Model model) {
 		model.addAttribute("memberModel",memberService.getMemberById(id));
 		return "MemberEdit";
@@ -164,10 +164,18 @@ public class MemberController {
 		return "redirect:/memberList";
 	}
 
-	@GetMapping("/memberView")
+	@GetMapping("/viewMember")
 	private String memberView(@RequestParam int id, Model model) {
 		model.addAttribute("memberModel",memberService.getMemberById(id));
 		return "MemberView";
+	}
+	@GetMapping("/revokeMember")
+	private String revoke(@RequestParam int id) {
+		System.out.println(id);
+		Member member = memberService.getMemberById(id);
+		member.setStatus(MemberStatus.INACTIVE);
+		memberService.updateMember(member);
+		return "redirect:/memberList";
 	}
 }
 

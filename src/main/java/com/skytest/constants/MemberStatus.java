@@ -2,5 +2,5 @@ package com.skytest.constants;
 
 public enum MemberStatus {
 
-	ACTIVE, INACTIVE
+	ACTIVE, INACTIVE, PENDING
 }
