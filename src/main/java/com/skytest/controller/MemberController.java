@@ -167,7 +167,7 @@ public class MemberController {
 	@GetMapping("/viewMember")
 	private String memberView(@RequestParam int id, Model model) {
 		model.addAttribute("memberModel",memberService.getMemberById(id));
-		return "MemberView";
+		return "ViewMember";
 	}
 	@GetMapping("/revokeMember")
 	private String revoke(@RequestParam int id) {

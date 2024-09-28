@@ -49,5 +49,10 @@ public class EventController {
 		model.addAttribute("eventModel",eventService.getEventById(id));
 		return"EditEvent";
 	}
+	@GetMapping("/viewEvent")
+	private String viewEvent(Model model,@RequestParam int id) {
+		model.addAttribute("eventModel",eventService.getEventById(id));
+		return"ViewEvent";
+	}
 
 }
