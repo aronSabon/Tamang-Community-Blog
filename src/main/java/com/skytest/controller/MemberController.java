@@ -101,7 +101,7 @@ public class MemberController {
 		return "MemberListNew";
 	}
 	@GetMapping("/memberEdit")
-	private String memberView(@RequestParam int id, Model model) {
+	private String memberEdit(@RequestParam int id, Model model) {
 		model.addAttribute("memberModel",memberService.getMemberById(id));
 		return "MemberEdit";
 	}
@@ -164,4 +164,10 @@ public class MemberController {
 		return "redirect:/memberList";
 	}
 
+	@GetMapping("/memberView")
+	private String memberView(@RequestParam int id, Model model) {
+		model.addAttribute("memberModel",memberService.getMemberById(id));
+		return "MemberView";
+	}
 }
+

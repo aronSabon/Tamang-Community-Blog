@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Details</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- Insert header block -->
+        <th:block th:insert="AdminHeader.html"></th:block>
+        
+        <div class="container-fluid page-body-wrapper">
+            <!-- Insert side navigation block -->
+            <th:block th:insert="AdminSideNav.html"></th:block>
+            
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <h2 class="mt-4">Member Details</h2>
+
+                    <!-- Member Information Section -->
+                    <div class="container mt-5">
+                        <div class="row" th:object="${memberModel}">
+                            <div class="col-md-4">
+                                <!-- Member Image -->
+                                <img th:src="@{'memberImages/' + *{imageName}}" alt="Member Image" class="img-thumbnail">
+                            </div>
+                            <div class="col-md-8">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <th>Membership Type</th>
+                                            <td th:text="*{membershipType}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Title</th>
+                                            <td th:text="*{title}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>First Name</th>
+                                            <td th:text="*{firstName}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Middle Name</th>
+                                            <td th:text="*{middleName}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Last Name</th>
+                                            <td th:text="*{lastName}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Email</th>
+                                            <td th:text="*{contact.email}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Mobile Number</th>
+                                            <td th:text="*{contact.mobileNumber}"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Landline</th>
+                                            <td th:text="*{contact.landline}"></td>
+                                        </tr>
+                                           <tr>
+                                    <th>House Number/Name</th>
+                                    <td th:text="*{address.houseNumberOrName}"></td>
+                                </tr>
+                                <tr>
+                                    <th>Street</th>
+                                    <td th:text="*{address.street}"></td>
+                                </tr>
+                                <tr>
+                                    <th>Locality</th>
+                                    <td th:text="*{address.locality}"></td>
+                                </tr>
+                                <tr>
+                                    <th>Town</th>
+                                    <td th:text="*{address.town}"></td>
+                                </tr>
+                                <tr>
+                                    <th>Country</th>
+                                    <td th:text="*{address.country}"></td>
+                                </tr>
+                                <tr>
+                                    <th>Postal Code</th>
+                                    <td th:text="*{address.postalCode}"></td>
+                                </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                  
+
+                        <!-- Family Members Section -->
+                  <h4 class="mt-5">Family Members</h4>
+<div th:if="${memberModel.family != null and memberModel.family.size() > 0}">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Relation</th>
+                <th>Title</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="familyMember : ${memberModel.family}">
+                <td th:text="${familyMember.relation}"></td>
+                <td th:text="${familyMember.title}"></td>
+                <td th:text="${familyMember.firstName}"></td>
+                <td th:text="${familyMember.middleName}"></td>
+                <td th:text="${familyMember.lastName}"></td>
+                <td>
+                    <img th:src="@{'memberImages/' + ${familyMember.imageName}}" width="50" style="border-radius: 50%;">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div th:if="${memberModel.family == null || memberModel.family.size() == 0}">
+    <p>No family members added.</p>
+</div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Insert footer block -->
+        <th:block th:insert="AdminFooter.html"></th:block>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -65,7 +65,7 @@
 														<td>[[${ m.memberSince}]]</td>
 														<td>[[${m.status}]]</td>
 														<td>
-															<button>View</button>
+														<a th:href="@{/memberView(id=${m.id})}">	<button>View</button></a>
 														<a th:href="@{/memberEdit(id=${m.id})}"><button>Edit</button></a>
 													
 														<button>Delete</button>
