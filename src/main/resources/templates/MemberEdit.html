@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container-scroller">
+		<th:block th:insert="AdminHeader.html"></th:block>
+		<div class="container-fluid page-body-wrapper">
+			<th:block th:insert="AdminSideNav.html"></th:block>
+			<div class="main-panel">
+				<div class="content-wrapper">
+
+					<div class="d-flex justify-content-between align-items-center mb-4">
+						<h1 class="h3 text-dark">Edit Member</h1>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+							<li class="breadcrumb-item active">Edit Member</li>
+						</ol>
+					</div>
+
+					<!-- Faculty form card -->
+					<div class="card shadow-sm">
+						<div class="card-body">
+
+
+							<div class="formContainer">
+								<form action="/updateMember" method="post"
+									enctype="multipart/form-data" th:object="${memberModel}">
+									<!-- Personal Information -->
+									<h2>Personal Details</h2>
+									<div class="row">
+										<div class="form-group  ">
+											<label for="title">MemberShip Type</label> <select
+												th:field="*{membershipType}">
+												<option value="">MemberShip Type</option>
+												<option value="Lifetime Member">Lifetime Member</option>
+												<option value="Honorary Member">Honorary Member</option>
+											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group  title-group">
+											<label for="title">Title</label> <select th:field="*{title}">
+												<option value="">Select</option>
+												<option value="Mrs">Mrs</option>
+												<option value="Mr">Mr</option>
+												<option value="Miss">Miss</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="firstName">First Name</label> <input
+												id="firstName" type="text" placeholder="First Name"
+												th:field="*{firstName}" />
+										</div>
+										<div class="form-group">
+											<label for="middleName">Middle Name</label> <input
+												id="middleName" type="text" placeholder="Middle Name"
+												th:field="*{middleName}" />
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group">
+											<label for="lastName">Last Name</label> <input id="lastName"
+												type="text" placeholder="Last Name" th:field="*{lastName}" />
+										</div>
+										<div class="form-group">
+											<label for="memberImage">Image</label> <input
+												id="memberImage" type="file" placeholder="Select Image"
+												name="memberImage" />
+										</div>
+									</div>
+
+
+									<!-- Address Information -->
+									<h2>Address Details</h2>
+									<div class="row">
+										<div class="form-group">
+											<label for="houseNumberOrName">House Number or Name</label> <input
+												id="houseNumberOrName" type="text"
+												placeholder="House Number or Name"
+												th:field="*{address.houseNumberOrName}" />
+										</div>
+										<div class="form-group">
+											<label for="street">Street</label> <input id="street"
+												type="text" placeholder="Street"
+												th:field="*{address.street}" />
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="form-group">
+											<label for="locality">Locality</label> <input id="locality"
+												type="text" placeholder="Locality"
+												th:field="*{address.locality}" />
+										</div>
+										<div class="form-group">
+											<label for="town">Town</label> <input id="town" type="text"
+												placeholder="Town" th:field="*{address.town}" />
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="form-group">
+											<label for="country">Country</label> <input id="country"
+												type="text" placeholder="Country"
+												th:field="*{address.country}" />
+										</div>
+										<div class="form-group">
+											<label for="postalCode">Postal Code</label> <input
+												id="postalCode" type="text" placeholder="Postal Code"
+												th:field="*{address.postalCode}" />
+										</div>
+									</div>
+
+									<!-- Contact Information -->
+									<h2>Contact Details</h2>
+									<div class="row">
+										<div class="form-group">
+											<label for="email">Email</label> <input id="email"
+												type="email" placeholder="Email" th:field="*{contact.email}" />
+										</div>
+										<div class="form-group">
+											<label for="landline">Landline</label> <input id="landline"
+												type="number" placeholder="Landline"
+												th:field="*{contact.landline}" />
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="form-group">
+											<label for="mobileNumber">Mobile Number</label> <input
+												id="mobileNumber" type="number" placeholder="Mobile Number"
+												th:field="*{contact.mobileNumber}" />
+										</div>
+									</div>
+
+
+
+									<!-- Family Information Section -->
+									<div id="familyContainer">
+										<!-- Loop through existing family members -->
+										<div th:each="familyMember, iterStat : ${memberModel.family}">
+											<div class="family-member-section">
+												<h2>Family Details</h2>
+												<div class="row">
+													<div class="form-group">
+														<label for="relation">Relation</label> <select
+															id="relation"
+															th:field="*{family[__${iterStat.index}__].relation}">
+															<option value="">Select Relation</option>
+															<option value="Son"
+																th:selected="${familyMember.relation == 'Son'}">Son</option>
+															<option value="Daughter"
+																th:selected="${familyMember.relation == 'Daughter'}">Daughter</option>
+															<option value="Son-In-Law"
+																th:selected="${familyMember.relation == 'Son-In-Law'}">Son-In-Law</option>
+															<option value="Daughter-In-Law"
+																th:selected="${familyMember.relation == 'Daughter-In-Law'}">Daughter-In-Law</option>
+															<option value="Grandfather"
+																th:selected="${familyMember.relation == 'Grandfather'}">Grandfather</option>
+															<option value="GrandMother"
+																th:selected="${familyMember.relation == 'GrandMother'}">GrandMother</option>
+															<option value="Father"
+																th:selected="${familyMember.relation == 'Father'}">Father</option>
+															<option value="Mother"
+																th:selected="${familyMember.relation == 'Mother'}">Mother</option>
+															<option value="Reserve"
+																th:selected="${familyMember.relation == 'Reserve'}">Reserve</option>
+														</select>
+													</div>
+												</div>
+												<div class="row">
+													<div class="form-group title-group">
+														<label for="familyTitle">Title</label> <select
+															id="familyTitle"
+															th:field="*{family[__${iterStat.index}__].title}">
+															<option value="">Select</option>
+															<option value="Mrs"
+																th:selected="${familyMember.title == 'Mrs'}">Mrs</option>
+															<option value="Mr"
+																th:selected="${familyMember.title == 'Mr'}">Mr</option>
+															<option value="Miss"
+																th:selected="${familyMember.title == 'Miss'}">Miss</option>
+														</select>
+													</div>
+													<div class="form-group">
+														<label for="familyFirstName">First Name</label> <input
+															id="familyFirstName" type="text"
+															placeholder="Member First Name"
+															th:field="*{family[__${iterStat.index}__].firstName}"
+															th:value="${familyMember.firstName}" />
+													</div>
+													<div class="form-group">
+														<label for="familyMiddleName">Middle Name</label> <input
+															id="familyMiddleName" type="text"
+															placeholder="Member Middle Name"
+															th:field="*{family[__${iterStat.index}__].middleName}"
+															th:value="${familyMember.middleName}" />
+													</div>
+												</div>
+												<div class="row">
+													<div class="form-group">
+														<label for="familyLastName">Last Name</label> <input
+															id="familyLastName" type="text"
+															placeholder="Member Last Name"
+															th:field="*{family[__${iterStat.index}__].lastName}"
+															th:value="${familyMember.lastName}" />
+													</div>
+													<div class="form-group">
+														<label for="familyImage">Image</label> <input
+															id="familyImage" type="file" name="familyImages" />
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<div>
+									<input type="hidden" th:field="*{id}">
+									</div>
+
+
+
+									<!-- Submit Button -->
+									<button type="submit" class="submit-btn">Submit</button>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+	</div>
+	
+	<th:block th:insert="AdminFooter.html"></th:block>
+	
+</body>
+</html>

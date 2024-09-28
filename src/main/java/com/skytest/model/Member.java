@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+import com.skytest.constants.MemberStatus;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -37,14 +38,15 @@ private String title;
 	private List<Family> family;
 	@OneToOne(cascade = CascadeType.ALL)
 	private PaymentInfo paymentInfo;
-	@Enumerated(EnumType.STRING)
-	private com.skytest.constants.MemberStatus  status;
+	
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate formSubmitDate;
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate memberSince;
 	private String imageName;
 	private String membershipType;
+	@Enumerated(EnumType.STRING)
+	private MemberStatus status;
 	
 	
 	
