@@ -103,7 +103,7 @@ public class MemberController {
 	@GetMapping("/editMember")
 	private String memberEdit(@RequestParam int id, Model model) {
 		model.addAttribute("memberModel",memberService.getMemberById(id));
-		return "MemberEdit";
+		return "EditMember";
 	}
 	@PostMapping("/updateMember")
 	private String updateMember(@RequestParam MultipartFile memberImage,@RequestParam(required = false) List<MultipartFile>familyImages,@ModelAttribute Member member) {

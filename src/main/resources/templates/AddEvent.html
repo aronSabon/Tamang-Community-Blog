@@ -85,9 +85,9 @@
 									</div>
 									<!-- Button to show Guest information -->
 									<div>
-									<button type="button" id="addGuest"
-										class="btn btn-primary next-btn">Add</button>
-										</div>
+										<button type="button" id="addGuest"
+											class="btn btn-primary next-btn">Add</button>
+									</div>
 
 
 
@@ -142,6 +142,15 @@
             guestSection.classList.add('guest-section');
             guestSection.innerHTML = `
                 <div class="row">
+            	 <div class="form-group  title-group">
+				<label for="guest${guestCount}">Title</label>
+				<select name="guest[${guestCount}].title" id="guest${guestCount}" class="form-control">
+					<option value="">Select</option>
+					<option value="Mrs">Mrs</option>
+					<option value="Mr">Mr</option>
+					<option value="Miss">Miss</option>
+				</select>
+			</div>
                     <div class="form-group">
                         <label for="firstName${guestCount}" >First Name</label>
                         <input id="firstName${guestCount}" type="text" placeholder="Guest First Name" name="guest[${guestCount}].firstName" class="form-control"/>

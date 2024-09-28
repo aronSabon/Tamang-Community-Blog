@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skytest.constants.EventStatus;
 import com.skytest.model.Event;
@@ -37,6 +38,16 @@ public class EventController {
 		event.setStatus(EventStatus.UPCOMMING);
 		eventService.addEvent(event);
 		return"redirect:/event";
+	}
+	@GetMapping("/eventList")
+	private String getEventList(Model model) {
+		model.addAttribute("eventList",eventService.getAllEvent());
+		return"EventList";
+	}
+	@GetMapping("/editEvent")
+	private String editEvent(Model model,@RequestParam int id) {
+		model.addAttribute("eventModel",eventService.getEventById(id));
+		return"EditEvent";
 	}
 
 }
