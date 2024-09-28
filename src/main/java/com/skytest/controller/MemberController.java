@@ -54,7 +54,7 @@ public class MemberController {
 				        .collect(Collectors.toList());
 				    
 				    member.setFamily(validFamilyMembers);
-		    if (member.getFamily().size() == familyImages.size()) {
+		    if (member.getFamily().size() >= familyImages.size()) {
 
 		    for (int i = 0; i < member.getFamily().size(); i++) {
 		        Family family = member.getFamily().get(i);
