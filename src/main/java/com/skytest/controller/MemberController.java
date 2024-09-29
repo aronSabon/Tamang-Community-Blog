@@ -24,7 +24,7 @@ import com.skytest.service.MemberService;
 
 @Controller
 public class MemberController {
-	
+
 	@Autowired
 	MemberService memberService;
 	@GetMapping("/member")
@@ -33,56 +33,56 @@ public class MemberController {
 	}
 	@PostMapping("/member")
 	private String postMember(@RequestParam MultipartFile memberImage,@RequestParam(required = false) List<MultipartFile>familyImages,@ModelAttribute Member member) {
-	
-		 if (!memberImage.isEmpty()) {
 
-				try {
-					Files.copy(memberImage.getInputStream(), 
-					Path.of("src/main/resources/static/memberImages/"+member.getFirstName()+member.getContact().getMobileNumber()+".jpg"), 
-					StandardCopyOption.REPLACE_EXISTING);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		    }
+		if (!memberImage.isEmpty()) {
 
-		    // Handle family images
-		 
-		 if(member.getFamily()!=null) {
-			 List<Family> validFamilyMembers = member.getFamily().stream()
-				        .filter(family -> family.getFirstName() != null && !family.getFirstName().isEmpty())
-				        .collect(Collectors.toList());
-				    
-				    member.setFamily(validFamilyMembers);
-		    if (member.getFamily().size() >= familyImages.size()) {
-
-		    for (int i = 0; i < member.getFamily().size(); i++) {
-		        Family family = member.getFamily().get(i);
-		        family.setImageName(family.getFirstName()+member.getContact().getMobileNumber()+".jpg");
-		        MultipartFile familyImage = familyImages.get(i); // Get the corresponding image for this family member
-		        
-		        if (!familyImage.isEmpty()) {
-
-					try {
-						Files.copy(familyImage.getInputStream(), 
-						Path.of("src/main/resources/static/memberImages/"+family.getFirstName()+member.getContact().getMobileNumber()+".jpg"), 
+			try {
+				Files.copy(memberImage.getInputStream(), 
+						Path.of("src/main/resources/static/memberImages/"+member.getFirstName()+member.getContact().getMobileNumber()+".jpg"), 
 						StandardCopyOption.REPLACE_EXISTING);
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		// Handle family images
+
+		if(member.getFamily()!=null) {
+			List<Family> validFamilyMembers = member.getFamily().stream()
+					.filter(family -> family.getFirstName() != null && !family.getFirstName().isEmpty())
+					.collect(Collectors.toList());
+
+			member.setFamily(validFamilyMembers);
+			if (member.getFamily().size() >= familyImages.size()) {
+
+				for (int i = 0; i < member.getFamily().size(); i++) {
+					Family family = member.getFamily().get(i);
+					family.setImageName(family.getFirstName()+member.getContact().getMobileNumber()+".jpg");
+					MultipartFile familyImage = familyImages.get(i); // Get the corresponding image for this family member
+
+					if (!familyImage.isEmpty()) {
+
+						try {
+							Files.copy(familyImage.getInputStream(), 
+									Path.of("src/main/resources/static/memberImages/"+family.getFirstName()+member.getContact().getMobileNumber()+".jpg"), 
+									StandardCopyOption.REPLACE_EXISTING);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
-		        }
-		    }
-		    } else {
-		        // Handle the case where the number of family members doesn't match the number of images
-		        // Maybe return an error or log the issue
-		        System.err.println("Number of family members doesn't match number of images");
-		    }
-		 }
-		 if(member.getFamily()!=null) {
-		    System.out.println("Number of family members: " + member.getFamily().size());
-		    System.out.println("Number of family images: " + familyImages.size());
-		 }
+				}
+			} else {
+				// Handle the case where the number of family members doesn't match the number of images
+				// Maybe return an error or log the issue
+				System.err.println("Number of family members doesn't match number of images");
+			}
+		}
+		if(member.getFamily()!=null) {
+			System.out.println("Number of family members: " + member.getFamily().size());
+			System.out.println("Number of family images: " + familyImages.size());
+		}
 		member.setImageName(member.getFirstName()+member.getContact().getMobileNumber()+".jpg");
 		member.setStatus(MemberStatus.PENDING);
 		member.setFormSubmitDate(LocalDate.now());
@@ -90,7 +90,7 @@ public class MemberController {
 		memberService.addMember(member);
 		return "redirect:/member";
 	}
-	
+
 	@GetMapping("/memberList")
 	private String memberList(Model model) {
 		model.addAttribute("memberList",memberService.getAllMember());
@@ -111,51 +111,52 @@ public class MemberController {
 
 			try {
 				Files.copy(memberImage.getInputStream(), 
-				Path.of("src/main/resources/static/memberImages/"+member.getFirstName()+member.getContact().getMobileNumber()+".jpg"), 
-				StandardCopyOption.REPLACE_EXISTING);
+						Path.of("src/main/resources/static/memberImages/"+member.getFirstName()+member.getContact().getMobileNumber()+".jpg"), 
+						StandardCopyOption.REPLACE_EXISTING);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-	    }
+		}
 
-	    // Handle family images
-	 
-	 if(member.getFamily()!=null) {
-		 List<Family> validFamilyMembers = member.getFamily().stream()
-			        .filter(family -> family.getFirstName() != null && !family.getFirstName().isEmpty())
-			        .collect(Collectors.toList());
-			    
-			    member.setFamily(validFamilyMembers);
-	    if (member.getFamily().size() >= familyImages.size()) {
+		// Handle family images
 
-	    for (int i = 0; i < member.getFamily().size(); i++) {
-	        Family family = member.getFamily().get(i);
-	        family.setImageName(family.getFirstName()+member.getContact().getMobileNumber()+".jpg");
-	        MultipartFile familyImage = familyImages.get(i); // Get the corresponding image for this family member
-	        
-	        if (!familyImage.isEmpty()) {
+		if(member.getFamily()!=null) {
+			List<Family> validFamilyMembers = member.getFamily().stream()
+					.filter(family -> family.getFirstName() != null && !family.getFirstName().isEmpty())
+					.collect(Collectors.toList());
 
-				try {
-					Files.copy(familyImage.getInputStream(), 
-					Path.of("src/main/resources/static/memberImages/"+family.getFirstName()+member.getContact().getMobileNumber()+".jpg"), 
-					StandardCopyOption.REPLACE_EXISTING);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+			member.setFamily(validFamilyMembers);
+			if (member.getFamily().size() >= familyImages.size()) {
+
+				for (int i = 0; i < member.getFamily().size(); i++) {
+					Family family = member.getFamily().get(i);
+					family.setImageName(family.getFirstName()+member.getContact().getMobileNumber()+".jpg");
+					MultipartFile familyImage = familyImages.get(i); // Get the corresponding image for this family member
+
+					if (!familyImage.isEmpty()) {
+
+						try {
+							Files.copy(familyImage.getInputStream(), 
+									Path.of("src/main/resources/static/memberImages/"+family.getFirstName()+member.getContact().getMobileNumber()+".jpg"), 
+									StandardCopyOption.REPLACE_EXISTING);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
 				}
-	        }
-	    }
-	    } else {
-	        // Handle the case where the number of family members doesn't match the number of images
-	        // Maybe return an error or log the issue
-	        System.err.println("Number of family members doesn't match number of images");
-	    }
-	 }
-	 if(member.getFamily()!=null) {
-	    System.out.println("Number of family members: " + member.getFamily().size());
-	    System.out.println("Number of family images: " + familyImages.size());
-	 }
+			}
+			else {
+				// Handle the case where the number of family members doesn't match the number of images
+				// Maybe return an error or log the issue
+				System.err.println("Number of family members doesn't match number of images");
+			}
+		}
+		if(member.getFamily()!=null) {
+			System.out.println("Number of family members: " + member.getFamily().size());
+			System.out.println("Number of family images: " + familyImages.size());
+		}
 		member.setImageName(member.getFirstName()+member.getContact().getMobileNumber()+".jpg");
 		member.setStatus(memberService.getMemberById(member.getId()).getStatus());
 		member.setFormSubmitDate(memberService.getMemberById(member.getId()).getFormSubmitDate());

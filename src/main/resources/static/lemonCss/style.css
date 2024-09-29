@@ -3,8 +3,8 @@
         .row {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-        }
+/*             gap: 10px;
+ */        }
 
         .form-group {
             flex: 1;
@@ -171,6 +171,18 @@
 }
 .buttonTopMargin{
 	margin-top:10px;
+}
+.bg-lemon-1 {
+  background-color: #ffe6ea!important;
+}
+.bg-lemon-2 {
+  background-color: #e6fee2!important;
+}
+.bg-lemon-3 {
+  background-color: #dee1fe!important;
+}
+.bg-lemon-4 {
+  background-color: #ffe6d9!important;
 }
 
 
