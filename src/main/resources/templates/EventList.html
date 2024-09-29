@@ -65,13 +65,18 @@
 														<td>[[${e.time}]]</td>
 														<td>[[${e.guest.size()}]]</td>
 														<td>[[${e.status}]]</td>
-														<td><a th:href="@{/viewEvent(id=${e.id})}">
-																<button>View</button>
-														</a> <a th:href="@{/editEvent(id=${e.id})}"><button>Edit</button></a>
-
-															<a th:href="@{/deleteEvent(id=${e.id})}"><button>Delete</button></a>
-															<a th:href="@{/addEventImage(id=${e.id})}"><button>Add Image</button></a>
-
+														<td>
+															
+																<a th:href="@{/viewEvent(id=${e.id})}">
+																	<button class=" btn-primary btn-sm">View</button>
+																</a> <a th:href="@{/editEvent(id=${e.id})}">
+																	<button class=" btn-info btn-sm">Edit</button>
+																</a> <a th:href="@{/deleteEvent(id=${e.id})}" >
+																	<button class="btn btn-danger btn-sm">Delete</button>
+																</a> <a th:href="@{/addEventImage(id=${e.id})}" >
+																	<button class="btn btn-success btn-sm">Add
+																		Image</button>
+																</a>
 														</td>
 													</tr>
 
