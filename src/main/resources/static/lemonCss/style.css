@@ -190,6 +190,6 @@
     .event-image {
         max-width: 100%; /* Responsive */
         max-height: 200px; /* Adjust height as needed */
-        object-fit: cover; /* Ensures images cover the area without distortion */
+        object-fit: contain; /* Ensures images cover the area without distortion */
     }
 

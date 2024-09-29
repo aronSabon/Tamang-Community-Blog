@@ -84,11 +84,7 @@ public class EventController {
 	@PostMapping("/addEventImage")
 	private String postaddEventImage(Model model,@RequestParam int eventId,@RequestParam List<MultipartFile>eventImages, RedirectAttributes redirectAttribute) {
 		Event event = eventService.getEventById(eventId);
-		  if (event.getImageNames() == null) {
-		        event.setImageNames(new ArrayList<>());
-		    }
-		
-		int imageNumber = event.getImageNames().size()+1;
+
 		if(eventImages!=null && !eventImages.isEmpty()) {
 				for (int i = 0; i < eventImages.size(); i++) {
 					MultipartFile eventImage = eventImages.get(i); // Get the corresponding image for this family member
@@ -96,15 +92,14 @@ public class EventController {
 					if (!eventImages.isEmpty()) {
 
 						try {
-		                    String imageName = event.getTitle() + imageNumber + ".jpg";
+		                    String imageName = eventImage.getOriginalFilename();
 
 							event.addImageName(imageName);
 							eventService.updateEvent(event);
 
 							Files.copy(eventImages.get(i).getInputStream(), 
-									Path.of("src/main/resources/static/eventImages/"+event.getTitle()+ imageNumber +".jpg"), 
+									Path.of("src/main/resources/static/eventImages/"+eventImage.getOriginalFilename()), 
 									StandardCopyOption.REPLACE_EXISTING);
-							imageNumber++;
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
