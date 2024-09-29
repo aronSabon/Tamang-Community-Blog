@@ -3,6 +3,7 @@ package com.skytest.controller;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -61,6 +63,11 @@ public class EventController {
 		event.setStatus(eventService.getEventById(event.getId()).getStatus());
 		eventService.updateEvent(event);
 		return "redirect:/eventList";
+	}
+	@GetMapping("/deleteEvent")
+	private String deleteEvent(Model model,@RequestParam int id) {
+	eventService.deleteEventById(id);
+		return"redirect:/eventList";
 	}
 	@GetMapping("/viewEvent")
 	private String viewEvent(Model model,@RequestParam int id) {
@@ -116,5 +123,25 @@ public class EventController {
 		System.out.println(event);
 		return"redirect:addEventImage";
 	}
+	 @PostMapping("/deleteImage/{eventId}")
+	    public String deleteImage(@PathVariable int eventId, @RequestParam String imageName, Model model , RedirectAttributes redirectAttribute) {
+	        // Path to the images folder (adjust according to your server setup)
+	        String imagePath = "eventImages/" + imageName;
+
+	        // Remove the image file from the folder
+	        try {
+	            Files.deleteIfExists(Paths.get(imagePath));
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	            // Handle the error (e.g., add an error message to the model)
+	        }
+
+	        // Update the event model by removing the image from the list (if you store images in the DB)
+	        Event event = eventService.getEventById(eventId);
+	        event.getImageNames().remove(imageName);
+	        eventService.updateEvent(event); // Save the event after removing the image
+	        redirectAttribute.addAttribute("id",eventId);
+	        return "redirect:/viewEvent"; // Redirect to the event details page
+	    }
 
 }
