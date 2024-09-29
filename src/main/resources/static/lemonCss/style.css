@@ -184,5 +184,12 @@
 .bg-lemon-4 {
   background-color: #ffe6d9!important;
 }
-
+.lemon-padding-top td {
+	padding-top:5px;
+}
+    .event-image {
+        max-width: 100%; /* Responsive */
+        max-height: 200px; /* Adjust height as needed */
+        object-fit: cover; /* Ensures images cover the area without distortion */
+    }
 
