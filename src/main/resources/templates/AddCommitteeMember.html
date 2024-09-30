@@ -21,7 +21,6 @@
     
     <!-- Select2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="lemonCss/lemon.js"></script>
 </head>
 <body>
     <div class="container-scroller">
@@ -42,15 +41,15 @@
                     <div class="card shadow-sm">
                         <div class="card-body">
                             <!-- Form Tag Starts Here -->
-                            <form action="/committeMember" method="post" enctype="multipart/form-data">
+                            <form action="/committeeMember" method="post" enctype="multipart/form-data">
                                 <div id="committee-member-forms">
                                     <!-- First committee member form -->
-                                    <div class="formContainer committee-member-form">
+                                    <div class="formContainer committee-member-form" data-form-index="0">
                                         <h2>Committee Member Details</h2>
                                         <div class="row">
                                             <div class="form-group">
                                                 <label>Member</label>
-                                                <select name="member[]" id="member" class="select2">
+                                                <select name="member[]" id="member-0" class="select2">
                                                     <option value="">Select Member</option>
                                                     <option th:each="m:${memberList}" th:value="${m.id}">
                                                         [[${m.title + " " + m.firstName + " " + (m.middleName != null ? m.middleName + " " : "") + m.lastName}]]
@@ -58,8 +57,8 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="designation">Designation</label>
-                                                <select name="designation[]" id="designation">
+                                                <label for="designation-0">Designation</label>
+                                                <select name="designation[]" id="designation-0">
                                                     <option value="">Select</option>
                                                     <option value="President">President</option>
                                                     <option value="Vice President">Vice President</option>
@@ -74,12 +73,12 @@
                                         </div>
                                         <div class="row">
                                             <div class="form-group">
-                                                <label for="activeFrom">Active From</label>
-                                                <input id="activeFrom" type="date" name="activeFrom[]" />
+                                                <label for="activeFrom-0">Active From</label>
+                                                <input id="activeFrom-0" type="date" name="activeFrom[]" />
                                             </div>
                                             <div class="form-group">
-                                                <label for="activeTo">Active To</label>
-                                                <input id="activeTo" type="date" name="activeTo[]" />
+                                                <label for="activeTo-0">Active To</label>
+                                                <input id="activeTo-0" type="date" name="activeTo[]" />
                                             </div>
                                         </div>
                                     </div>
@@ -100,40 +99,57 @@
 
     <!-- Initialize Select2 -->
     <script>
-        $(document).ready(function () {
-            // Initialize Select2 for the first member field
-            $('#member').select2({
+    $(document).ready(function () {
+        var formIndex = 0;
+
+        // Initialize Select2 for the first member field only
+        $('#member-0').select2({
+            placeholder: "Select Member",
+            allowClear: true,
+            tags: true
+        });
+
+        // Function to initialize Select2 only for the member select elements
+        function initializeSelect2(selector) {
+            selector.select2({
                 placeholder: "Select Member",
                 allowClear: true,
                 tags: true
             });
+        }
 
-            // Function to initialize Select2 for dynamically added elements
-            function initializeSelect2() {
-                $('.select2').select2({
-                    placeholder: "Select Member",
-                    allowClear: true,
-                    tags: true
-                });
-            }
+        // Add new committee member form
+        $('#add-member').on('click', function () {
+            formIndex++;
 
-            // Add new committee member form
-            $('#add-member').on('click', function () {
-                // Clone the first form
-                var newForm = $('.committee-member-form').first().clone();
+            // Clone the first form
+            var newForm = $('.committee-member-form').first().clone();
 
-                // Reset values of the cloned form
-                newForm.find('select').val('').trigger('change'); // Reset Select2 fields
-                newForm.find('input').val(''); // Reset date fields
+            // Remove any previous Select2 container (to avoid duplication)
+            newForm.find('.select2-container').remove();
 
-                // Append the new form
-                $('#committee-member-forms').append(newForm);
+            // Clear the values of the cloned form (both select and input fields)
+            newForm.find('select').val(null).trigger('change'); // Reset Select2 fields
+            newForm.find('input').val(''); // Reset date fields
 
-                // Reinitialize Select2 for the new form
-                initializeSelect2();
+            // Update the new form's fields with unique IDs
+            newForm.attr('data-form-index', formIndex);
+            newForm.find('select, input').each(function () {
+                var fieldId = $(this).attr('id');
+                var newId = fieldId.replace(/\d+/, formIndex); // Update id with new index
+                $(this).attr('id', newId);
             });
 
+            // Append the new form
+            $('#committee-member-forms').append(newForm);
+
+            // Reinitialize Select2 only for the member select field
+            initializeSelect2(newForm.find('select[name^="member"]'));  // Only initialize on member field
         });
+
+    });
+
+
     </script>
 
 </body>

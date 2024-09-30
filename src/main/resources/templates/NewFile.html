@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Select2</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <style>
+        .select2-container {
+            width: 100% !important;
+        }
+    </style>
+</head>
+<body>
+    <select id="member" class="select2">
+        <option value="1">Member 1</option>
+        <option value="2">Member 2</option>
+        <option value="3">Member 3</option>
+    </select>
+
+    <script>
+        $(document).ready(function() {
+            $('#member').select2({
+                placeholder: "Select Member",
+                allowClear: true,
+                tags: true // Enable typing new options
+            });
+        });
+    </script>
+</body>
+</html>
