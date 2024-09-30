@@ -40,6 +40,8 @@ public class MemberController {
 				Files.copy(memberImage.getInputStream(), 
 						Path.of("src/main/resources/static/memberImages/"+member.getFirstName()+member.getContact().getMobileNumber()+".jpg"), 
 						StandardCopyOption.REPLACE_EXISTING);
+				member.setImageName(member.getFirstName()+member.getContact().getMobileNumber()+".jpg");
+
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -83,7 +85,6 @@ public class MemberController {
 			System.out.println("Number of family members: " + member.getFamily().size());
 			System.out.println("Number of family images: " + familyImages.size());
 		}
-		member.setImageName(member.getFirstName()+member.getContact().getMobileNumber()+".jpg");
 		member.setStatus(MemberStatus.PENDING);
 		member.setFormSubmitDate(LocalDate.now());
 		System.out.println(member);
