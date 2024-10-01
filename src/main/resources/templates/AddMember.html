@@ -1,140 +1,266 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Add Committee Member</title>
-
-    <style>
-        .select2-container {
-            width: 100% !important;
-        }
-        .formContainer {
-            margin-bottom: 20px;
-        }
-    </style>
-    
-    <!-- Select2 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    
-    <!-- jQuery (required for Select2) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    
-    <!-- Select2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="lemonCss/lemon.js"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-    <div class="container-scroller">
-        <th:block th:insert="AdminHeader.html"></th:block>
-        <div class="container-fluid page-body-wrapper">
-            <th:block th:insert="AdminSideNav.html"></th:block>
-            <div class="main-panel">
-                <div class="content-wrapper">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h1 class="h3 text-dark">Add Committee Members</h1>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Add Committee Members</li>
-                        </ol>
+	<div class="container-scroller">
+		<th:block th:insert="AdminHeader.html"></th:block>
+		<div class="container-fluid page-body-wrapper">
+			<th:block th:insert="AdminSideNav.html"></th:block>
+			<div class="main-panel">
+				<div class="content-wrapper">
+					<h2>Membership Registration</h2>
+					<div class="container mt-5">
+						<form id="multiTabForm" class="forms-sample" action="/member"
+							method="post" enctype="multipart/form-data">
+							<!-- Tab navigation -->
+							<ul class="nav nav-tabs" id="formTabs" role="tablist">
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" id="tab1-tab"
+										data-bs-toggle="tab" data-bs-target="#tab1" type="button"
+										role="tab">Personal Details</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="tab2-tab" data-bs-toggle="tab"
+										data-bs-target="#tab2" type="button" role="tab">Address
+										Details</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="tab3-tab" data-bs-toggle="tab"
+										data-bs-target="#tab3" type="button" role="tab">Contact
+										Details</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="tab4-tab" data-bs-toggle="tab"
+										data-bs-target="#tab4" type="button" role="tab">Family
+										Details</button>
+								</li>
+							</ul>
+							<!-- Tab content -->
+							<div class="tab-content mt-3" id="formTabsContent">
+								<!-- Tab 1 Content -->
+								<div class="tab-pane fade show active" id="tab1" role="tabpanel">
+									<div class="row">
+										<div class="form-group  ">
+											<label for="title">MemberShip Type</label> <select
+												name="membershipType" class="form-control">
+												<option value="">MemberShip Type</option>
+												<option value="Lifetime Member">Lifetime Member</option>
+												<option value="Honorary Member">Honorary Member</option>
+											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group  title-group">
+											<label for="title">Title</label> <select name="title"
+												class="form-control">
+												<option value="">Select</option>
+												<option value="Mrs">Mrs</option>
+												<option value="Mr">Mr</option>
+												<option value="Miss">Miss</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="firstName">First Name</label> <input
+												id="firstName" type="text" placeholder="First Name"
+												name="firstName" class="form-control" />
+										</div>
+										<div class="form-group">
+											<label for="middleName">Middle Name</label> <input
+												id="middleName" type="text" placeholder="Middle Name"
+												name="middleName" class="form-control" />
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group">
+											<label for="lastName">Last Name</label> <input id="lastName"
+												type="text" placeholder="Last Name" name="lastName"
+												class="form-control" />
+										</div>
+										<div class="form-group">
+											<label for="memberImage">Image</label> <input
+												id="memberImage" type="file" placeholder="Select Image"
+												name="memberImage" class="form-control" />
+										</div>
+									</div>
+									<button type="button" class="btn btn-primary next-btn"
+										data-next="tab2">Next</button>
+								</div>
+								<!-- Tab 2 Content -->
+								<div class="tab-pane fade" id="tab2" role="tabpanel">
+									<div class="row">
+										<div class="form-group">
+											<label for="houseNumberOrName">House Number or Name</label> <input
+												id="houseNumberOrName" type="text"
+												placeholder="House Number or Name"
+												name="address.houseNumberOrName" class="form-control" />
+										</div>
+										<div class="form-group">
+											<label for="street">Street</label> <input id="street"
+												type="text" placeholder="Street" name="address.street"
+												class="form-control" />
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group">
+											<label for="locality">Locality</label> <input id="locality"
+												type="text" placeholder="Locality" name="address.locality"
+												class="form-control" />
+										</div>
+										<div class="form-group">
+											<label for="town">Town</label> <input id="town" type="text"
+												placeholder="Town" name="address.town" class="form-control" />
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group">
+											<label for="country">Country</label> <input id="country"
+												type="text" placeholder="Country" name="address.country"
+												class="form-control" />
+										</div>
+										<div class="form-group">
+											<label for="postalCode">Postal Code</label> <input
+												id="postalCode" type="text" placeholder="Postal Code"
+												name="address.postalCode" class="form-control" />
+										</div>
+									</div>
+									<button type="button" class="btn btn-primary next-btn"
+										data-next="tab3">Next</button>
+								</div>
+								<!-- Tab 3 Content -->
+								<div class="tab-pane fade" id="tab3" role="tabpanel">
+									<div class="row">
+										<div class="form-group">
+											<label for="email">Email</label> <input id="email"
+												type="email" placeholder="Email" name="contact.email"
+												class="form-control" />
+										</div>
+										<div class="form-group">
+											<label for="landline">Landline</label> <input id="landline"
+												type="number" placeholder="Landline" name="contact.landline"
+												class="form-control" />
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group">
+											<label for="mobileNumber">Mobile Number</label> <input
+												id="mobileNumber" type="number" placeholder="Mobile Number"
+												name="contact.mobileNumber" class="form-control" />
+										</div>
+									</div>
+									<button type="button" class="btn btn-primary next-btn"
+										data-next="tab4">Next</button>
+								</div>
+								<!-- Tab 3 Content -->
+								<div class="tab-pane fade" id="tab4" role="tabpanel">
+									<div id="familyContainer">
+										<!-- Dynamic family member sections will appear here -->
+									</div>
+									<!-- Button to show family information -->
+									<div>
+										<button type="button" id="addFamilyBtn"
+											class="btn btn-primary next-btn">Add</button>
+									</div>
+									<button type="submit" class="btn btn-success buttonTopMargin">Submit</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<th:block th:insert="AdminFooter.html"></th:block>
+	</div>
+	<!-- Bootstrap JS and Popper.js -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+	<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const nextButtons = document.querySelectorAll('.next-btn');
+    
+    nextButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const nextTab = this.getAttribute('data-next');
+        const nextTabEl = document.querySelector(`#${nextTab}-tab`);
+        
+        if (nextTabEl) {
+          const tab = new bootstrap.Tab(nextTabEl);
+          tab.show();
+        }
+      });
+    });
+  });
+</script>
+	<script>
+        const addFamilyBtn = document.getElementById('addFamilyBtn');
+        const familyContainer = document.getElementById('familyContainer');
+        let familyMemberCount = 0;
+        addFamilyBtn.addEventListener('click', function () {
+            familyMemberCount++;
+            const familyMemberSection = document.createElement('div');
+            familyMemberSection.classList.add('family-member-section');
+            familyMemberSection.innerHTML = `
+                <div class="row">
+                    <div class="form-group">
+                        <label for="relation${familyMemberCount}" >Relation</label>
+                        <select id="relation${familyMemberCount}" name="family[${familyMemberCount}].relation" class="form-control" >
+                    	<option value="">Select Relation</option>
+                    	<option value="Son">Son</option>
+                    	<option value="Daughter">Daughter</option>
+                    	<option value="Son-In-Law">Son-In-Law</option>
+                    	<option value="Daughter-In-Law">Daughter-In-Law</option>
+                    	<option value="Grandfather">Grandfather</option>
+                    	<option value="GrandMother">GrandMother</option>
+                    	<option value="Father">Father</option>
+                    	<option value="Mother">Mother</option>
+                    	<option value="Reserve">Reserve</option>
+                    </select>
                     </div>
-
-                    <!-- Faculty form card -->
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <!-- Form Tag Starts Here -->
-                            <form action="/committeMember" method="post" enctype="multipart/form-data">
-                                <div id="committee-member-forms">
-                                    <!-- First committee member form -->
-                                    <div class="formContainer committee-member-form">
-                                        <h2>Committee Member Details</h2>
-                                        <div class="row">
-                                            <div class="form-group">
-                                                <label>Member</label>
-                                                <select name="member[]" id="member" class="select2">
-                                                    <option value="">Select Member</option>
-                                                    <option th:each="m:${memberList}" th:value="${m.id}">
-                                                        [[${m.title + " " + m.firstName + " " + (m.middleName != null ? m.middleName + " " : "") + m.lastName}]]
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="designation">Designation</label>
-                                                <select name="designation[]" id="designation">
-                                                    <option value="">Select</option>
-                                                    <option value="President">President</option>
-                                                    <option value="Vice President">Vice President</option>
-                                                    <option value="Treasurer">Treasurer</option>
-                                                    <option value="Junior Treasurer">Junior Treasurer</option>
-                                                    <option value="Secretary">Secretary</option>
-                                                    <option value="Vice Secretary">Vice Secretary</option>
-                                                    <option value="Editor">Editor</option>
-                                                    <option value="Committee Member">Committee Member</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group">
-                                                <label for="activeFrom">Active From</label>
-                                                <input id="activeFrom" type="date" name="activeFrom[]" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="activeTo">Active To</label>
-                                                <input id="activeTo" type="date" name="activeTo[]" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Buttons -->
-                                <button type="button" id="add-member" class="btn btn-info buttonTopMargin">Add Another Member</button>
-                                <button type="submit" class="btn btn-success buttonTopMargin">Submit</button>
-                            </form> <!-- Form Tag Ends Here -->
-                        </div>
-                    </div>
-
                 </div>
-            </div>
-        </div>
-        <th:block th:insert="AdminFooter.html"></th:block>
-    </div>
-
-    <!-- Initialize Select2 -->
-    <script>
-        $(document).ready(function () {
-            // Initialize Select2 for the first member field
-            $('#member').select2({
-                placeholder: "Select Member",
-                allowClear: true,
-                tags: true
-            });
-
-            // Function to initialize Select2 for dynamically added elements
-            function initializeSelect2() {
-                $('.select2').select2({
-                    placeholder: "Select Member",
-                    allowClear: true,
-                    tags: true
-                });
-            }
-
-            // Add new committee member form
-            $('#add-member').on('click', function () {
-                // Clone the first form
-                var newForm = $('.committee-member-form').first().clone();
-
-                // Reset values of the cloned form
-                newForm.find('select').val('').trigger('change'); // Reset Select2 fields
-                newForm.find('input').val(''); // Reset date fields
-
-                // Append the new form
-                $('#committee-member-forms').append(newForm);
-
-                // Reinitialize Select2 for the new form
-                initializeSelect2();
-            });
-
+                <div class="row">
+                <div class="form-group  title-group">
+				<label for="familyTitle${familyMemberCount}">Title</label>
+				<select name="family[${familyMemberCount}].title" id="familyTitle${familyMemberCount}" class="form-control">
+					<option value="">Select</option>
+					<option value="Mrs">Mrs</option>
+					<option value="Mr">Mr</option>
+					<option value="Miss">Miss</option>
+				</select>
+			</div>
+                    <div class="form-group">
+                        <label for="familyFirstName${familyMemberCount}">First Name</label>
+                        <input id="familyFirstName${familyMemberCount}" type="text" placeholder="Member First Name" name="family[${familyMemberCount}].firstName" class="form-control"/>
+                        
+                        </div>
+                    <div class="form-group">
+                        <label for="familyMiddleName${familyMemberCount}">Middle Name</label>
+                    
+                        <input id="familyMiddleName${familyMemberCount}" type="text" placeholder="Member Middle Name" name="family[${familyMemberCount}].middleName" class="form-control"/>
+                        
+                             </div>
+                <div class="row">
+               		<div class="form-group">
+               		<label for="familyLastName${familyMemberCount}">Last Name</label>
+              		<input id="familyLastName${familyMemberCount}" type="text" placeholder="Member Last Name" name="family[${familyMemberCount}].lastName" class="form-control" />
+          		</div>
+                <div class="form-group">
+                      <label for="familyImage${familyMemberCount}">Image</label>
+                      <input id="familyImage${familyMemberCount}" type="file" placeholder="Select Image" name="familyImages" class="form-control"/>
+                  </div>
+              </div>
+                <button type="button" class="remove-btn" onclick="removeFamilyMember(this)">Remove</button>
+            `;
+            
+              familyContainer.appendChild(familyMemberSection);
         });
+        function removeFamilyMember(button) {
+            const familyMemberSection = button.parentElement;
+            familyContainer.removeChild(familyMemberSection);
+        }
     </script>
-
 </body>
 </html>
