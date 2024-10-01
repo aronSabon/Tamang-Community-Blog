@@ -16,6 +16,8 @@ import com.skytest.model.CommitteeMember;
 import com.skytest.model.Member;
 import com.skytest.service.CommitteeMemberService;
 import com.skytest.service.MemberService;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @Controller
 
@@ -60,4 +62,25 @@ public class CommitteeMemberController {
 		model.addAttribute("committeeMemberList",committeeMemberService.getAllCommitteMember());
 		return "CommitteeMemberList";
 	}
+	@GetMapping("/editCommitteeMember")
+	private String edit(Model model,@RequestParam int id) {
+		model.addAttribute("memberList",memberService.getAllMember());
+		model.addAttribute("committeeMemberModel",committeeMemberService.getCommitteMemberById(id));
+		return "EditCommitteeMember";
+	}
+	@PostMapping("/updateCommitteeMember")
+	public String update(@ModelAttribute CommitteeMember committeeMember) {
+		committeeMember.setStatus(committeeMemberService.getCommitteMemberById(committeeMember.getId()).getStatus());
+		committeeMemberService.updateCommitteMember(committeeMember);
+		
+		return "redirect:/committeeMemberList";
+	}
+	@GetMapping("/deleteCommitteeMember")
+	public String delete(@RequestParam int id) {
+		committeeMemberService.deleteCommitteMemberById(id);
+		
+		return "redirect:/committeeMemberList";
+	}
+	
+	
 }
