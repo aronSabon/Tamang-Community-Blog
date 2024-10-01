@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
+	rel="stylesheet" />
+</head>
+<body>
+	<div class="container-scroller">
+		<th:block th:insert="AdminHeader.html"></th:block>
+		<div class="container-fluid page-body-wrapper">
+			<th:block th:insert="AdminSideNav.html"></th:block>
+			<div class="main-panel">
+				<div class="content-wrapper">
+
+
+					<!-- Page header -->
+					<div class="d-flex justify-content-between align-items-center mb-4">
+						<h1 class="h3 text-dark">Committee Member List</h1>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+							<li class="breadcrumb-item active">Committee Member List</li>
+						</ol>
+					</div>
+
+					<!-- Faculty form card -->
+					<div class="card shadow-sm">
+						<div class="card-body">
+						<!-- 	<a href="">
+								<button type="button"
+									class="btn btn-danger btn-icon-text exportExcel">
+									Export to Excel <i class="fas fa-file-excel btn-icon-append"></i>
+								</button>
+							</a> -->
+							<div class="grid-margin stretch-card">
+								<div class="card">
+									<div class="card-body">
+										<h4 class="card-title">Committee Member Details</h4>
+										<div class="table-responsive">
+											<table class="table table-striped lemon-padding-top" id="datatablesSimple">
+												<thead>
+													<tr>
+
+														<th></th>
+														<th>Full Name</th>
+														<th>Designation</th>
+														<th>Active From</th>
+														<th>Active To</th>
+														<th>Status</th>
+														<th>Actions</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr th:each="c:${committeeMemberList}">
+													<td><img  th:src="@{'memberImages/'+${c.member.imageName}}" width="45px"  style="border-radius: 50%;" alt="No Image"></td>
+														<td> [[${c.member.title + ' ' + c.member.firstName + (c.member.middleName != null ? ' ' + c.member.middleName : '') + ' ' + c.member.lastName}]]</td>
+														<td>[[${c.designation }]]</td>
+														<td>[[${c.activeFrom}]]</td>
+														<td>[[${c.activeTo}]]</td>
+														<td>[[${c.status}]]</td>
+														<td>
+															
+																<a th:href="@{/viewEvent(id=${c.id})}">
+																	<button class=" btn btn-primary btn-sm">View</button>
+																</a> <a th:href="@{/editEvent(id=${c.id})}">
+																	<button class=" btn btn-info btn-sm">Edit</button>
+																</a> <a th:href="@{/deleteEvent(id=${c.id})}" >
+																	<button class="btn btn-danger btn-sm">Delete</button>
+																</a>
+														</td>
+													</tr>
+
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+				</div>
+			</div>
+		</div>
+		<th:block th:insert="AdminFooter.html"></th:block>
+	</div>
+
+</body>
+</html>
