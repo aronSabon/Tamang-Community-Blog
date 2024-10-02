@@ -1,139 +1,137 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Gallery</title>
-    <style>
-        .image-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: flex-start;
-        }
+<meta charset="UTF-8">
+<title>Gallery</title>
+<style>
+.image-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	justify-content: flex-start;
+}
 
-        .image-card {
-            width: calc(33.33% - 15px);
-            box-sizing: border-box;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f8f9fa;
-            padding: 10px;
-        }
+.image-card {
+	width: calc(33.33% - 15px);
+	box-sizing: border-box;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f8f9fa;
+	padding: 10px;
+}
 
-        .image-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            border-radius: 8px;
-        }
+.image-card img {
+	width: 100%;
+	height: 200px;
+	object-fit: contain;
+	border-radius: 8px;
+}
 
-        @media (max-width: 768px) {
-            .image-card {
-                width: calc(50% - 15px);
-            }
-        }
+@media ( max-width : 768px) {
+	.image-card {
+		width: calc(50% - 15px);
+	}
+}
 
-        @media (max-width: 576px) {
-            .image-card {
-                width: 100%;
-            }
-        }
+@media ( max-width : 576px) {
+	.image-card {
+		width: 100%;
+	}
+}
 
-        /* Pagination styling */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
+/* Pagination styling */
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
 
-        .pagination a {
-            margin: 0 5px;
-            padding: 8px 16px;
-            text-decoration: none;
-            background-color: #007bff;
-            color: white;
-            border-radius: 4px;
-        }
-    /* Style for active (current) page */
-    .pagination a.active {
-        background-color: gray;
-        font-weight: bold;
-    }
+.pagination a {
+	margin: 0 5px;
+	padding: 8px 16px;
+	text-decoration: none;
+	background-color: #007bff;
+	color: white;
+	border-radius: 4px;
+}
+/* Style for active (current) page */
+.pagination a.active {
+	background-color: gray;
+	font-weight: bold;
+}
 
-        .pagination a.disabled {
-            background-color: #ddd;
-            pointer-events: none;
-        }
-    </style>
+.pagination a.disabled {
+	background-color: #ddd;
+	pointer-events: none;
+}
+</style>
 </head>
 <body>
-    <div class="container-scroller">
-        <th:block th:insert="AdminHeader.html"></th:block>
-        <div class="container-fluid page-body-wrapper">
-            <th:block th:insert="AdminSideNav.html"></th:block>
-            <div class="main-panel">
-                <div class="content-wrapper">
+	<div class="container-scroller">
+		<th:block th:insert="AdminHeader.html"></th:block>
+		<div class="container-fluid page-body-wrapper">
+			<th:block th:insert="AdminSideNav.html"></th:block>
+			<div class="main-panel">
+				<div class="content-wrapper">
 
-                    <!-- Page header -->
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h1 class="h3 text-dark">Gallery</h1>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Gallery</li>
-                        </ol>
-                    </div>
+					
+					<!-- Page header -->
+					<div class="d-flex justify-content-between align-items-center mb-4">
+						<h1 class="h3 text-dark">Gallery</h1>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+							<li class="breadcrumb-item active">Gallery List</li>
+						</ol>
+					</div>
+						<div>
+						<select id="type">
+							<option value="Member">Member</option>
+							<option th:each="e:${eventType}" th:value="${e}" th:text="${e}"></option>
+						</select>
+					</div>
 
-                    <!-- Faculty form card -->
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <select id="type">
-                                <option value="Member">Member</option>
-                                <option th:each="e:${eventType}" th:value="${e}" th:text="${e}"></option>
-                            </select>
+							<div class="grid-margin stretch-card">
+								<div class="card">
+									<div class="card-body">
+										<h4 class="card-title">Gallery Details</h4>
+										<div class="table-responsive">
+											<table class="table table-striped lemon-padding-top" id="datatablesSimple">
+												<thead>
+													<tr>
 
-                            <!-- Images section -->
-                            <div class="grid-margin stretch-card">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Member Images</h4>
+														<th></th>
+												
+														<th>Actions</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr th:each="i:${memberImageList}">
+														<td><img th:src="@{/memberImages/{img}(img=${i})}" alt="No Image" /></td>
+														
+														<td>
+															
+														<button class="btn btn-danger btn-sm">Delete</button>
+														</td>
+													</tr>
 
-                                        <!-- Image container -->
-                                        <div class="image-container">
-                                            <!-- Display member images, 3 per row, rounded borders -->
-                                            <div class="image-card" th:each="img : ${memberImages}">
-                                                <img th:src="@{/memberImages/{img}(img=${img})}" alt="No Image" />
-                                            </div>
-                                        </div>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+		
 
-                                        <!-- Pagination controls -->
-                                        <div class="pagination">
-                                            <a th:if="${currentPage > 1}"
-                                               th:href="@{/gallery(page=${currentPage - 1})}">Previous</a>
+					
 
-                                            <a th:each="i : ${#numbers.sequence(1, totalPages)}"
-                                               th:href="@{/gallery(page=${i})}"
-                                               th:text="${i}"
-                                               th:class="${i == currentPage} ? 'active' : '' "></a>
-
-                                            <a th:if="${currentPage < totalPages}"
-                                               th:href="@{/gallery(page=${currentPage + 1})}">Next</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <th:block th:insert="AdminFooter.html"></th:block>
-    </div>
+				</div>
+			</div>
+		</div>
+		<th:block th:insert="AdminFooter.html"></th:block>
+	</div>
 </body>
 </html>
