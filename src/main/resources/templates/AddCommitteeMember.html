@@ -103,6 +103,25 @@
     <script>
     $(document).ready(function () {
         var formIndex = 0;
+        
+        //select date greater than active from on active to
+        $('input[type="date"]').on('change', function () {
+            const activeFromDate = $('#activeFrom-0').val(); // Get the selected date from "Active From"
+            if (this.id.startsWith('activeFrom')) {
+                // Check if "Active From" date is selected
+                if (activeFromDate) {
+                    // Create a new date object for the selected date
+                    const activeFrom = new Date(activeFromDate);
+                    // Set the minimum selectable date for "Active To" to be the day after "Active From"
+                    activeFrom.setDate(activeFrom.getDate() + 1);
+                    $('#activeTo-0').attr('min', activeFrom.toISOString().split('T')[0]);
+                } else {
+                    // If no date is selected, clear the minimum date for "Active To"
+                    $('#activeTo-0').removeAttr('min');
+                }
+            }
+        });
+        
 
         // Initialize Select2 for the first member field only
         $('#member-0').select2({
@@ -179,7 +198,7 @@
             });
 
             // Add a remove button to the new form
-            newForm.append('<button type="button" class="btn btn-danger remove-member" style="margin-top: 10px;">Remove</button>');
+            newForm.append('<button type="button" class="btn btn-danger remove-member" >Remove</button>');
 
             // Append the new form
             $('#committee-member-forms').append(newForm);
