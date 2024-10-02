@@ -252,14 +252,22 @@
                       <input id="familyImage${familyMemberCount}" type="file" placeholder="Select Image" name="familyImages" class="form-control"/>
                   </div>
               </div>
+             <div>
                 <button type="button" class="remove-btn" onclick="removeFamilyMember(this)">Remove</button>
+                </div>
+                
             `;
             
               familyContainer.appendChild(familyMemberSection);
         });
         function removeFamilyMember(button) {
-            const familyMemberSection = button.parentElement;
-            familyContainer.removeChild(familyMemberSection);
+        	console.log("what is happening");
+        	 const familyMemberSection = button.closest('.family-member-section'); // Get the closest family-member-section
+        	    if (familyMemberSection && familyContainer.contains(familyMemberSection)) {
+        	        familyContainer.removeChild(familyMemberSection); // Remove it from the container
+        	    } else {
+        	        console.error("The family member section is not found or not a child of familyContainer");
+        	    }
         }
     </script>
 </body>
