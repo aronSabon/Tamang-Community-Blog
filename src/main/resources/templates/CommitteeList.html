@@ -19,10 +19,10 @@
 
 					<!-- Page header -->
 					<div class="d-flex justify-content-between align-items-center mb-4">
-						<h1 class="h3 text-dark">Committee Member List</h1>
+						<h1 class="h3 text-dark">Committee List</h1>
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-							<li class="breadcrumb-item active">Committee Member List</li>
+							<li class="breadcrumb-item active">Committee List</li>
 						</ol>
 					</div>
 
@@ -30,7 +30,7 @@
 					<div class="grid-margin stretch-card">
 						<div class="card">
 							<div class="card-body">
-								<h4 class="card-title">Committee Member Details</h4>
+								<h4 class="card-title">Committee Details</h4>
 								<div class="table-responsive">
 									<table class="table table-striped lemon-padding-top"
 										id="datatablesSimple">
@@ -47,7 +47,7 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr th:each="c:${committeeMemberList}">
+											<tr th:each="c:${committeePresidentList}">
 												<td><img
 													th:src="@{'memberImages/'+${c.member.imageName}}"
 													width="45px" style="border-radius: 50%;" alt="No Image"></td>
@@ -58,10 +58,8 @@
 												<td>[[${c.activeFrom}]]</td>
 												<td>[[${c.activeTo}]]</td>
 												<td>[[${c.status}]]</td>
-												<td><a th:href="@{/editCommitteeMember(id=${c.id})}">
-														<button class=" btn btn-info btn-sm">Edit</button>
-												</a> <a th:href="@{/deleteCommitteeMember(id=${c.id})}">
-														<button class="btn btn-danger btn-sm">Delete</button>
+												<td><a th:href="@{/committeeView(activeFrom=${c.activeFrom},activeTo=${c.activeTo})}">
+														<button class=" btn btn-info btn-sm">View</button>
 												</a></td>
 											</tr>
 
