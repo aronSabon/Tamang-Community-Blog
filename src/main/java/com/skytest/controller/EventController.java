@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,7 +23,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.skytest.constants.EventStatus;
 import com.skytest.constants.EventType;
 import com.skytest.model.Event;
-import com.skytest.model.Family;
 import com.skytest.model.Guest;
 import com.skytest.service.EventService;
 
@@ -32,9 +30,11 @@ import com.skytest.service.EventService;
 public class EventController {
 	@Autowired
 	EventService eventService;
+	
 
 	@GetMapping("/event")
 	private String getEvent(Model model) {
+		
 	    List<EventType> eventTypeList = Arrays.asList(EventType.values());
 		model.addAttribute("eventType", eventTypeList);
 		return"AddEvent";

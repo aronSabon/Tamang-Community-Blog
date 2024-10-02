@@ -63,11 +63,12 @@
 														<td>[[${c.status}]]</td>
 														<td>
 															
-																<a th:href="@{/viewEvent(id=${c.id})}">
-																	<button class=" btn btn-primary btn-sm">View</button>
-																</a> <a th:href="@{/editCommitteeMember(id=${c.id})}">
+																<a th:href="@{/editCommitteeMember(id=${c.id})}">
 																	<button class=" btn btn-info btn-sm">Edit</button>
-																</a> <a th:href="@{/deleteCommitteeMember(id=${c.id})}" >
+																</a>
+																
+																
+																 <a th:href="@{/deleteCommitteeMember(id=${c.id})}" >
 																	<button class="btn btn-danger btn-sm">Delete</button>
 																</a>
 														</td>
