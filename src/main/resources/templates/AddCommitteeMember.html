@@ -104,6 +104,24 @@
     $(document).ready(function () {
         var formIndex = 0;
         
+     
+
+        // Initialize Select2 for the first member field only
+        $('#member-0').select2({
+            placeholder: "Select Member",
+            allowClear: true,
+            tags: true
+        });
+
+        // Function to initialize Select2 only for the member select elements
+        function initializeSelect2(selector) {
+            selector.select2({
+                placeholder: "Select Member",
+                allowClear: true,
+                tags: true
+            });
+        }
+        
         //select date greater than active from on active to
         $('input[type="date"]').on('change', function () {
             const activeFromDate = $('#activeFrom-0').val(); // Get the selected date from "Active From"
@@ -122,22 +140,6 @@
             }
         });
         
-
-        // Initialize Select2 for the first member field only
-        $('#member-0').select2({
-            placeholder: "Select Member",
-            allowClear: true,
-            tags: true
-        });
-
-        // Function to initialize Select2 only for the member select elements
-        function initializeSelect2(selector) {
-            selector.select2({
-                placeholder: "Select Member",
-                allowClear: true,
-                tags: true
-            });
-        }
         
 
         // Function to check if date fields are filled
