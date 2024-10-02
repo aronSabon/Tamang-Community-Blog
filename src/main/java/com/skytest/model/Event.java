@@ -7,6 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import com.skytest.constants.EventStatus;
+import com.skytest.constants.EventType;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.CollectionTable;
@@ -41,7 +42,8 @@ public class Event {
 	private EventStatus status;
 	 @ElementCollection
 	private List<String> imageNames;
-
+	 @Enumerated(EnumType.STRING)
+	 private EventType type;
 	
 	public void addImageName(String imageName) {
 	    this.imageNames.add(imageName);

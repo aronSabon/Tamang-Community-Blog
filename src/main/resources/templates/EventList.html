@@ -27,9 +27,9 @@
 					</div>
 
 					<!-- Faculty form card -->
-					<div class="card shadow-sm">
+				<!-- 	<div class="card shadow-sm">
 						<div class="card-body">
-						<!-- 	<a href="">
+							<a href="">
 								<button type="button"
 									class="btn btn-danger btn-icon-text exportExcel">
 									Export to Excel <i class="fas fa-file-excel btn-icon-append"></i>
@@ -46,6 +46,7 @@
 
 														<th>Title</th>
 														<th>Description</th>
+														<th>Type</th>
 														<th>Location</th>
 														<th>Date</th>
 														<th>Time</th>
@@ -58,6 +59,7 @@
 													<tr th:each="e:${eventList}">
 														<td>[[${e.title}]]</td>
 														<td>[[${e.description}]]</td>
+														<td>[[${e.type}]]</td>
 														<td>[[${e.location }]]</td>
 														<td>[[${e.date}]]</td>
 														<td>[[${e.time}]]</td>
@@ -84,8 +86,8 @@
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
+					<!-- 	</div>
+					</div> -->
 
 
 

@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skytest.constants.EventStatus;
+import com.skytest.constants.EventType;
 import com.skytest.model.Event;
 import com.skytest.model.Family;
 import com.skytest.model.Guest;
@@ -32,7 +34,9 @@ public class EventController {
 	EventService eventService;
 
 	@GetMapping("/event")
-	private String getEvent() {
+	private String getEvent(Model model) {
+	    List<EventType> eventTypeList = Arrays.asList(EventType.values());
+		model.addAttribute("eventType", eventTypeList);
 		return"AddEvent";
 	}
 	@PostMapping("/event")
@@ -55,6 +59,8 @@ public class EventController {
 	}
 	@GetMapping("/editEvent")
 	private String editEvent(Model model,@RequestParam int id) {
+	    List<EventType> eventTypeList = Arrays.asList(EventType.values());
+		model.addAttribute("eventType", eventTypeList);
 		model.addAttribute("eventModel",eventService.getEventById(id));
 		return"EditEvent";
 	}
@@ -84,6 +90,7 @@ public class EventController {
 	@PostMapping("/addEventImage")
 	private String postaddEventImage(Model model,@RequestParam int eventId,@RequestParam List<MultipartFile>eventImages, RedirectAttributes redirectAttribute) {
 		Event event = eventService.getEventById(eventId);
+
 
 		if(eventImages!=null && !eventImages.isEmpty()) {
 				for (int i = 0; i < eventImages.size(); i++) {

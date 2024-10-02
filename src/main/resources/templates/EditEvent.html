@@ -61,6 +61,13 @@
 												id="location" type="text" placeholder="Location"
 												th:field="*{location}" />
 										</div>
+												<div class="form-group">
+											<label for="type">Type</label> 
+											<select th:field="*{type}" id="type">
+												<option value="">Select Type</option>
+												<option th:each="e:${eventType}"  th:value="${e}" th:text="${e}"></option>
+											</select>
+										</div>
 									</div>
 
 
