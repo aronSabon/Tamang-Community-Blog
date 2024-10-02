@@ -97,10 +97,7 @@ public class MemberController {
 		model.addAttribute("memberList",memberService.getAllMember());
 		return "MemberList";
 	}
-	@GetMapping("/memberListNew")
-	private String memberLissdft() {
-		return "MemberListNew";
-	}
+
 	@GetMapping("/editMember")
 	private String memberEdit(@RequestParam int id, Model model) {
 		model.addAttribute("memberModel",memberService.getMemberById(id));
