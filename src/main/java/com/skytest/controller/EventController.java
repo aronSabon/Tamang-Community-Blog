@@ -128,7 +128,7 @@ public class EventController {
 	 @PostMapping("/deleteImage/{eventId}")
 	    public String deleteImage(@PathVariable int eventId, @RequestParam String imageName, Model model , RedirectAttributes redirectAttribute) {
 	        // Path to the images folder (adjust according to your server setup)
-	        String imagePath = "eventImages/" + imageName;
+	        String imagePath = "src/main/resources/static/eventImages/" + imageName;
 
 	        // Remove the image file from the folder
 	        try {

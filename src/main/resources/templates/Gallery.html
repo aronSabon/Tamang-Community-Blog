@@ -4,70 +4,34 @@
 <meta charset="UTF-8">
 <title>Gallery</title>
 <style>
-.image-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 15px;
-	justify-content: flex-start;
-}
+    /* General styles for the select element */
+    #type {
+        padding: 10px; /* Add padding for better spacing */
+        font-size: 16px; /* Set font size */
+        border: 1px solid #ccc; /* Light gray border */
+        border-radius: 5px; /* Rounded corners */
+        background-color: #f8f8f8; /* Light background color */
+        cursor: pointer; /* Change cursor to pointer */
+        transition: border-color 0.3s; /* Transition for border color */
+        margin-bottom:10px;
+    }
 
-.image-card {
-	width: calc(33.33% - 15px);
-	box-sizing: border-box;
-	border-radius: 10px;
-	overflow: hidden;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #f8f9fa;
-	padding: 10px;
-}
+    /* Style for when the select is focused */
+    #type:focus {
+        border-color: #007bff; /* Change border color when focused */
+        outline: none; /* Remove default outline */
+    }
 
-.image-card img {
-	width: 100%;
-	height: 200px;
-	object-fit: contain;
-	border-radius: 8px;
-}
+    /* Style for the options */
+    #type option {
+        padding: 10px; /* Padding for options */
+        background-color: #f8f8f8; /* Background color for options */
+    }
 
-@media ( max-width : 768px) {
-	.image-card {
-		width: calc(50% - 15px);
-	}
-}
-
-@media ( max-width : 576px) {
-	.image-card {
-		width: 100%;
-	}
-}
-
-/* Pagination styling */
-.pagination {
-	display: flex;
-	justify-content: center;
-	margin-top: 20px;
-}
-
-.pagination a {
-	margin: 0 5px;
-	padding: 8px 16px;
-	text-decoration: none;
-	background-color: #007bff;
-	color: white;
-	border-radius: 4px;
-}
-/* Style for active (current) page */
-.pagination a.active {
-	background-color: gray;
-	font-weight: bold;
-}
-
-.pagination a.disabled {
-	background-color: #ddd;
-	pointer-events: none;
-}
+    /* Change background color of options on hover */
+    #type option:hover {
+        background-color: #e2e2e2; /* Change background color on hover */
+    }
 </style>
 </head>
 <body>
@@ -78,7 +42,7 @@
 			<div class="main-panel">
 				<div class="content-wrapper">
 
-					
+
 					<!-- Page header -->
 					<div class="d-flex justify-content-between align-items-center mb-4">
 						<h1 class="h3 text-dark">Gallery</h1>
@@ -87,51 +51,123 @@
 							<li class="breadcrumb-item active">Gallery List</li>
 						</ol>
 					</div>
-						<div>
-						<select id="type">
+					<div>
+						<select id="type" onchange="fetchImages()">
 							<option value="Member">Member</option>
 							<option th:each="e:${eventType}" th:value="${e}" th:text="${e}"></option>
 						</select>
 					</div>
 
-							<div class="grid-margin stretch-card">
-								<div class="card">
-									<div class="card-body">
-										<h4 class="card-title">Gallery Details</h4>
-										<div class="table-responsive">
-											<table class="table table-striped lemon-padding-top" id="datatablesSimple">
-												<thead>
-													<tr>
+					<div class="grid-margin stretch-card">
+						<div class="card">
+							<div class="card-body">
+                                <h4 class="card-title" id="galleryTitle">this text is Dynamically dislayed</h4>
+								<div class="table-responsive">
+									<table class="table table-striped lemon-padding-top"
+										id="datatablesSimple">
+										<thead>
+											<tr>
 
-														<th></th>
-												
-														<th>Actions</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr th:each="i:${memberImageList}">
-														<td><img th:src="@{/memberImages/{img}(img=${i})}" alt="No Image" /></td>
-														
-														<td>
-															
-														<button class="btn btn-danger btn-sm">Delete</button>
-														</td>
-													</tr>
+												<th></th>
 
-												</tbody>
-											</table>
-										</div>
-									</div>
+												<th>Actions</th>
+											</tr>
+										</thead>
+										<tbody>
+										<!-- the innerhtml of body is dynamically displayed by javascript -->
+											<tr>
+												<td></td>
+												<td></td>
+											</tr>
+										<!-- for static display of member Images -->
+									<!--/*		<tr th:each="i:${memberImageList}">
+												<td><img th:src="@{/memberImages/{img}(img=${i})}"
+													alt="No Image" />
+												</td>
+												<td>
+													<button class="btn btn-danger btn-sm">Delete</button>
+												</td>
+											</tr> */-->
+										
+										</tbody>
+									</table>
 								</div>
 							</div>
-		
+						</div>
+					</div>
 
-					
+
+
 
 				</div>
 			</div>
 		</div>
 		<th:block th:insert="AdminFooter.html"></th:block>
 	</div>
+	<script>
+    window.onload = function() {
+        fetchImages(); // Fetch images when the page is loaded
+    };
+    function fetchImages() {
+        const selectedType = document.getElementById('type').value;
+        let src;
+        if(selectedType=="Member"){
+        	src="memberImages";
+        }
+        else{
+        	src="eventImages";
+        }
+        const url = `/gallery/${selectedType}`; // Adjust the URL according to your backend endpoint
+    	console.log(url);
+        
+    	 
+        // Dynamically update the gallery title
+        document.getElementById('galleryTitle').textContent = selectedType + " Images List";
+
+        fetch(url)
+            .then(response =>{
+            	 if (!response.ok) {
+                     return response.text().then(text => { throw new Error(text); });
+                 }
+                 return response.json();
+            })
+            .then(data => {
+            	console.log(data);
+                const tableBody = document.querySelector('#datatablesSimple tbody');
+                tableBody.innerHTML = ''; // Clear previous results
+                
+                data.forEach(image => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><img src="/${src}/${image}" alt="No Image" /></td>
+                        <td>
+                            <button class="btn btn-danger btn-sm" onclick="deleteImage('${image}')">Delete</button>
+                        </td>
+                    `;
+
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching images:', error));
+    }
+    
+    function deleteImage(imageName) {
+        const selectedType = document.getElementById('type').value;
+
+        const url = `gallery/${selectedType}/${imageName}`; // Adjust the URL according to your backend endpoint
+        fetch(url, { method: 'DELETE' })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => { throw new Error(text); });
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log("Delete response:", data); // Debugging: check response from delete operation
+                fetchImages(); // Refresh the gallery after successful deletion
+            })
+            .catch(error => console.error('Error deleting image:', error));
+    }
+</script>
 </body>
 </html>
