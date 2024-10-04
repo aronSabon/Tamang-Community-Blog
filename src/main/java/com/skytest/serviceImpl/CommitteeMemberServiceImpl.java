@@ -14,35 +14,35 @@ import com.skytest.service.CommitteeMemberService;
 @Service
 public class CommitteeMemberServiceImpl implements CommitteeMemberService {
 	@Autowired
-	CommitteeMemberRepository committeCommitteMemberRepository;
+	CommitteeMemberRepository committeMemberRepository;
 		@Override
-		public void addCommitteMember(CommitteeMember committeCommitteMember) {
+		public void addCommitteMember(CommitteeMember committeeMember) {
 			// TODO Auto-generated method stub
-			committeCommitteMemberRepository.save(committeCommitteMember);
+			committeMemberRepository.save(committeeMember);
 		}
 
 		@Override
 		public List<CommitteeMember> getAllCommitteMember() {
 			// TODO Auto-generated method stub
-			return committeCommitteMemberRepository.findAll();
+			return committeMemberRepository.findAll();
 		}
 
 		@Override
 		public void deleteCommitteMemberById(int id) {
 			// TODO Auto-generated method stub
-			committeCommitteMemberRepository.deleteById(id);
+			committeMemberRepository.deleteById(id);
 		}
 
 		@Override
 		public CommitteeMember getCommitteMemberById(int id) {
 			// TODO Auto-generated method stub
-			return committeCommitteMemberRepository.findById(id).get();
+			return committeMemberRepository.findById(id).get();
 		}
 
 		@Override
-		public void updateCommitteMember(CommitteeMember committeCommitteMember) {
+		public void updateCommitteMember(CommitteeMember committeeMember) {
 			// TODO Auto-generated method stub
-			committeCommitteMemberRepository.save(committeCommitteMember);
+			committeMemberRepository.save(committeeMember);
 		}
 
 }

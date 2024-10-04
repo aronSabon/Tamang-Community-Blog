@@ -42,7 +42,11 @@ private String title;
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate formSubmitDate;
 	@DateTimeFormat(iso = ISO.DATE)
-	private LocalDate memberSince;
+	private LocalDate memberSince;	
+	@DateTimeFormat(iso = ISO.DATE)
+	private LocalDate expiryDate;
+	@DateTimeFormat(iso = ISO.DATE)
+	private LocalDate renewDate;
 	private String imageName;
 	private String membershipType;
 	@Enumerated(EnumType.STRING)

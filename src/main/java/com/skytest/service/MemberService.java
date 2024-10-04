@@ -12,5 +12,6 @@ public interface MemberService {
 	void deleteMemberById(int id);
 	Member getMemberById(int id);
 	void updateMember(Member member);
+	Member getMemberByEmail(String email);
 
 }

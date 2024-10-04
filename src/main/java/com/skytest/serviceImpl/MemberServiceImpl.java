@@ -45,4 +45,10 @@ public class MemberServiceImpl implements MemberService {
 			memberRepository.save(member);
 		}
 
+		@Override
+		public Member getMemberByEmail(String email) {
+			// TODO Auto-generated method stub
+			return memberRepository.findByContactEmail(email);
+		}
+
 }

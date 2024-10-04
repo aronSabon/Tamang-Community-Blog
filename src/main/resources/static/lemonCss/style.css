@@ -192,4 +192,25 @@
         max-height: 200px; /* Adjust height as needed */
         object-fit: contain; /* Ensures images cover the area without distortion */
     }
+/* for payment info */
+
+
+.payment-form{
+		margin: 50px 500px;
+	
+	border: 1px solid gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 

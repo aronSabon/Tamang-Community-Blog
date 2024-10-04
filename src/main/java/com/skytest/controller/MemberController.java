@@ -21,16 +21,25 @@ import com.skytest.constants.MemberStatus;
 import com.skytest.model.Family;
 import com.skytest.model.Member;
 import com.skytest.service.MemberService;
+import com.skytest.utils.MailUtils;
 
 @Controller
 public class MemberController {
 
 	@Autowired
 	MemberService memberService;
+	@Autowired
+	private MailUtils mailUtils;
+	
+	
 	@GetMapping("/member")
 	private String getMember() {
 		return "AddMember";
 	}
+	 String subject ="Membership Payment";
+	 String message = " lskdafjslkdfjlsk \n Bank details :\n sldkfjsdlkjf  l;ksdjfldskj saldkjfsldkjf  \nclick this link http://localhost/memberList";
+
+
 	@PostMapping("/member")
 	private String postMember(@RequestParam MultipartFile memberImage,@RequestParam(required = false) List<MultipartFile>familyImages,@ModelAttribute Member member) {
 
@@ -89,6 +98,17 @@ public class MemberController {
 		member.setFormSubmitDate(LocalDate.now());
 		System.out.println(member);
 		memberService.addMember(member);
+		
+		//send mail
+		String subject ="Membership Payment";
+		 String message = " lskdafjslkdfjlsk \n Bank details :\n sldkfjsdlkjf  l;ksdjfldskj saldkjfsldkjf  \nclick this link http://localhost/memberList";
+
+
+		mailUtils.sendEmail(member.getContact().getEmail(), subject, message);
+		
+
+		
+		
 		return "redirect:/member";
 	}
 

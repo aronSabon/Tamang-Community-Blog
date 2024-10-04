@@ -1,6 +1,13 @@
 package com.skytest.model;
 
 
+import java.time.LocalDate;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
+import com.skytest.constants.PaymentStatus;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -16,8 +23,10 @@ public class PaymentInfo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String email;
-	private String paymentReceipt;
-	private String membershipType;
-
+	private String paymentReceiptImageName;
+	@DateTimeFormat(iso = ISO.DATE)
+	private LocalDate date;
+	@Enumerated(EnumType.STRING)
+	private PaymentStatus status;
 
 }

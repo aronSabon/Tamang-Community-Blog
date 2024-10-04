@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
+	rel="stylesheet" />
+	
+</head>
+<body>
+	<div class="container-scroller">
+		<th:block th:insert="AdminHeader.html"></th:block>
+		<div class="container-fluid page-body-wrapper">
+			<th:block th:insert="AdminSideNav.html"></th:block>
+			<div class="main-panel">
+				<div class="content-wrapper">
+
+
+					<!-- Page header -->
+					<div class="d-flex justify-content-between align-items-center mb-4">
+						<h1 class="h3 text-dark">Payment List</h1>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+							<li class="breadcrumb-item active">Event List</li>
+						</ol>
+					</div>
+
+					<div class="grid-margin stretch-card">
+						<div class="card">
+							<div class="card-body">
+								<h4 class="card-title">Payment Details</h4>
+								<div class="table-responsive">
+									<table class="table table-striped lemon-padding-top"
+										id="datatablesSimple">
+										<thead>
+											<tr>
+												<th>Id</th>
+												<th>Email</th>
+												<th>Payment Slip</th>
+												<th>Date</th>
+												<th>Status</th>
+												<th>Actions</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr th:each="p:${paymentList}">
+												<td>[[${p.id}]]</td>
+												<td>[[${p.email}]]</td>
+												<td><img
+													th:src="@{'paymentImages/'+${p.paymentReceiptImageName}}"
+													width="45px" style="border-radius: 50%;" alt="No Image"></td>
+												<td>[[${p.date }]]</td>
+												<td>[[${p.status}]]</td>
+
+												<td><a th:href="@{/approvePayment(id=${p.id})}">
+														<button class="btn btn-success btn-sm approve-btn"   th:disabled="${p.status == T(com.skytest.constants.PaymentStatus).APPROVED or p.status == T(com.skytest.constants.PaymentStatus).DECLINED}">Approve</button>
+												</a> <a th:href="@{/rejectPayment(id=${p.id})}">
+														<button class="btn btn-danger btn-sm decline-btn"   th:disabled="${p.status == T(com.skytest.constants.PaymentStatus).APPROVED or p.status == T(com.skytest.constants.PaymentStatus).DECLINED}">Decline</button>
+												</a></td>
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+				</div>
+			</div>
+		</div>
+		<th:block th:insert="AdminFooter.html"></th:block>
+	</div>
+
+</body>
+</html>
