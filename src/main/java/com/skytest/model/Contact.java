@@ -13,7 +13,7 @@ public class Contact {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
 	private String email;
-	private int landline;
-	private int mobileNumber;
+	private String landline;
+	private String mobileNumber;
 	
 }

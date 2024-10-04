@@ -101,7 +101,12 @@ public class MemberController {
 		
 		//send mail
 		String subject ="Membership Payment";
-		 String message = " lskdafjslkdfjlsk \n Bank details :\n sldkfjsdlkjf  l;ksdjfldskj saldkjfsldkjf  \nclick this link http://localhost/memberList";
+		 String message = "Please deposit your membership fee into the account details provided below.\n"
+				+"Bank Details\n"
+		 		+ "Tamu Samaj UK\n"
+		 		+ "AC No: 93052087\n"
+		 		+ "Sort Code: 20-37-16 \n"
+		 		+ "Please provide Your Payment Slip in this Link \n http://localhost/payment";
 
 
 		mailUtils.sendEmail(member.getContact().getEmail(), subject, message);
