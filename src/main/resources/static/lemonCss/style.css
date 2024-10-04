@@ -201,7 +201,22 @@
 	border: 1px solid gray;
 }
 
+/* line forming between thebuttons */
 
+/* Target the specific area around and including the buttons */
+table td,
+table td *,
+.actions-container,
+.actions-container *,
+[data-label="Actions"],
+[data-label="Actions"] *,
+.btn-group,
+.btn-group *
+/* Add any other relevant selectors here */
+{
+  
+    text-decoration: none !important;
+}
 
 
 

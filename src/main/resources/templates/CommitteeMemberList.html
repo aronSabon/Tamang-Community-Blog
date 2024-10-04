@@ -19,12 +19,13 @@
 
 					<!-- Page header -->
 					<div class="d-flex justify-content-between align-items-center mb-4">
-						<h1 class="h3 text-dark">Committee Member List</h1>
+						<h1 class="h3 text-dark"></h1>
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
 							<li class="breadcrumb-item active">Committee Member List</li>
 						</ol>
 					</div>
+						<h1 class="h3 text-dark text-center">Committee Member List</h1>
 
 
 					<div class="grid-margin stretch-card">
@@ -32,7 +33,7 @@
 							<div class="card-body">
 								<h4 class="card-title">Committee Member Details</h4>
 								<div class="table-responsive">
-									<table class="table table-striped lemon-padding-top"
+									<table class="table table-striped "
 										id="datatablesSimple">
 										<thead>
 											<tr>
@@ -59,9 +60,9 @@
 												<td>[[${c.activeTo}]]</td>
 												<td>[[${c.status}]]</td>
 												<td><a th:href="@{/editCommitteeMember(id=${c.id})}">
-														<button class=" btn btn-info btn-sm">Edit</button>
+													<button class="btn btn-sm btn-warning btn-rounded ">Edit</button>
 												</a> <a th:href="@{/deleteCommitteeMember(id=${c.id})}">
-														<button class="btn btn-danger btn-sm">Delete</button>
+														<button class="btn btn-sm btn-danger btn-rounded ">Delete</button>
 												</a></td>
 											</tr>
 

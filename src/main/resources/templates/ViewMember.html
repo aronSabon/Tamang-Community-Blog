@@ -15,9 +15,21 @@
             <!-- Insert side navigation block -->
             <th:block th:insert="AdminSideNav.html"></th:block>
             
+          
+            
             <div class="main-panel">
                 <div class="content-wrapper">
-                    <h2 class="mt-4">Member Details</h2>
+                  <!-- Page header -->
+					 	<div class="d-flex justify-content-between align-items-center mb-4">
+						<h1 class="h3 text-dark"></h1>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+							<li class="breadcrumb-item"><a href="/memberList">Member List</a></li>
+							
+							<li class="breadcrumb-item active">Member Registration</li>
+						</ol>
+					</div>
+                    <h2 class="mt-4 text-center" >Member Details</h2>
 
                     <!-- Member Information Section -->
                     <div class="container mt-5">

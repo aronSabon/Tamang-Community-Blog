@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+<link
+	href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
+	rel="stylesheet" />
 
 
 </head>
@@ -17,20 +19,23 @@
 				<div class="content-wrapper">
 
 
-						<!-- Page header -->
-					 	<div class="d-flex justify-content-between align-items-center mb-4">
-						<h1 class="h3 text-dark">Member List</h1>
+					<!-- Page header -->
+					<div class="d-flex justify-content-between align-items-center mb-4">
+						<h1 class="h3 text-dark"></h1>
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
 							<li class="breadcrumb-item active">Member List</li>
 						</ol>
 					</div>
+					<h1 class="h3 text-dark text-center">Member List</h1>
+
 
 					<!-- Faculty form card -->
 					<div class="card shadow-sm">
 						<div class="card-body">
 							<a href="">
-								<button type="button" class="btn btn-danger btn-icon-text exportExcel">
+								<button type="button"
+									class="btn btn-sm btn-success btn-rounded exportExcel">
 									Export to Excel <i class="fas fa-file-excel btn-icon-append"></i>
 								</button>
 							</a>
@@ -39,13 +44,11 @@
 									<div class="card-body">
 										<h4 class="card-title">Member Details</h4>
 										<div class="table-responsive">
-											<table class="table table-striped" 
-											
-												id="datatablesSimple">
+											<table class="table table-striped" id="datatablesSimple">
 												<thead>
 													<tr>
-													
-	<th></th>
+
+														<th></th>
 														<th>Full Name</th>
 														<th>Address</th>
 														<th>Mobile No</th>
@@ -57,19 +60,24 @@
 												</thead>
 												<tbody>
 													<tr th:each="m:${memberList}">
-													<td><img  th:src="@{'memberImages/'+${m.firstName}+${m.contact.mobileNumber}+'.jpg'}" width="45px"  style="border-radius: 50%;" alt="No Image"></td>
-														<td> [[${m.title + ' ' + m.firstName + (m.middleName != null ? ' ' + m.middleName : '') + ' ' + m.lastName}]]</td>
+														<td><img
+															th:src="@{'memberImages/'+${m.firstName}+${m.contact.mobileNumber}+'.jpg'}"
+															width="45px" style="border-radius: 50%;" alt="No Image"></td>
+														<td>[[${m.title + ' ' + m.firstName + (m.middleName
+															!= null ? ' ' + m.middleName : '') + ' ' + m.lastName}]]</td>
 														<td>[[${m.address.street + " "+ m.address.town}]]</td>
 														<td>[[${m.contact.mobileNumber }]]</td>
 														<td>[[${m.membershipType }]]</td>
 														<td>[[${ m.memberSince}]]</td>
 														<td>[[${m.status}]]</td>
-														<td>
-														<a th:href="@{/viewMember(id=${m.id})}">	<button>View</button></a>
-														<a th:href="@{/editMember(id=${m.id})}"><button>Edit</button></a>
-													
-														<a th:href="@{/revokeMember(id=${m.id})}"><button>Revoke</button></a>
-														
+														<td><a th:href="@{/viewMember(id=${m.id})}">
+																<button class="btn btn-sm btn-info btn-rounded">View</button>
+														</a> <a th:href="@{/editMember(id=${m.id})}"><button
+																	class="btn btn-sm btn-warning btn-rounded">Edit</button></a>
+
+															<a th:href="@{/revokeMember(id=${m.id})}"><button
+																	class="btn btn-sm btn-danger btn-rounded">Revoke</button></a>
+
 														</td>
 													</tr>
 
@@ -81,12 +89,12 @@
 							</div>
 						</div>
 					</div>
-				
-                	
-                	
-                	
-                	
-                	
+
+
+
+
+
+
 				</div>
 			</div>
 		</div>

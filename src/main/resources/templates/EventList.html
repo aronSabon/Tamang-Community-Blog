@@ -19,12 +19,13 @@
 
 					<!-- Page header -->
 					<div class="d-flex justify-content-between align-items-center mb-4">
-						<h1 class="h3 text-dark">Event List</h1>
+						<h1 class="h3 text-dark"></h1>
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
 							<li class="breadcrumb-item active">Event List</li>
 						</ol>
 					</div>
+						<h1 class="h3 text-dark text-center">Event List</h1>
 
 							<div class="grid-margin stretch-card">
 								<div class="card">
@@ -59,9 +60,9 @@
 														<td>
 															
 																<a th:href="@{/viewEvent(id=${e.id})}">
-																	<button class=" btn btn-primary btn-sm">View</button>
+																	<button class=" btn btn-info btn-sm">View</button>
 																</a> <a th:href="@{/editEvent(id=${e.id})}">
-																	<button class=" btn btn-info btn-sm">Edit</button>
+																	<button class=" btn btn-warning btn-sm">Edit</button>
 																</a> <a th:href="@{/deleteEvent(id=${e.id})}" >
 																	<button class="btn btn-danger btn-sm">Delete</button>
 																</a> <a th:href="@{/addEventImage(id=${e.id})}" >
