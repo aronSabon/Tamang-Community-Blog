@@ -7,7 +7,9 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
 	rel="stylesheet" />
-	
+	<!-- //for modal -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+
 </head>
 <body>
 	<div class="container-scroller">
@@ -26,8 +28,8 @@
 							<li class="breadcrumb-item active">Event List</li>
 						</ol>
 					</div>
-											<h1 class="h3 text-dark text-center">Payment List</h1>
-					
+					<h1 class="h3 text-dark text-center">Payment List</h1>
+
 
 					<div class="grid-margin stretch-card">
 						<div class="card">
@@ -52,14 +54,17 @@
 												<td>[[${p.email}]]</td>
 												<td><img
 													th:src="@{'paymentImages/'+${p.paymentReceiptImageName}}"
-													width="45px" style="border-radius: 50%;" alt="No Image"></td>
+													width="45px" style="border-radius: 50%;" alt="No Image"
+													onclick="showImageModal(this)"></td>
 												<td>[[${p.date }]]</td>
 												<td>[[${p.status}]]</td>
 
 												<td><a th:href="@{/approvePayment(id=${p.id})}">
-														<button class="btn btn-success btn-sm approve-btn"   th:disabled="${p.status == T(com.skytest.constants.PaymentStatus).APPROVED or p.status == T(com.skytest.constants.PaymentStatus).DECLINED}">Approve</button>
+														<button class="btn btn-success btn-sm approve-btn"
+															th:disabled="${p.status == T(com.skytest.constants.PaymentStatus).APPROVED or p.status == T(com.skytest.constants.PaymentStatus).DECLINED}">Approve</button>
 												</a> <a th:href="@{/rejectPayment(id=${p.id})}">
-														<button class="btn btn-danger btn-sm decline-btn"   th:disabled="${p.status == T(com.skytest.constants.PaymentStatus).APPROVED or p.status == T(com.skytest.constants.PaymentStatus).DECLINED}">Decline</button>
+														<button class="btn btn-danger btn-sm decline-btn"
+															th:disabled="${p.status == T(com.skytest.constants.PaymentStatus).APPROVED or p.status == T(com.skytest.constants.PaymentStatus).DECLINED}">Decline</button>
 												</a></td>
 											</tr>
 
@@ -81,6 +86,40 @@
 		</div>
 		<th:block th:insert="AdminFooter.html"></th:block>
 	</div>
+	<!-- Modal for Image Preview -->
+	<div class="modal fade" id="imageModal" tabindex="-1" role="dialog"
+		aria-labelledby="imageModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="imageModalLabel">Payment Receipt</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<img id="modalImage" src="" alt="Full-size Image"
+						style="width: 100%;">
+				</div>
+			</div>
+		</div>
+	</div>
 
+	<!-- Bootstrap JS and dependencies for modal functionality -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<!-- JavaScript to show modal and set image src -->
+	<script>
+        function showImageModal(imgElement) {
+            var imageUrl = imgElement.src;
+            document.getElementById('modalImage').src = imageUrl;
+            $('#imageModal').modal('show'); // Trigger Bootstrap modal
+        }
+    </script>
 </body>
 </html>
