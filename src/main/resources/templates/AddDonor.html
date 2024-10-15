@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container-scroller">
+		<th:block th:insert="AdminHeader.html"></th:block>
+		<div class="container-fluid page-body-wrapper">
+			<th:block th:insert="AdminSideNav.html"></th:block>
+			<div class="main-panel">
+				<div class="content-wrapper">
+
+					<div class="d-flex justify-content-between align-items-center mb-4">
+						<h1 class="h3 text-dark"></h1>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+							<li class="breadcrumb-item active">Donor List</li>
+						</ol>
+					</div>
+					<h1 class="h3 text-dark text-center">Add Donor</h1>
+
+					<!-- Faculty form card -->
+					<div class="card shadow-sm">
+						<div class="card-body">
+
+
+							<div class="formContainer">
+								<form action="/donor" method="post">
+									<!-- Personal Information -->
+									<h4>Donor Details</h4>
+
+									<div class="row">
+										<div class="form-group title-group">
+											<label for="title">Title</label> 
+											<select name="title" id="title">
+												<option value="">Select</option>
+												<option value="Mrs">Mrs</option>
+												<option value="Mr">Mr</option>
+												<option value="Miss">Miss</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="firstName">First Name</label> <input
+												id="firstName" type="text"
+												placeholder="First Name"
+												name="firstName" />
+										</div>
+										<div class="form-group">
+											<label for="middleName">Middle Name</label> <input
+												id="middleName" type="text"
+												placeholder="Middle Name"
+												name="middleName"
+												 />
+										</div>
+									</div>
+									<div class="row">
+									<div class="form-group">
+											<label for="lastName">Last Name</label> <input
+												id="lastName" type="text" placeholder="Last Name"
+												name="lastName" />
+										</div>
+										<div class="form-group">
+											<label for="email">Email</label> <input
+												id="email" type="email" placeholder="Email"
+												name="email" />
+										</div>
+									
+									</div>
+								
+									<div class="row">
+										<div class="form-group">
+											<label for="contact">Contact Number</label> <input id="contact" type="text"
+												placeholder="Contact" name="contact" />
+										</div>
+										<div class="form-group">
+											<label for="address">Address</label> <input id="address"
+												type="text" placeholder="Address" name="address"/>
+										</div>
+									
+									</div>
+									<div class="row">
+										<div class="form-group">
+											<label for="description">Description</label> <input id="description"
+												type="text" placeholder="Description" name="description"/>
+										</div>
+									
+									</div>
+
+
+								
+
+
+									<!-- Submit Button -->
+									<button type="submit" class="submit-btn">Submit</button>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+	</div>
+
+	<th:block th:insert="AdminFooter.html"></th:block>
+
+</body>
+</html>

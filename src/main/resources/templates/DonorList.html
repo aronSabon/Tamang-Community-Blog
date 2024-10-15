@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
+	rel="stylesheet" />
+</head>
+<body>
+	<div class="container-scroller">
+		<th:block th:insert="AdminHeader.html"></th:block>
+		<div class="container-fluid page-body-wrapper">
+			<th:block th:insert="AdminSideNav.html"></th:block>
+			<div class="main-panel">
+				<div class="content-wrapper">
+
+
+					<!-- Page header -->
+					<div class="d-flex justify-content-between align-items-center mb-4">
+						<h1 class="h3 text-dark"></h1>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+							<li class="breadcrumb-item active">Donor List</li>
+						</ol>
+					</div>
+						<h1 class="h3 text-dark text-center">Donor List</h1>
+
+							<div class="grid-margin stretch-card">
+								<div class="card">
+									<div class="card-body">
+										<h4 class="card-title">Donor Details</h4>
+										<div class="table-responsive">
+											<table class="table table-striped lemon-padding-top" id="datatablesSimple">
+												<thead>
+													<tr>
+
+														<th>Full Name</th>
+														<th>Email</th>
+														<th>Contact</th>
+														<th>Address</th>
+														<th>Date</th>
+														<th>Description</th>
+														
+														<th>Actions</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr th:each="d:${donorList}">
+														<td>[[${d.title + ' ' + d.firstName + (d.middleName
+															!= null ? ' ' + d.middleName : '') + ' ' + d.lastName}]]</td>
+														<td>[[${d.email}]]</td>
+														<td>[[${d.contact}]]</td>
+														<td>[[${d.address }]]</td>
+														<td>[[${d.date}]]</td>
+														<td>[[${d.description}]]</td>
+														
+														<td>
+															
+															<a th:href="@{/editDonor(id=${d.id})}">
+																	<button class=" btn btn-warning btn-sm">Edit</button>
+																</a> <a th:href="@{/deleteDonor(id=${d.id})}" >
+																	<button class="btn btn-danger btn-sm">Delete</button>
+																</a> 
+														</td>
+													</tr>
+
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+		
+
+
+
+
+
+
+				</div>
+			</div>
+		</div>
+		<th:block th:insert="AdminFooter.html"></th:block>
+	</div>
+
+</body>
+</html>
