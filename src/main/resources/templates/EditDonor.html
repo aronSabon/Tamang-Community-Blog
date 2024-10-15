@@ -27,14 +27,15 @@
 
 
 							<div class="formContainer">
-								<form action="/updateDonor" method="post" th:object="${donorModel}">
+								<form action="/updateDonor" method="post"
+									th:object="${donorModel}">
 									<!-- Personal Information -->
 									<h4>Donor Details</h4>
 
 									<div class="row">
 										<div class="form-group title-group">
-											<label for="title">Title</label> 
-											<select th:field="*{title}" id="title">
+											<label for="title">Title</label> <select th:field="*{title}"
+												id="title">
 												<option value="">Select</option>
 												<option value="Mrs">Mrs</option>
 												<option value="Mr">Mr</option>
@@ -43,61 +44,68 @@
 										</div>
 										<div class="form-group">
 											<label for="firstName">First Name</label> <input
-												id="firstName" type="text"
-												placeholder="First Name"
-												th:field="*{firstName}"  />
+												id="firstName" type="text" placeholder="First Name"
+												th:field="*{firstName}" />
 										</div>
 										<div class="form-group">
 											<label for="middleName">Middle Name</label> <input
-												id="middleName" type="text"
-												placeholder="Middle Name"
-												th:field="*{middleName}"
-												 />
+												id="middleName" type="text" placeholder="Middle Name"
+												th:field="*{middleName}" />
 										</div>
 									</div>
 									<div class="row">
-									<div class="form-group">
-											<label for="lastName">Last Name</label> <input
-												id="lastName" type="text" placeholder="Last Name"
-												th:field="*{lastName}" />
+										<div class="form-group">
+											<label for="lastName">Last Name</label> <input id="lastName"
+												type="text" placeholder="Last Name" th:field="*{lastName}" />
 										</div>
 										<div class="form-group">
-											<label for="email">Email</label> <input
-												id="email" type="email" placeholder="Email"
-												th:field="*{email}" />
+											<label for="amount">Amount</label> <input id="amount"
+												type="number" placeholder="Amount" th:field="*{amount}" />
 										</div>
-									
+
+
 									</div>
+
+									<div class="row">
+										<div class="form-group">
+											<label for="email">Email</label> <input id="email"
+												type="email" placeholder="Email" th:field="*{email}" />
+										</div>
+										<div class="form-group">
+											<label for="contact">Contact Number</label> <input
+												id="contact" type="text" placeholder="Contact"
+												th:field="*{contact}" />
+										</div>
 								
+
+									</div>
 									<div class="row">
-										<div class="form-group">
-											<label for="contact">Contact Number</label> <input id="contact" type="text"
-												placeholder="Contact" th:field="*{contact}" />
-										</div>
 										<div class="form-group">
 											<label for="address">Address</label> <input id="address"
-												type="text" placeholder="Address"th:field="*{address}"/>
+												type="text" placeholder="Address" th:field="*{address}" />
 										</div>
-									
+										<div class="form-group">
+											<label for="date">Date</label> <input id="date" type="date"
+												placeholder="Date" th:field="*{date}" />
+										</div>
+
+
 									</div>
 									<div class="row">
-									<div class="form-group">
-											<label for="date">Date</label> <input id="date"
-												type="date" placeholder="Date" th:field="*{date}"/>
-										</div>
-									
+
 										<div class="form-group">
-											<label for="description">Description</label> <input id="description"
-												type="text" placeholder="Description" th:field="*{description}"/>
+											<label for="description">Description</label> <input
+												id="description" type="text" placeholder="Description"
+												th:field="*{description}" />
 										</div>
-									
+
 									</div>
-									
+
 									<input type="hidden" th:field="*{id}">
-									
 
 
-								
+
+
 
 
 									<!-- Submit Button -->

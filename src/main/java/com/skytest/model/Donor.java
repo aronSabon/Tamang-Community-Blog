@@ -28,5 +28,6 @@ public class Donor {
 	private String description;
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate date;
+	private int amount;
 
 }
