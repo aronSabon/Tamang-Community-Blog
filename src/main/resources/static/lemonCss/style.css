@@ -218,6 +218,35 @@ table td *,
     text-decoration: none !important;
 }
 
+/*gallery dropdown css*/
+    /* General styles for the select element */
+    #type {
+        padding: 10px; /* Add padding for better spacing */
+        font-size: 16px; /* Set font size */
+        border: 1px solid #ccc; /* Light gray border */
+        border-radius: 5px; /* Rounded corners */
+        background-color: #f8f8f8; /* Light background color */
+        cursor: pointer; /* Change cursor to pointer */
+        transition: border-color 0.3s; /* Transition for border color */
+        margin-bottom:10px;
+    }
+
+    /* Style for when the select is focused */
+    #type:focus {
+        border-color: #007bff; /* Change border color when focused */
+        outline: none; /* Remove default outline */
+    }
+
+    /* Style for the options */
+    #type option {
+        padding: 10px; /* Padding for options */
+        background-color: #f8f8f8; /* Background color for options */
+    }
+
+    /* Change background color of options on hover */
+    #type option:hover {
+        background-color: #e2e2e2; /* Change background color on hover */
+    }
 
 
 
