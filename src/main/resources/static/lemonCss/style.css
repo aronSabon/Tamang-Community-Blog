@@ -248,8 +248,21 @@ table td *,
         background-color: #e2e2e2; /* Change background color on hover */
     }
 
-
-
+/* for add committee member select option*/
+    .select2-container {
+            width: 100% !important;
+        }
+        .formContainer {
+            margin-bottom: 20px;
+        }
+        
+        /*donor list text wrap for c8th row */
+        .textWrap td:nth-child(8) {
+    white-space: normal; /* Allow text wrapping */
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 200px; /* Optional: Control the column width */
+}
 
 
 
