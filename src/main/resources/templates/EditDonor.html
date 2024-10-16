@@ -28,7 +28,7 @@
 
 							<div class="formContainer">
 								<form action="/updateDonor" method="post"
-									th:object="${donorModel}">
+									th:object="${donorModel}" enctype="multipart/form-data">
 									<!-- Personal Information -->
 									<h4>Donor Details</h4>
 
@@ -100,6 +100,14 @@
 										</div>
 
 									</div>
+																		<div class="row">
+									
+										<div class="form-group">
+											<label for="donorImage">Image</label> <input
+												id="donorImage" type="file" placeholder="Select Image"
+												name="donorImage" class="form-control" />
+										</div>
+										</div>
 
 									<input type="hidden" th:field="*{id}">
 

@@ -63,10 +63,10 @@
 
 												<td><a th:href="@{/approvePayment(id=${p.id})}">
 														<button class="btn btn-success btn-sm approve-btn"
-															th:disabled="${p.status == T(com.skytest.constants.PaymentStatus).APPROVED or p.status == T(com.skytest.constants.PaymentStatus).DECLINED}">Approve</button>
+															th:disabled="${p.status == T(com.appsoft.tmgsamaj.constants.PaymentStatus).APPROVED or p.status == T(com.appsoft.tmgsamaj.constants.PaymentStatus).DECLINED}">Approve</button>
 												</a> <a th:href="@{/rejectPayment(id=${p.id})}">
 														<button class="btn btn-danger btn-sm decline-btn"
-															th:disabled="${p.status == T(com.skytest.constants.PaymentStatus).APPROVED or p.status == T(com.skytest.constants.PaymentStatus).DECLINED}">Decline</button>
+															th:disabled="${p.status == T(com.appsoft.tmgsamaj.constants.PaymentStatus).APPROVED or p.status == T(com.appsoft.tmgsamaj.constants.PaymentStatus).DECLINED}">Decline</button>
 												</a></td>
 											</tr>
 
