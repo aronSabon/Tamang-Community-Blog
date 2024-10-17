@@ -16,10 +16,10 @@
 						<h1 class="h3 text-dark"></h1>
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-							<li class="breadcrumb-item active">Add Donor</li>
+							<li class="breadcrumb-item active">Add Condolence</li>
 						</ol>
 					</div>
-					<h1 class="h3 text-dark text-center">Add Donor</h1>
+					<h1 class="h3 text-dark text-center">Add Condolence</h1>
 
 					<!-- Faculty form card -->
 					<div class="card shadow-sm">
@@ -29,7 +29,7 @@
 							<div class="formContainer">
 								<form action="/donor" method="post" enctype="multipart/form-data">
 									<!-- Personal Information -->
-									<h4>Donor Details</h4>
+									<h4>Condolence Details</h4>
 
 									<div class="row">
 										<div class="form-group title-group">
@@ -57,25 +57,25 @@
 											<label for="lastName">Last Name</label> <input id="lastName"
 												type="text" placeholder="Last Name" name="lastName" />
 										</div>
-										<div class="form-group">
-											<label for="amount">Amount</label> <input id="amount"
-												type="number" placeholder="Amount" name="amount" />
+											<div class="form-group">
+											<label for="condolenceImage">Image</label> <input
+												id="condolenceImage" type="file" placeholder="Select Image"
+												name="condolenceImage" class="form-control" />
 										</div>
 
 
 									</div>
+										<div class="row">
+										<div class="form-group">
+											<label for="bornOn">Born On</label> <input id="bornOn"
+												type="date" placeholder="bornOn" name="bornOn" />
+										</div>
+											<div class="form-group">
+											<label for="diedOn">Died On</label> <input
+												id="diedOn" type="date" placeholder="DiedOn"
+												name="diedOn" class="form-control" />
+										</div>
 
-									<div class="row">
-										<div class="form-group">
-											<label for="email">Email</label> <input id="email"
-												type="email" placeholder="Email" name="email" />
-										</div>
-										<div class="form-group">
-											<label for="contact">Contact Number</label> <input
-												id="contact" type="text" placeholder="Contact"
-												name="contact" />
-										</div>
-								
 
 									</div>
 										<div class="row">
@@ -87,17 +87,7 @@
 										</div>
 
 									</div>
-									<div class="row">
-										<div class="form-group">
-											<label for="address">Address</label> <input id="address"
-												type="text" placeholder="Address" name="address" />
-										</div>
-											<div class="form-group">
-											<label for="donorImage">Image</label> <input
-												id="donorImage" type="file" placeholder="Select Image"
-												name="donorImage" class="form-control" />
-										</div>
-									</div>
+								
 								
 
 
