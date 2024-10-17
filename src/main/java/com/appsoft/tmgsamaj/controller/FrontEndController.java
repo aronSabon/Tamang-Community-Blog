@@ -1,12 +1,27 @@
 package com.appsoft.tmgsamaj.controller;
 
+import java.time.LocalDate;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.appsoft.tmgsamaj.constants.EventStatus;
+import com.appsoft.tmgsamaj.constants.EventType;
+import com.appsoft.tmgsamaj.repository.EventRepository;
+import com.appsoft.tmgsamaj.service.EventService;
+
 @Controller
+//@RequestMapping("/user")
+
 public class FrontEndController {
+	@Autowired
+	EventRepository eventRepo;
 	@GetMapping("/fHome")
-	private String getHome() {
+	private String getHome(Model model) {
+		model.addAttribute("upcommingEventList" ,eventRepo.findClosestEventsByStatus(EventStatus.UPCOMMING,LocalDate.now(), EventType.Condolence, PageRequest.of(0, 3)));
 		return"frontend/index";
 	}
 	@GetMapping("/fAbout")
@@ -18,7 +33,10 @@ public class FrontEndController {
 		return"frontend/contact";
 	}
 	@GetMapping("/fEvent")
-	private String getEvent() {
+	private String getEvent(Model model) {
+		model.addAttribute("socialList",eventRepo.findBytype(EventType.Social));
+		model.addAttribute("musicList",eventRepo.findBytype(EventType.Music));
+
 		return"frontend/Event";
 	}
 	@GetMapping("/fExecutive")

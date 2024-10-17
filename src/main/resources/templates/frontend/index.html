@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="zxx" xmlns:th="https://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -327,7 +327,31 @@
                 </div>
             </div>
             <div class="row g-4 mt-4">
-                <div class="col-md-4">
+                <div class="col-md-4" th:each="e:${upcommingEventList}">
+                    <div class="card upcomming-event-card">
+                        <figure class="card-img">
+                            <a href="#">
+                                <img src="./assets/image/men-image.jpg" alt="event img">
+                            </a>
+                        </figure>
+                        <div class="card-body text-center">
+                            <div class="time-content d-flex justify-content-between mb-4">
+                                <div class="time d-flex align-items-center gap-2">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span>[[${e.time}]], [[${e.date}]]</span>
+                                </div>
+                                <div class="location d-flex align-items-center gap-2">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>[[${e.location}]]</span>
+                                </div>
+                            </div>
+                            <h3 class="h4 mb-3"><a href="#">[[${e.title}]]</a></h3>
+                            <p>[[${e.description}]]</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-4">
                     <div class="card upcomming-event-card">
                         <figure class="card-img">
                             <a href="#">
@@ -376,32 +400,7 @@
                             <a href="#">Read More</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card upcomming-event-card">
-                        <figure class="card-img">
-                            <a href="#">
-                                <img src="./assets/image/men-image.jpg" alt="event img">
-                            </a>
-                        </figure>
-                        <div class="card-body text-center">
-                            <div class="time-content d-flex justify-content-between mb-4">
-                                <div class="time d-flex align-items-center gap-2">
-                                    <i class="fa-regular fa-clock"></i>
-                                    <span>10:00 AM - 12:00 PM</span>
-                                </div>
-                                <div class="location d-flex align-items-center gap-2">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <span>123, Main Street, City, Country</span>
-                                </div>
-                            </div>
-                            <h3 class="h4 mb-3"><a href="#">Education For Children</a></h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, fugit maiores quos
-                                tenetur nisi explicabo cupiditate sequi sit necessitatibus in.</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
