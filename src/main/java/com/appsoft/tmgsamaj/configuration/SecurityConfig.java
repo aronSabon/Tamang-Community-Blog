@@ -25,7 +25,7 @@ public class SecurityConfig {
 		//disabel csrf
 		http.csrf(customizer -> customizer.disable());
         http.authorizeHttpRequests(request -> request
-                .requestMatchers("/login", "/register","/css/**", "/js/**", "/images/**","/webjars/**").permitAll() // allow access to these pages without authentication
+                .requestMatchers("/login", "/register","/css/**", "/js/**", "/images/**","/webjars/**","/","/assets/**","/fHome","/fAbout","/fContact","/fEvent","/fExecutive","/fGallery","/fNews").permitAll() // allow access to these pages without authentication
                 .anyRequest().authenticated() // all other requests require authentication
             );
         http.formLogin(form -> form

@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="ZXX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Support our mission to make a difference. Join us in empowering communities, providing aid, and creating a better future for those in need.">
+    <meta name="keywords" content="HTML, CSS, Jquery">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="./assets/vendors/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/vendors/slicknav/slicknav.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/vendors/venobox/venobox.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/image/tamang-samaj-uk-favicon.png">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="top-header py-2">
+            <div class="container">
+                <div class="d-flex justify-content-end align-items-center gap-5">
+                    <div class="add-member">
+                       <a class="fw-bold" href="#"><i class="me-1 fa-solid fa-plus"></i>New Member</a>
+                    </div>
+                    <div class="social-media d-flex gap-3 align-items-center">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-header navbar-expand-xl">
+            <div class="container">
+                <div class="menu-wrapper d-flex justify-content-between align-items-center">
+                    <div class="site-logo d-flex align-items-center gap-3">
+                        <a href="./index.html"><img src="./assets/image/tamangSamajuk.png" alt="Charity-logo"></a>
+                        <h3 class="mb-0"><a href="./index.html">Tamang Samaj UK<span class="mt-1 d-block">Charity Reg
+                                    No:12342434</span></a></h3>
+                    </div>
+                    <div class="nav-wrap">
+                        <button class="d-xl-none site-nav-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvas_navigation" aria-controls="offcanvas_navigation">
+                            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22,17 L22,19 L2,19 L2,17 L22,17 Z M22,11 L22,13 L2,13 L2,11 L22,11 Z M22,5 L22,7 L2,7 L2,5 L22,5 Z"
+                                    fill-rule="evenodd" />
+                            </svg>
+                        </button>
+
+                        <div class="header-offcanvas offcanvas offcanvas-start" tabindex="-1" id="offcanvas_navigation">
+                            <div class="offcanvas-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <nav class="header-nav">
+                                    <ul class="menu d-flex flex-wrap gap-4">
+                                        <li><a href="/fHome">Home</a></li>
+                                        <li><a href="/fAbout">About Us</a></li>
+                                        <li><a href="/fNews">News</a></li>
+                                        <li><a href="/fEvent">Events</a></li>
+                                        <li><a href="fExecutive">Executive Members</a></li>
+                                        <li><a href="fGallery">Gallery</a></li>
+                                        <li><a href="fContact">Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="events block">
+        <div class="container">
+            <div class="event-tab-wrapper">
+                <div class="row g-4">
+                    <div class="col-lg-3">
+                        <div class="gallery-category category-sticky">
+                            <h2 class="h4 mb-4">Event Category</h2>
+                            <div class="nav flex-column gap-3 p-3 nav-pills align-items-start" id="v-pills-tab"
+                                role="tablist" aria-orientation="vertical">
+                                <button class="nav-link active" id="v-pills-festival-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-festival" type="button" role="tab"
+                                    aria-controls="v-pills-festival" aria-selected="true">Category 1</button>
+                                <button class="nav-link" id="v-pills-charity-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-charity" type="button" role="tab"
+                                    aria-controls="v-pills-charity" aria-selected="false">Category 2</button>
+                                <button class="nav-link" id="v-pills-cultural-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-cultural" type="button" role="tab"
+                                    aria-controls="v-pills-cultural" aria-selected="false">Category 3</button>
+                                <button class="nav-link" id="v-pills-music-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-music" type="button" role="tab"
+                                    aria-controls="v-pills-music" aria-selected="false">Category 4</button>
+                                <button class="nav-link" id="v-pills-dance-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-pills-dance" type="button" role="tab"
+                                    aria-controls="v-pills-dance" aria-selected="false">Category 5</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="gallery-tab-content">
+                            <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="v-pills-festival" role="tabpanel"
+                                    aria-labelledby="v-pills-festival-tab" tabindex="0">
+                                    <h2 class="h4 mb-4 text-center">Category 1</h2>
+                                    <div class="row g-4">
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-charity" role="tabpanel"
+                                    aria-labelledby="v-pills-charity-tab" tabindex="0">
+                                    <h2 class="h4 mb-4 text-center">Category 2</h2>
+                                    <div class="row g-4">
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-cultural" role="tabpanel"
+                                    aria-labelledby="v-pills-cultural-tab" tabindex="0">
+                                    <h2 class="h4 mb-4 text-center">Category 3</h2>
+                                    <div class="row g-4">
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-music" role="tabpanel"
+                                    aria-labelledby="v-pills-music-tab" tabindex="0">
+                                    <h2 class="h4 mb-4 text-center">Category 4</h2>
+                                    <div class="row g-4">
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-dance" role="tabpanel"
+                                    aria-labelledby="v-pills-dance-tab" tabindex="0">
+                                    <h2 class="h4 mb-4 text-center">Category 5</h2>
+                                    <div class="row g-4">
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="card event-card">
+                                                <figure class="card-img">
+                                                    <img src="./assets/image/men-image.jpg"
+                                            alt="men-image">
+                                                </figure>
+                                                <div class="card-body">
+                                                    <div class="date d-flex align-items-center gap-2 mb-2">
+                                                        <i class="fa-solid fa-clock-rotate-left"></i>
+                                                        <span>january 01,2024</span>
+                                                    </div>
+                                                    <h3 class="mb-2 fw-bold"><a href="#">Event name</a></h3>
+                                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                        Earum
+                                                        assumenda
+                                                        omnis mollitia nesciunt officia sequi tempore, odio saepe quis
+                                                        officia sequi tempore, odio saepe quis,
+
+                                                    </p>
+                                                    <div class="show-content para">
+                                                        <p class="mb-5 content-para" style="display: none;">Another card
+                                                            content that will be shown when clicked.</p>
+                                                        <a class="event-link show-btn" href="#">Show more</a>
+                                                        <a class="event-link less-btn" href="#"
+                                                            style="display: none;">Less more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 col-xl-3">
+                    <div class="site-logo d-flex align-items-center gap-3">
+                        <a href="./index.html"><img src="./assets/image/tamang-samaj-uk-rooter-logo.png"
+                                alt="Charity-logo"></a>
+                        <h3 class="mb-0"><a href="./index.html">Tamang Samaj UK<span class="mt-1 d-block">Charity Reg
+                                    No:12342434</span></a></h3>
+                    </div>
+                    <div class="footer-content mt-4">
+                        <p class="mb-0 text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates
+                            architecto neque dolor atque ullam labore! Amet ad deleniti assumenda non voluptates ex
+                            velit, voluptatum beatae animi reiciendis dolorum voluptate at.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-3">
+                    <h6>Quicks Links</h6>
+                    <ul class="footer-quick-link mt-4">
+                        <li>
+                            <a href="#">home</a>
+                        </li>
+                        <li>
+                            <a href="#">about us</a>
+                        </li>
+                        <li>
+                            <a href="#">news</a>
+                        </li>
+                        <li>
+                            <a href="#">events</a>
+                        </li>
+                        <li>
+                            <a href="#">executive members</a>
+                        </li>
+                        <li>
+                            <a href="#">gallery</a>
+                        </li>
+                        <li>
+                            <a href="#">contact us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-3">
+                    <h6>Social Media</h6>
+                    <div class="d-flex footer-social gap-3 mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-3">
+                    <h6>Contact Us</h6>
+                    <ul class="footer-contact-info mt-4">
+                        <li>
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <p class="mb-0 fw-medium">123 Street, City, Country</p>
+                        </li>
+                        <li>
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <a href="tel:+1234567890">+123 456 7890</a>
+                        </li>
+                        <li>
+                            <div class="info-icon">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <a href="mailto:info@example.com">info@example.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="./assets/vendors/venobox/venobox.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendors/slicknav/jquery.slicknav.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

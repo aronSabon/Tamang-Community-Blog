@@ -20,7 +20,9 @@ public class MainController {
 	UserRepository userRepository;
 	private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10);
 
-	@GetMapping({"/","dashboard"})
+//	@GetMapping({"/","dashboard"})
+	@GetMapping("dashboard")
+
     public String homePage(HttpServletRequest request) {
     	  HttpSession session = request.getSession(false);
     	    if (session != null) {
@@ -29,6 +31,10 @@ public class MainController {
     	    }
         return "AdminDashboard";
     }
+	@GetMapping ("/")
+	public String frontend() {
+		return"frontend/index";
+	}
 
 	@GetMapping("/login")
     public String loginPage() {
