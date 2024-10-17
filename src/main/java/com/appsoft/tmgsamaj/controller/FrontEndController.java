@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.appsoft.tmgsamaj.constants.EventStatus;
 import com.appsoft.tmgsamaj.constants.EventType;
 import com.appsoft.tmgsamaj.repository.EventRepository;
+import com.appsoft.tmgsamaj.service.DonorService;
 import com.appsoft.tmgsamaj.service.EventService;
 
 @Controller
@@ -19,9 +20,13 @@ import com.appsoft.tmgsamaj.service.EventService;
 public class FrontEndController {
 	@Autowired
 	EventRepository eventRepo;
+	@Autowired
+	DonorService donorService;
+	
 	@GetMapping("/fHome")
 	private String getHome(Model model) {
-		model.addAttribute("upcommingEventList" ,eventRepo.findClosestEventsByStatus(EventStatus.UPCOMMING,LocalDate.now(), EventType.Condolence, PageRequest.of(0, 3)));
+		model.addAttribute("upcommingEventList" ,eventRepo.findClosestEventsByStatus());
+		model.addAttribute("donorList",donorService.getAllDonor());
 		return"frontend/index";
 	}
 	@GetMapping("/fAbout")

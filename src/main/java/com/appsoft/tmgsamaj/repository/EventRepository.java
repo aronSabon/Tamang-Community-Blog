@@ -18,16 +18,13 @@ public interface EventRepository extends JpaRepository<Event, Integer> {
 	List<Event> findByStatus(EventStatus status);
 	List<Event> findBytype(EventType type);
 
-//	@Query("SELECT e FROM Event e WHERE e.status = :status AND e.date >= :today ORDER BY e.date ASC")
+	@Query(value="SELECT * FROM EVENT WHERE STATUS = 'upcomming' ORDER BY DATE ASC LIMIT 3",nativeQuery = true)
+	List<Event> findClosestEventsByStatus();
+	
+//	@Query("SELECT e FROM Event e WHERE e.status = :status AND e.date >= :today AND e.type != :excludedType ORDER BY e.date ASC")
 //	List<Event> findClosestEventsByStatus(
 //			@Param("status") EventStatus status, 
 //			@Param("today") LocalDate today, 
+//		    @Param("excludedType") EventType excludedType, 
 //			Pageable pageable);
-	
-	@Query("SELECT e FROM Event e WHERE e.status = :status AND e.date >= :today AND e.type != :excludedType ORDER BY e.date ASC")
-	List<Event> findClosestEventsByStatus(
-			@Param("status") EventStatus status, 
-			@Param("today") LocalDate today, 
-		    @Param("excludedType") EventType excludedType, 
-			Pageable pageable);
 }

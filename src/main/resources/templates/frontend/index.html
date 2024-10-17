@@ -966,17 +966,17 @@
                     </div>
                     <div class="swiper donors">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" th:each="donor:${donorList}">
                                 <div class="card donor-card">
                                     <figure class="card-img">
                                        <img src="./assets/image/men-image.jpg"
                                             alt="men-image">
                                     </figure>
                                     <div class="card-body text-center">
-                                        <h3 class="h4">Donner Name</h3>
+                                        <h3 class="h4">[[${donor.title}]] [[${donor.firstName}]] [[${donor.middleName}]] [[${donor.lastName}]]</h3>
                                         <div>
                                             <p class="fw-bold">Donated Ammount:<span
-                                                    class="d-inline-flex ms-2 dooner-price">220 USD</span></p>
+                                                    class="d-inline-flex ms-2 dooner-price">[[${donor.amount}]]</span></p>
                                         </div>
                                     </div>
                                 </div>
