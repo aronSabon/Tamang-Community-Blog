@@ -257,7 +257,14 @@ table td *,
         }
         
         /*donor list text wrap for c8th row */
-        .textWrap td:nth-child(8) {
+        .textWrap8th td:nth-child(8) {
+    white-space: normal; /* Allow text wrapping */
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 200px; /* Optional: Control the column width */
+}
+
+        .textWrap5th td:nth-child(5) {
     white-space: normal; /* Allow text wrapping */
     word-break: break-word;
     overflow-wrap: break-word;

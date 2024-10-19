@@ -19,51 +19,44 @@
 						<h1 class="h3 text-dark"></h1>
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-							<li class="breadcrumb-item active">Donor List</li>
+							<li class="breadcrumb-item active">Condolence List</li>
 						</ol>
 					</div>
-						<h1 class="h3 text-dark text-center">Donor List</h1>
+						<h1 class="h3 text-dark text-center">Condolence List</h1>
 
 							<div class="grid-margin stretch-card">
 								<div class="card">
 									<div class="card-body">
-										<h4 class="card-title">Donor Details</h4>
+										<h4 class="card-title">Condolence Details</h4>
 										<div class="table-responsive">
-											<table class="table table-striped lemon-padding-top textWrap8th" id="datatablesSimple" >
+											<table class="table table-striped lemon-padding-top textWrap5th" id="datatablesSimple" >
 												<thead>
 													<tr>
 														<th></th>
-
 														<th>Full Name</th>
-														<th>Amount</th>
-														<th>Email</th>
-														<th>Contact</th>
-														<th>Address</th>
-														<th>Date</th>
+														<th>Born On</th>
+														<th>Died On</th>
 														<th>Description</th>
-														
 														<th>Actions</th>
 													</tr>
 												</thead>
 												<tbody>
-													<tr th:each="d:${donorList}">
+													<tr th:each="c:${condolenceList}">
 													<td><img
-															th:src="@{'donorImages/'+ ${d.imageName}}"
+															th:src="@{'condolenceImages/'+ ${c.imageName}}"
 															width="45px" style="border-radius: 50%;" alt="No Image"></td>
-														<td>[[${d.title + ' ' + d.firstName + (d.middleName
-															!= null ? ' ' + d.middleName : '') + ' ' + d.lastName}]]</td>
-														<td>[[${d.amount}]]</td>	
-														<td>[[${d.email}]]</td>
-														<td>[[${d.contact}]]</td>
-														<td>[[${d.address }]]</td>
-														<td>[[${d.date}]]</td>
-														<td >[[${d.description}]]</td>
+														<td>[[${c.title + ' ' + c.firstName + (c.middleName
+															!= null ? ' ' + c.middleName : '') + ' ' + c.lastName}]]</td>
+														<td>[[${c.birth}]]</td>	
+														<td>[[${c.death}]]</td>
+											
+														<td >[[${c.description}]]</td>
 														
 														<td>
 															
-															<a th:href="@{/editDonor(id=${d.id})}">
+															<a th:href="@{/editCondolence(id=${c.id})}">
 																	<button class=" btn btn-warning btn-sm">Edit</button>
-																</a> <a th:href="@{/deleteDonor(id=${d.id})}" >
+																</a> <a th:href="@{/deleteCondolence(id=${c.id})}" >
 																	<button class="btn btn-danger btn-sm">Delete</button>
 																</a> 
 														</td>

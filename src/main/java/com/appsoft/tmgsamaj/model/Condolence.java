@@ -24,7 +24,6 @@ public class Condolence {
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate birth;
 	@DateTimeFormat(iso = ISO.DATE)
-
 	private LocalDate death;
 	private String description;
 	private String imageName;
