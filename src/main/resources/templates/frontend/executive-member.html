@@ -212,10 +212,31 @@
 
     	    $.get(membersUrl, function(data) {
     	        members = data; // Assuming data is an array of member objects
+    	        
+    	        // Sort members by designation: president > vice president > treasurer > others
+    	        members.sort(function(a, b) {
+    	            const designationOrder = {
+    	                "President": 1,
+    	                "Vice President": 2,
+    	                "Treasurer": 3,
+    	                "Junior Treasurer": 4,
+    	                "Secretary": 5,
+    	                "Vice Secretary": 6,
+    	                "Editor": 7,
+    	                "Committee Member": 8
+    	            };
 
+    	            return (designationOrder[a.designation] || 9) - (designationOrder[b.designation] || 9);
+    	        });
+
+    	        console.log(members); // Ensure sorted members are logged correctly
+    	        
     	        // Trigger click on the first president to load their members
     	        $('.president-card').first().click();
     	    });
+           
+
+    	    
     	    console.log(members);
 
     	    // Display members when a president is clicked

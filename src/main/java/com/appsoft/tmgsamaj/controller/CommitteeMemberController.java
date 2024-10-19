@@ -85,6 +85,9 @@ public class CommitteeMemberController {
 		
 		return "redirect:/committeeMemberList";
 	}
+	
+	
+	
 	@GetMapping("/committeeMemberList1")
 	@ResponseBody
 	public List<CommitteeMember> getallcommitteeMember(Model model) {
