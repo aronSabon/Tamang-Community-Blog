@@ -8,14 +8,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.appsoft.tmgsamaj.constants.CommitteeMemberStatus;
 import com.appsoft.tmgsamaj.model.CommitteeMember;
 import com.appsoft.tmgsamaj.model.Member;
 import com.appsoft.tmgsamaj.service.CommitteeMemberService;
 import com.appsoft.tmgsamaj.service.MemberService;
+
 
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -82,6 +85,10 @@ public class CommitteeMemberController {
 		
 		return "redirect:/committeeMemberList";
 	}
-	
+	@GetMapping("/committeeMemberList1")
+	@ResponseBody
+	public List<CommitteeMember> getallcommitteeMember(Model model) {
+		return committeeMemberService.getAllCommitteMember();
+	}
 	
 }

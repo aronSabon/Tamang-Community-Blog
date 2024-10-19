@@ -1,6 +1,8 @@
 package com.appsoft.tmgsamaj.controller;
 
 import java.time.LocalDate;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -10,8 +12,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.appsoft.tmgsamaj.constants.EventStatus;
 import com.appsoft.tmgsamaj.constants.EventType;
+import com.appsoft.tmgsamaj.model.CommitteeMember;
 import com.appsoft.tmgsamaj.repository.CondolenceRepository;
 import com.appsoft.tmgsamaj.repository.EventRepository;
+import com.appsoft.tmgsamaj.service.CommitteeMemberService;
 import com.appsoft.tmgsamaj.service.DonorService;
 import com.appsoft.tmgsamaj.service.EventService;
 
@@ -25,6 +29,9 @@ public class FrontEndController {
 	DonorService donorService;
 	@Autowired 
 	CondolenceRepository condolenceRepo;
+	@Autowired
+	CommitteeMemberService committeeMemberService;
+	
 	
 	@GetMapping("/fHome")
 	private String getHome(Model model) {
@@ -49,7 +56,13 @@ public class FrontEndController {
 		return"frontend/Event";
 	}
 	@GetMapping("/fExecutive")
-	private String getExecutiveMember() {
+	private String getExecutiveMember(Model model) {
+		model.addAttribute("committeePresidentList", committeeMemberService.getAllCommitteMember()
+				.stream()
+				.filter(x ->x.getDesignation()
+				.equals("President"))
+			    .sorted(Comparator.comparing(CommitteeMember::getActiveFrom).reversed()) // Sort by activeFrom in descending order
+				.collect(Collectors.toList()));
 		return"frontend/executive-member";
 	}
 	@GetMapping("/fNews")
