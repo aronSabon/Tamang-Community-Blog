@@ -87,7 +87,6 @@ public class CommitteeMemberController {
 	}
 	
 	
-	
 	@GetMapping("/committeeMemberList1")
 	@ResponseBody
 	public List<CommitteeMember> getallcommitteeMember(Model model) {
