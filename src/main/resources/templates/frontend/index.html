@@ -2,356 +2,393 @@
 <html lang="zxx" xmlns:th="https://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description"
-        content="Support our mission to make a difference. Join us in empowering communities, providing aid, and creating a better future for those in need.">
-    <meta name="keywords" content="HTML, CSS, Jquery">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamang Samaj UK</title>
-    <link rel="stylesheet" href="./assets/vendors/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./assets/vendors/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="assets/vendors/slicknav/slicknav.min.css">
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/vendors/venobox/venobox.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/image/tamang-samaj-uk-favicon.png">
+<meta charset="UTF-8">
+<meta name="description"
+	content="Support our mission to make a difference. Join us in empowering communities, providing aid, and creating a better future for those in need.">
+<meta name="keywords" content="HTML, CSS, Jquery">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tamang Samaj UK</title>
+<link rel="stylesheet"
+	href="./assets/vendors/swiper/swiper-bundle.min.css">
+<link rel="stylesheet"
+	href="./assets/vendors/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="assets/vendors/slicknav/slicknav.min.css">
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="./assets/vendors/venobox/venobox.min.css">
+<link rel="stylesheet" href="./assets/css/style.css">
+<!-- favicon -->
+<link rel="icon" type="image/x-icon"
+	href="./assets/image/tamang-samaj-uk-favicon.png">
 </head>
 
 <body>
 
-    <!-- header html start -->
+	<!-- header html start -->
 
-    <header class="site-header">
-        <div class="top-header py-2">
-            <div class="container">
-                <div class="d-flex justify-content-end align-items-center gap-5">
-                    <div class="add-member">
-                        <a class="fw-bold" href="#"><i class="me-1 fa-solid fa-plus"></i>New Member</a>
-                    </div>
-                    <div class="social-media d-flex gap-3 align-items-center">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-header navbar-expand-xl">
-            <div class="container">
-                <div class="menu-wrapper d-flex justify-content-between align-items-center">
-                    <div class="site-logo d-flex align-items-center gap-3">
-                        <a href="./index.html"><img src="./assets/image/tamangSamajuk.png" alt="Charity-logo"></a>
-                        <h3 class="mb-0"><a href="./index.html">Tamang Samaj UK<span class="mt-1 d-block">Charity Reg
-                                    No:12342434</span></a></h3>
-                    </div>
-                    <div class="nav-wrap">
-                        <button class="d-xl-none site-nav-toggler" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvas_navigation" aria-controls="offcanvas_navigation">
-                            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+	<header class="site-header">
+		<div class="top-header py-2">
+			<div class="container">
+				<div class="d-flex justify-content-end align-items-center gap-5">
+					<div class="add-member">
+						<a class="fw-bold" href="#"><i class="me-1 fa-solid fa-plus"></i>New
+							Member</a>
+					</div>
+					<div class="social-media d-flex gap-3 align-items-center">
+						<a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i
+							class="fa-brands fa-x-twitter"></i></a> <a href="#"><i
+							class="fab fa-instagram"></i></a> <a href="#"><i
+							class="fab fa-youtube"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main-header navbar-expand-xl">
+			<div class="container">
+				<div
+					class="menu-wrapper d-flex justify-content-between align-items-center">
+					<div class="site-logo d-flex align-items-center gap-3">
+						<a href="./index.html"><img
+							src="./assets/image/tamangSamajuk.png" alt="Charity-logo"></a>
+						<h3 class="mb-0">
+							<a href="./index.html">Tamang Samaj UK<span
+								class="mt-1 d-block">Charity Reg No:12342434</span></a>
+						</h3>
+					</div>
+					<div class="nav-wrap">
+						<button class="d-xl-none site-nav-toggler" type="button"
+							data-bs-toggle="offcanvas" data-bs-target="#offcanvas_navigation"
+							aria-controls="offcanvas_navigation">
+							<svg height="24" viewBox="0 0 24 24" width="24"
+								xmlns="http://www.w3.org/2000/svg">
                                 <path
-                                    d="M22,17 L22,19 L2,19 L2,17 L22,17 Z M22,11 L22,13 L2,13 L2,11 L22,11 Z M22,5 L22,7 L2,7 L2,5 L22,5 Z"
-                                    fill-rule="evenodd" />
+									d="M22,17 L22,19 L2,19 L2,17 L22,17 Z M22,11 L22,13 L2,13 L2,11 L22,11 Z M22,5 L22,7 L2,7 L2,5 L22,5 Z"
+									fill-rule="evenodd" />
                             </svg>
-                        </button>
+						</button>
 
-                        <div class="header-offcanvas offcanvas offcanvas-start" tabindex="-1" id="offcanvas_navigation">
-                            <div class="offcanvas-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-body">
-                                <nav class="header-nav">
-                                    <ul class="menu d-flex flex-wrap gap-4">
-                                        <li><a href="/fHome">Home</a></li>
-                                        <li><a href="/fAbout">About Us</a></li>
-                                        <li><a href="/fNews">News</a></li>
-                                        <li><a href="/fEvent">Events</a></li>
-                                        <li><a href="fExecutive">Executive Members</a></li>
-                                        <li><a href="fGallery">Gallery</a></li>
-                                        <li><a href="fContact">Contact Us</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+						<div class="header-offcanvas offcanvas offcanvas-start"
+							tabindex="-1" id="offcanvas_navigation">
+							<div class="offcanvas-header">
+								<button type="button" class="btn-close"
+									data-bs-dismiss="offcanvas" aria-label="Close"></button>
+							</div>
+							<div class="offcanvas-body">
+								<nav class="header-nav">
+									<ul class="menu d-flex flex-wrap gap-4">
+										<li><a href="/fHome">Home</a></li>
+										<li><a href="/fAbout">About Us</a></li>
+										<li><a href="/fNews">News</a></li>
+										<li><a href="/fEvent">Events</a></li>
+										<li><a href="fExecutive">Executive Members</a></li>
+										<li><a href="fGallery">Gallery</a></li>
+										<li><a href="fContact">Contact Us</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
 
 
-    <!-- banner html start -->
-
-    <section class="banner block">
-        <div class="container">
-            <div class="swiper banner-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-md-5">
-                                <div class="banner-content">
-                                    <span>The importance of stretching</span>
-                                    <h1 class="text-white">Welcome to Tamang Samaj UK</h1>
-                                    <p class="text-white lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                        Explicabo expedita consequuntur blanditiis necessitatibus nisi minus mollitia
-                                        officiis. Nemo dicta doloremque suscipit delectus rem sit, deserunt, nobis
-                                        reprehenderit enim cum adipisci?</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <figure class="banner-img">
-                                    <img src="./assets/image/452382967_896594009179479_778188078247314881_n.jpg" alt="banner image">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-md-5">
-                                <div class="banner-content">
-                                    <span>The importance of stretching</span>
-                                    <h1 class="text-white">Welcome to Tamang Samaj UK</h1>
-                                    <p class="text-white lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                        Explicabo expedita consequuntur blanditiis necessitatibus nisi minus mollitia
-                                        officiis. Nemo dicta doloremque suscipit delectus rem sit, deserunt, nobis
-                                        reprehenderit enim cum adipisci?</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <figure class="banner-img">
-                                    <img src="./assets/image/428140362_797927059046175_97442968347571838_n.jpg" alt="banner image">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-md-5">
-                                <div class="banner-content">
-                                    <span>The importance of stretching</span>
-                                    <h1 class="text-white">Welcome to Tamang Samaj UK</h1>
-                                    <p class="text-white lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                        Explicabo expedita consequuntur blanditiis necessitatibus nisi minus mollitia
-                                        officiis. Nemo dicta doloremque suscipit delectus rem sit, deserunt, nobis
-                                        reprehenderit enim cum adipisci?</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <figure class="banner-img">
-                                    <img src="./assets/image/428190328_797913095714238_72621739980668708_n.jpg" alt="banner image">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-md-5">
-                                <div class="banner-content">
-                                    <span>The importance of stretching</span>
-                                    <h1 class="text-white">Welcome to Tamang Samaj UK</h1>
-                                    <p class="text-white lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                        Explicabo expedita consequuntur blanditiis necessitatibus nisi minus mollitia
-                                        officiis. Nemo dicta doloremque suscipit delectus rem sit, deserunt, nobis
-                                        reprehenderit enim cum adipisci?</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <figure class="banner-img">
-                                    <img src="./assets/image/431540921_821583990013815_5736011613256892188_n.jpg" alt="banner image">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-md-5">
-                                <div class="banner-content">
-                                    <span>The importance of stretching</span>
-                                    <h1 class="text-white">Welcome to Tamang Samaj UK</h1>
-                                    <p class="text-white lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                        Explicabo expedita consequuntur blanditiis necessitatibus nisi minus mollitia
-                                        officiis. Nemo dicta doloremque suscipit delectus rem sit, deserunt, nobis
-                                        reprehenderit enim cum adipisci?</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <figure class="banner-img">
-                                    <img src="./assets/image/444216280_862303129275234_3851303012683186685_n.jpg" alt="banner image">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-md-5">
-                                <div class="banner-content">
-                                    <h1 class="text-white">Welcome to Tamang Samaj UK</h1>
-                                    <p class="text-white lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                        Explicabo expedita consequuntur blanditiis necessitatibus nisi minus mollitia
-                                        officiis. Nemo dicta doloremque suscipit delectus rem sit, deserunt, nobis
-                                        reprehenderit enim cum adipisci?</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <figure class="banner-img">
-                                    <img src="./assets/image/452198865_896593275846219_2136019613657026361_n.jpg" alt="banner image">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-    </section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
 
 
-    <section class="welcome block">
-        <div class="container">
-            <div class="welcome-heading text-center mb-5">
-                <span class="heading-style">The importance of stretching</span>
-            </div>
-            <div class="swiper welcome-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide text-center">
-                        <h2 class="mb-0">Welcome to Tamang Samaj UK</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<!-- banner html start -->
 
-    <section class="community-banner block">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-6">
-                    <div class="community-banner-content text-center">
-                        <h2>Community Building</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lectus vel justo consectetur
-                            fermentum. Donec sagittis, neque vitae condimentum elementum, ipsum nunc ullamcorper
-                            velit, at consectetur neque velit vel ipsum.</p>
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<section class="banner block">
+		<div class="container">
+			<div class="swiper banner-swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="row justify-content-center align-items-center">
+							<div class="col-md-5">
+								<div class="banner-content">
+									<span>The importance of stretching</span>
+									<h1 class="text-white">Welcome to Tamang Samaj UK</h1>
+									<p class="text-white lead">Lorem, ipsum dolor sit amet
+										consectetur adipisicing elit. Explicabo expedita consequuntur
+										blanditiis necessitatibus nisi minus mollitia officiis. Nemo
+										dicta doloremque suscipit delectus rem sit, deserunt, nobis
+										reprehenderit enim cum adipisci?</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<figure class="banner-img">
+									<img
+										src="./assets/image/452382967_896594009179479_778188078247314881_n.jpg"
+										alt="banner image">
+								</figure>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="row justify-content-center align-items-center">
+							<div class="col-md-5">
+								<div class="banner-content">
+									<span>The importance of stretching</span>
+									<h1 class="text-white">Welcome to Tamang Samaj UK</h1>
+									<p class="text-white lead">Lorem, ipsum dolor sit amet
+										consectetur adipisicing elit. Explicabo expedita consequuntur
+										blanditiis necessitatibus nisi minus mollitia officiis. Nemo
+										dicta doloremque suscipit delectus rem sit, deserunt, nobis
+										reprehenderit enim cum adipisci?</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<figure class="banner-img">
+									<img
+										src="./assets/image/428140362_797927059046175_97442968347571838_n.jpg"
+										alt="banner image">
+								</figure>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="row justify-content-center align-items-center">
+							<div class="col-md-5">
+								<div class="banner-content">
+									<span>The importance of stretching</span>
+									<h1 class="text-white">Welcome to Tamang Samaj UK</h1>
+									<p class="text-white lead">Lorem, ipsum dolor sit amet
+										consectetur adipisicing elit. Explicabo expedita consequuntur
+										blanditiis necessitatibus nisi minus mollitia officiis. Nemo
+										dicta doloremque suscipit delectus rem sit, deserunt, nobis
+										reprehenderit enim cum adipisci?</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<figure class="banner-img">
+									<img
+										src="./assets/image/428190328_797913095714238_72621739980668708_n.jpg"
+										alt="banner image">
+								</figure>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="row justify-content-center align-items-center">
+							<div class="col-md-5">
+								<div class="banner-content">
+									<span>The importance of stretching</span>
+									<h1 class="text-white">Welcome to Tamang Samaj UK</h1>
+									<p class="text-white lead">Lorem, ipsum dolor sit amet
+										consectetur adipisicing elit. Explicabo expedita consequuntur
+										blanditiis necessitatibus nisi minus mollitia officiis. Nemo
+										dicta doloremque suscipit delectus rem sit, deserunt, nobis
+										reprehenderit enim cum adipisci?</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<figure class="banner-img">
+									<img
+										src="./assets/image/431540921_821583990013815_5736011613256892188_n.jpg"
+										alt="banner image">
+								</figure>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="row justify-content-center align-items-center">
+							<div class="col-md-5">
+								<div class="banner-content">
+									<span>The importance of stretching</span>
+									<h1 class="text-white">Welcome to Tamang Samaj UK</h1>
+									<p class="text-white lead">Lorem, ipsum dolor sit amet
+										consectetur adipisicing elit. Explicabo expedita consequuntur
+										blanditiis necessitatibus nisi minus mollitia officiis. Nemo
+										dicta doloremque suscipit delectus rem sit, deserunt, nobis
+										reprehenderit enim cum adipisci?</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<figure class="banner-img">
+									<img
+										src="./assets/image/444216280_862303129275234_3851303012683186685_n.jpg"
+										alt="banner image">
+								</figure>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="row justify-content-center align-items-center">
+							<div class="col-md-5">
+								<div class="banner-content">
+									<h1 class="text-white">Welcome to Tamang Samaj UK</h1>
+									<p class="text-white lead">Lorem, ipsum dolor sit amet
+										consectetur adipisicing elit. Explicabo expedita consequuntur
+										blanditiis necessitatibus nisi minus mollitia officiis. Nemo
+										dicta doloremque suscipit delectus rem sit, deserunt, nobis
+										reprehenderit enim cum adipisci?</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<figure class="banner-img">
+									<img
+										src="./assets/image/452198865_896593275846219_2136019613657026361_n.jpg"
+										alt="banner image">
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+		</div>
+	</section>
 
-    <section class="our-activity block">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-5">
-                    <div class="our-sctivity-title text-center">
-                        <h2 class="heading-style pb-4">Our Activity</h2>
-                        <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, deleniti ea
-                            fugiat unde explicabo perspiciatis quam laborum numquam natus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4 mt-4">
-                <div class="col-md-3">
-                    <div class="card activity-card">
-                        <div class="activity-icon text-center">
-                            <a href="#">
-                                <i class="fa-solid fa-paper-plane"></i>
-                            </a>
-                        </div>
-                        <div class="card-body pt-0 text-center">
-                            <h4 class="card-title"><a href="#">Fundraising</a></h4>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lectus
-                                vel justo consectetur fermentum.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card activity-card">
-                        <div class="activity-icon text-center">
-                            <a href="#">
-                                <i class="fa-solid fa-heart"></i>
-                            </a>
-                        </div>
-                        <div class="card-body pt-0  text-center">
-                            <h4 class="card-title"><a href="#">Volunteering</a></h4>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lectus
-                                vel justo consectetur fermentum.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card activity-card">
-                        <div class="activity-icon text-center">
-                            <a href="#">
-                                <i class="fa-solid fa-calendar-check"></i>
-                            </a>
-                        </div>
-                        <div class="card-body pt-0  text-center">
-                            <h4 class="card-title"><a href="#">Our Programs</a></h4>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lectus
-                                vel justo consectetur fermentum.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card activity-card">
-                        <div class="activity-icon text-center">
-                            <a href="#">
-                                <i class="fa-solid fa-hand-holding-dollar"></i>
-                            </a>
-                        </div>
-                        <div class="card-body pt-0  text-center">
-                            <h4 class="card-title"><a href="#">Donations</a></h4>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lectus
-                                vel justo consectetur fermentum.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="event block pt-0">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-5">
-                    <div class="event-title text-center">
-                        <h2 class="heading-style pb-4">Upcoming Events</h2>
-                        <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, deleniti ea
-                            fugiat unde explicabo perspiciatis quam laborum numquam natus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4 mt-4">
-                <div class="col-md-4" th:each="e:${upcommingEventList}">
-                    <div class="card upcomming-event-card">
-                        <figure class="card-img">
-                            <a href="#">
-                                <img src="./assets/image/men-image.jpg" alt="event img">
-                            </a>
-                        </figure>
-                        <div class="card-body text-center">
-                            <div class="time-content d-flex justify-content-between mb-4">
-                                <div class="time d-flex align-items-center gap-2">
-                                    <i class="fa-regular fa-clock"></i>
-                                    <span>[[${e.time}]], [[${e.date}]]</span>
-                                </div>
-                                <div class="location d-flex align-items-center gap-2">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <span>[[${e.location}]]</span>
-                                </div>
-                            </div>
-                            <h3 class="h4 mb-3"><a href="#">[[${e.title}]]</a></h3>
-                            <p>[[${e.description}]]</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col-md-4">
+	<section class="welcome block">
+		<div class="container">
+			<div class="welcome-heading text-center mb-5">
+				<span class="heading-style">The importance of stretching</span>
+			</div>
+			<div class="swiper welcome-swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide text-center">
+						<h2 class="mb-0">Welcome to Tamang Samaj UK</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="community-banner block">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-6">
+					<div class="community-banner-content text-center">
+						<h2>Community Building</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Sed id lectus vel justo consectetur fermentum. Donec sagittis,
+							neque vitae condimentum elementum, ipsum nunc ullamcorper velit,
+							at consectetur neque velit vel ipsum.</p>
+						<a href="#" class="btn btn-primary">Learn More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="our-activity block">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-5">
+					<div class="our-sctivity-title text-center">
+						<h2 class="heading-style pb-4">Our Activity</h2>
+						<p class="mt-4">Lorem ipsum dolor sit amet, consectetur
+							adipisicing elit. Delectus, deleniti ea fugiat unde explicabo
+							perspiciatis quam laborum numquam natus.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row g-4 mt-4">
+				<div class="col-md-3">
+					<div class="card activity-card">
+						<div class="activity-icon text-center">
+							<a href="#"> <i class="fa-solid fa-paper-plane"></i>
+							</a>
+						</div>
+						<div class="card-body pt-0 text-center">
+							<h4 class="card-title">
+								<a href="#">Fundraising</a>
+							</h4>
+							<p class="card-text">Lorem ipsum dolor sit amet, consectetur
+								adipiscing elit. Sed id lectus vel justo consectetur fermentum.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card activity-card">
+						<div class="activity-icon text-center">
+							<a href="#"> <i class="fa-solid fa-heart"></i>
+							</a>
+						</div>
+						<div class="card-body pt-0  text-center">
+							<h4 class="card-title">
+								<a href="#">Volunteering</a>
+							</h4>
+							<p class="card-text">Lorem ipsum dolor sit amet, consectetur
+								adipiscing elit. Sed id lectus vel justo consectetur fermentum.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card activity-card">
+						<div class="activity-icon text-center">
+							<a href="#"> <i class="fa-solid fa-calendar-check"></i>
+							</a>
+						</div>
+						<div class="card-body pt-0  text-center">
+							<h4 class="card-title">
+								<a href="#">Our Programs</a>
+							</h4>
+							<p class="card-text">Lorem ipsum dolor sit amet, consectetur
+								adipiscing elit. Sed id lectus vel justo consectetur fermentum.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card activity-card">
+						<div class="activity-icon text-center">
+							<a href="#"> <i class="fa-solid fa-hand-holding-dollar"></i>
+							</a>
+						</div>
+						<div class="card-body pt-0  text-center">
+							<h4 class="card-title">
+								<a href="#">Donations</a>
+							</h4>
+							<p class="card-text">Lorem ipsum dolor sit amet, consectetur
+								adipiscing elit. Sed id lectus vel justo consectetur fermentum.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="event block pt-0">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-5">
+					<div class="event-title text-center">
+						<h2 class="heading-style pb-4">Upcoming Events</h2>
+						<p class="mt-4">Lorem ipsum dolor sit amet, consectetur
+							adipisicing elit. Delectus, deleniti ea fugiat unde explicabo
+							perspiciatis quam laborum numquam natus.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row g-4 mt-4">
+				<div class="col-md-4" th:each="e:${upcommingEventList}">
+					<div class="card upcomming-event-card">
+						<figure class="card-img">
+							<a href="#"> <img src="./assets/image/men-image.jpg"
+								alt="event img">
+							</a>
+						</figure>
+						<div class="card-body text-center">
+							<div class="time-content d-flex justify-content-between mb-4">
+								<div class="time d-flex align-items-center gap-2">
+									<i class="fa-regular fa-clock"></i> <span>[[${e.time}]],
+										[[${e.date}]]</span>
+								</div>
+								<div class="location d-flex align-items-center gap-2">
+									<i class="fa-solid fa-location-dot"></i> <span>[[${e.location}]]</span>
+								</div>
+							</div>
+							<h3 class="h4 mb-3">
+								<a href="#">[[${e.title}]]</a>
+							</h3>
+							<p>[[${e.description}]]</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="col-md-4">
                     <div class="card upcomming-event-card">
                         <figure class="card-img">
                             <a href="#">
@@ -401,228 +438,224 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
-        </div>
-    </section>
+			</div>
+		</div>
+	</section>
 
 
-    <section class="event block pt-0">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-5">
-                    <div class="event-title text-center">
-                        <h2 class="heading-style pb-4">Latest News</h2>
-                        <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, deleniti ea
-                            fugiat unde explicabo perspiciatis quam laborum numquam natus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4 mt-4">
-                <div class="col-md-4">
-                    <div class="card upcomming-event-card">
-                        <figure class="card-img">
-                            <a href="#">
-                                <img src="./assets/image/men-image.jpg" alt="event img">
-                            </a>
-                        </figure>
-                        <div class="card-body text-center">
-                            <div class="date d-flex align-items-center gap-2 mb-4 justify-content-center">
-                                <i class="fa-solid fa-clock-rotate-left"></i>
-                                <span>january 01,2024</span>
-                            </div>
-                            <h3 class="h4 mb-3"><a href="#">Education For Children</a></h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, fugit maiores quos
-                                tenetur nisi explicabo cupiditate sequi sit necessitatibus in.</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card upcomming-event-card">
-                        <figure class="card-img">
-                            <a href="#">
-                                <img src="./assets/image/men-image.jpg" alt="event img">
-                            </a>
-                        </figure>
-                        <div class="card-body text-center">
-                            <div class="date d-flex align-items-center gap-2 mb-4 justify-content-center">
-                                <i class="fa-solid fa-clock-rotate-left"></i>
-                                <span>january 01,2024</span>
-                            </div>
-                            <h3 class="h4 mb-3"><a href="#">Education For Children</a></h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, fugit maiores quos
-                                tenetur nisi explicabo cupiditate sequi sit necessitatibus in.</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card upcomming-event-card">
-                        <figure class="card-img">
-                            <a href="#">
-                                <img src="./assets/image/men-image.jpg" alt="event img">
-                            </a>
-                        </figure>
-                        <div class="card-body text-center">
-                            <div class="date d-flex align-items-center gap-2 mb-4 justify-content-center">
-                                <i class="fa-solid fa-clock-rotate-left"></i>
-                                <span>january 01,2024</span>
-                            </div>
-                            <h3 class="h4 mb-3"><a href="#">Education For Children</a></h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, fugit maiores quos
-                                tenetur nisi explicabo cupiditate sequi sit necessitatibus in.</p>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<section class="event block pt-0">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-5">
+					<div class="event-title text-center">
+						<h2 class="heading-style pb-4">Latest News</h2>
+						<p class="mt-4">Lorem ipsum dolor sit amet, consectetur
+							adipisicing elit. Delectus, deleniti ea fugiat unde explicabo
+							perspiciatis quam laborum numquam natus.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row g-4 mt-4">
+				<div class="col-md-4">
+					<div class="card upcomming-event-card">
+						<figure class="card-img">
+							<a href="#"> <img src="./assets/image/men-image.jpg"
+								alt="event img">
+							</a>
+						</figure>
+						<div class="card-body text-center">
+							<div
+								class="date d-flex align-items-center gap-2 mb-4 justify-content-center">
+								<i class="fa-solid fa-clock-rotate-left"></i> <span>january
+									01,2024</span>
+							</div>
+							<h3 class="h4 mb-3">
+								<a href="#">Education For Children</a>
+							</h3>
+							<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+								Itaque, fugit maiores quos tenetur nisi explicabo cupiditate
+								sequi sit necessitatibus in.</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card upcomming-event-card">
+						<figure class="card-img">
+							<a href="#"> <img src="./assets/image/men-image.jpg"
+								alt="event img">
+							</a>
+						</figure>
+						<div class="card-body text-center">
+							<div
+								class="date d-flex align-items-center gap-2 mb-4 justify-content-center">
+								<i class="fa-solid fa-clock-rotate-left"></i> <span>january
+									01,2024</span>
+							</div>
+							<h3 class="h4 mb-3">
+								<a href="#">Education For Children</a>
+							</h3>
+							<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+								Itaque, fugit maiores quos tenetur nisi explicabo cupiditate
+								sequi sit necessitatibus in.</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card upcomming-event-card">
+						<figure class="card-img">
+							<a href="#"> <img src="./assets/image/men-image.jpg"
+								alt="event img">
+							</a>
+						</figure>
+						<div class="card-body text-center">
+							<div
+								class="date d-flex align-items-center gap-2 mb-4 justify-content-center">
+								<i class="fa-solid fa-clock-rotate-left"></i> <span>january
+									01,2024</span>
+							</div>
+							<h3 class="h4 mb-3">
+								<a href="#">Education For Children</a>
+							</h3>
+							<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+								Itaque, fugit maiores quos tenetur nisi explicabo cupiditate
+								sequi sit necessitatibus in.</p>
+							<a href="#">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
-    <section class="event block pt-0">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-5">
-                    <div class="event-title text-center">
-                        <h2 class="heading-style pb-4">Our Causes</h2>
-                        <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, deleniti ea
-                            fugiat unde explicabo perspiciatis quam laborum numquam natus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4 mt-4">
-                <div class="col-md-9">
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="card upcomming-event-card">
-                                <figure class="card-img">
-                                    <a href="#">
-                                        <img src="./assets/image/men-image.jpg" alt="event img">
-                                    </a>
-                                </figure>
-                                <div class="card-body text-center">
-                                    <!-- <div class="date d-flex align-items-center gap-2 mb-4 justify-content-center">
-                                <i class="fa-solid fa-clock-rotate-left"></i>
-                                <span>january 01,2024</span>
-                            </div> -->
-                                    <h3 class="h4 mb-3"><a href="#">Education For Children</a></h3>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, fugit maiores
-                                        quos
-                                        tenetur nisi explicabo cupiditate sequi sit necessitatibus in.</p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card upcomming-event-card">
-                                <figure class="card-img">
-                                    <a href="#">
-                                        <img src="./assets/image/men-image.jpg" alt="event img">
-                                    </a>
-                                </figure>
-                                <div class="card-body text-center">
-                                    <!-- <div class="date d-flex align-items-center gap-2 mb-4 justify-content-center">
+	<section class="event block pt-0">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-5">
+					<div class="event-title text-center">
+						<h2 class="heading-style pb-4">Our Causes</h2>
+						<p class="mt-4">Lorem ipsum dolor sit amet, consectetur
+							adipisicing elit. Delectus, deleniti ea fugiat unde explicabo
+							perspiciatis quam laborum numquam natus.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row g-4 mt-4">
+				<div class="col-md-9">
+					<div class="row g-4">
+						<div class="col-md-4">
+							<div class="card upcomming-event-card">
+								<figure class="card-img">
+									<a href="#"> <img src="./assets/image/men-image.jpg"
+										alt="event img">
+									</a>
+								</figure>
+								<div class="card-body text-center">
+									<!-- <div class="date d-flex align-items-center gap-2 mb-4 justify-content-center">
                                 <i class="fa-solid fa-clock-rotate-left"></i>
                                 <span>january 01,2024</span>
                             </div> -->
-                                    <h3 class="h4 mb-3"><a href="#">Education For Children</a></h3>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, fugit maiores
-                                        quos
-                                        tenetur nisi explicabo cupiditate sequi sit necessitatibus in.</p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card upcomming-event-card">
-                                <figure class="card-img">
-                                    <a href="#">
-                                        <img src="./assets/image/men-image.jpg" alt="event img">
-                                    </a>
-                                </figure>
-                                <div class="card-body text-center">
-                                    <!-- <div class="date d-flex align-items-center gap-2 mb-4 justify-content-center">
+									<h3 class="h4 mb-3">
+										<a href="#">Education For Children</a>
+									</h3>
+									<p>Lorem, ipsum dolor sit amet consectetur adipisicing
+										elit. Itaque, fugit maiores quos tenetur nisi explicabo
+										cupiditate sequi sit necessitatibus in.</p>
+									<a href="#">Read More</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card upcomming-event-card">
+								<figure class="card-img">
+									<a href="#"> <img src="./assets/image/men-image.jpg"
+										alt="event img">
+									</a>
+								</figure>
+								<div class="card-body text-center">
+									<!-- <div class="date d-flex align-items-center gap-2 mb-4 justify-content-center">
                                 <i class="fa-solid fa-clock-rotate-left"></i>
                                 <span>january 01,2024</span>
                             </div> -->
-                                    <h3 class="mb-3"><a href="#">Education For Children</a></h3>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, fugit maiores
-                                        quos
-                                        tenetur nisi explicabo cupiditate sequi sit necessitatibus in.</p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="condolence-sidebar">
-                        <h2 class="text-center">Condolence</h2>
-                        <div class="swiper condolence-swiper pt-5 pb-4 mb-3">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="card condolence-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/image/shree-man-bahadur.jpg"
-                                                alt="shree man bahadur">
-                                        </figure>
-                                        <div class="card-body text-center">
-                                            <h3 class="h5 mb-3"><a href="#">Shree Man Bahadur Tamang</a></h3>
-                                            <div class="dob d-flex gap-2 justify-content-center">
-                                                <span>October 8, 1990 -</span>
-                                                <span> November 14, 2040</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card condolence-card">
-                                        <figure class="card-img">
-                                            <<img src="./assets/image/shree-man-bahadur.jpg"
-                                            alt="shree man bahadur">
-                                        </figure>
-                                        <div class="card-body text-center">
-                                            <h3 class="h5 mb-3"><a href="#">Shree Man Bahadur Tamang</a></h3>
-                                            <div class="dob d-flex gap-2 justify-content-center">
-                                                <span>October 8, 1990 -</span>
-                                                <span> November 14, 2040</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card condolence-card">
-                                        <figure class="card-img">
-                                            <img src="./assets/image/shree-man-bahadur.jpg"
-                                                alt="shree man bahadur">
-                                        </figure>
-                                        <div class="card-body text-center">
-                                            <h3 class="h5 mb-3"><a href="#">Shree Man Bahadur Tamang</a></h3>
-                                            <div class="dob d-flex gap-2 justify-content-center">
-                                                <span>October 8, 1990 -</span>
-                                                <span> November 14, 2040</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                        <a class="text-center d-block condolence-link" href="#">View More</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- start event and News -->
+									<h3 class="h4 mb-3">
+										<a href="#">Education For Children</a>
+									</h3>
+									<p>Lorem, ipsum dolor sit amet consectetur adipisicing
+										elit. Itaque, fugit maiores quos tenetur nisi explicabo
+										cupiditate sequi sit necessitatibus in.</p>
+									<a href="#">Read More</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card upcomming-event-card">
+								<figure class="card-img">
+									<a href="#"> <img src="./assets/image/men-image.jpg"
+										alt="event img">
+									</a>
+								</figure>
+								<div class="card-body text-center">
+									<!-- <div class="date d-flex align-items-center gap-2 mb-4 justify-content-center">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                <span>january 01,2024</span>
+                            </div> -->
+									<h3 class="mb-3">
+										<a href="#">Education For Children</a>
+									</h3>
+									<p>Lorem, ipsum dolor sit amet consectetur adipisicing
+										elit. Itaque, fugit maiores quos tenetur nisi explicabo
+										cupiditate sequi sit necessitatibus in.</p>
+									<a href="#">Read More</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="condolence-sidebar">
+						<h2 class="text-center">Condolence</h2>
+						<div class="swiper condolence-swiper pt-5 pb-4 mb-3">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide" th:each="condolence:${condolenceList}">
+									<div class="card condolence-card">
+										<figure class="card-img">
+											<img src="./assets/image/shree-man-bahadur.jpg"
+												alt="shree man bahadur">
+										</figure>
+										<div class="card-body text-center">
+											<h3 class="h5 mb-3">
+												<a href="#">[[${condolence.title}]]
+													[[${condolence.firstName}]] [[${condolence.middleName}]]
+													[[${condolence.lastName}]]</a>
+											</h3>
+											<div class="dob d-flex gap-2 justify-content-center">
+												<span
+													th:text="${#temporals.format(condolence.birth, 'MMMM dd, yyyy')}  + ' - '"></span>
+												<span
+													th:text="${#temporals.format(condolence.death, 'MMMM dd, yyyy')}"></span>
+											</div>
+										</div>
+									</div>
+								</div>
 
 
-    <!-- <section class="event-news block">
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+						<a class="text-center d-block condolence-link" href="#">View
+							More</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- start event and News -->
+
+
+	<!-- <section class="event-news block">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-3 pe-3">
@@ -765,10 +798,10 @@
         </div>
     </section> -->
 
-    <section class="block pt-0">
-        <div class="container">
-            <div class="row g-4">
-                <!-- <div class="col-xl-9">
+	<section class="block pt-0">
+		<div class="container">
+			<div class="row g-4">
+				<!-- <div class="col-xl-9">
                     <div class="tab-wrapper top-border-blue">
                         <ul class="nav nav-pills mb-3 tab-btn-wrapper" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
@@ -957,185 +990,179 @@
                         </div>
                     </div>
                 </div> -->
-                <div class="col-xl-9">
-                    <div class="featured-content text-center">
-                        <h2 class="h3 heading-style pb-4 text-center">FEATURED DONORS</h2>
-                        <p class="mb-0 w-75 mx-auto mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                            explicabo aperiam libero sapiente impedit repellendus commodi excepturi aspernatur rerum
-                            unde ea quibusdam, tenetur beatae praesentium obcaecati, quod, sit aliquam.</p>
-                    </div>
-                    <div class="swiper donors">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide" th:each="donor:${donorList}">
-                                <div class="card donor-card">
-                                    <figure class="card-img">
-                                       <img src="./assets/image/men-image.jpg"
-                                            alt="men-image">
-                                    </figure>
-                                    <div class="card-body text-center">
-                                        <h3 class="h4">[[${donor.title}]] [[${donor.firstName}]] [[${donor.middleName}]] [[${donor.lastName}]]</h3>
-                                        <div>
-                                            <p class="fw-bold">Donated Ammount:<span
-                                                    class="d-inline-flex ms-2 dooner-price">[[${donor.amount}]]</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card donor-card">
-                                    <figure class="card-img">
-                                        <img src="./assets/image/men-image.jpg"
-                                            alt="men-image">
-                                    </figure>
-                                    <div class="card-body text-center">
-                                        <h3 class="h4">Donner Name</h3>
-                                        <div>
-                                            <p class="fw-bold">Donated Ammount:<span
-                                                    class="d-inline-flex ms-2 dooner-price">220 USD</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card donor-card">
-                                    <figure class="card-img">
-                                       <img src="./assets/image/men-image.jpg"
-                                            alt="men-image">
-                                    </figure>
-                                    <div class="card-body text-center">
-                                        <h3 class="h4">Donner Name</h3>
-                                        <div>
-                                            <p class="fw-bold">Donated Ammount:<span
-                                                    class="d-inline-flex ms-2 dooner-price">220 USD</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card donor-card">
-                                    <figure class="card-img">
-                                       <img src="./assets/image/men-image.jpg"
-                                            alt="men-image">
-                                    </figure>
-                                    <div class="card-body text-center">
-                                        <h3 class="h4">Donner Name</h3>
-                                        <div>
-                                            <p class="fw-bold">Donated Ammount:<span
-                                                    class="d-inline-flex ms-2 dooner-price">220
-                                                    USD</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-                <div class="col-xl-3">
-                    <div class="post-sidebar">
-                        <h2 class="text-center">Facebook post</h2>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="fb-post">
-                                    <iframe
-                                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTamangSamajUk%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=855526203230224"
-                                        width="340" height="500" style="border:none;overflow:hidden" scrolling="no"
-                                        frameborder="0" allowfullscreen="true"
-                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+				<div class="col-xl-9">
+					<div class="featured-content text-center">
+						<h2 class="h3 heading-style pb-4 text-center">FEATURED DONORS</h2>
+						<p class="mb-0 w-75 mx-auto mt-4">Lorem ipsum dolor sit amet
+							consectetur adipisicing elit. Ut explicabo aperiam libero
+							sapiente impedit repellendus commodi excepturi aspernatur rerum
+							unde ea quibusdam, tenetur beatae praesentium obcaecati, quod,
+							sit aliquam.</p>
+					</div>
+					<div class="swiper donors">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" th:each="donor:${donorList}">
+								<div class="card donor-card">
+									<figure class="card-img">
+										<img src="./assets/image/men-image.jpg" alt="men-image">
+									</figure>
+									<div class="card-body text-center">
+										<h3 class="h4">[[${donor.title}]] [[${donor.firstName}]]
+											[[${donor.middleName}]] [[${donor.lastName}]]</h3>
+										<div>
+											<p class="fw-bold">
+												Donated Ammount:<span
+													class="d-inline-flex ms-2 dooner-price">[[${donor.amount}]]</span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="card donor-card">
+									<figure class="card-img">
+										<img src="./assets/image/men-image.jpg" alt="men-image">
+									</figure>
+									<div class="card-body text-center">
+										<h3 class="h4">Donner Name</h3>
+										<div>
+											<p class="fw-bold">
+												Donated Ammount:<span
+													class="d-inline-flex ms-2 dooner-price">220 USD</span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="card donor-card">
+									<figure class="card-img">
+										<img src="./assets/image/men-image.jpg" alt="men-image">
+									</figure>
+									<div class="card-body text-center">
+										<h3 class="h4">Donner Name</h3>
+										<div>
+											<p class="fw-bold">
+												Donated Ammount:<span
+													class="d-inline-flex ms-2 dooner-price">220 USD</span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="card donor-card">
+									<figure class="card-img">
+										<img src="./assets/image/men-image.jpg" alt="men-image">
+									</figure>
+									<div class="card-body text-center">
+										<h3 class="h4">Donner Name</h3>
+										<div>
+											<p class="fw-bold">
+												Donated Ammount:<span
+													class="d-inline-flex ms-2 dooner-price">220 USD</span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+				<div class="col-xl-3">
+					<div class="post-sidebar">
+						<h2 class="text-center">Facebook post</h2>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="fb-post">
+									<iframe
+										src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTamangSamajUk%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=855526203230224"
+										width="340" height="500"
+										style="border: none; overflow: hidden" scrolling="no"
+										frameborder="0" allowfullscreen="true"
+										allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3 col-xl-3">
-                    <div class="site-logo d-flex align-items-center gap-3">
-                        <a href="./index.html"><img src="./assets/image/tamang-samaj-uk-rooter-logo.png"
-                                alt="Charity-logo"></a>
-                        <h3 class="mb-0"><a href="./index.html">Tamang Samaj UK<span class="mt-1 d-block">Charity Reg
-                                    No:12342434</span></a></h3>
-                    </div>
-                    <div class="footer-content mt-4">
-                        <p class="mb-0 text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates
-                            architecto neque dolor atque ullam labore! Amet ad deleniti assumenda non voluptates ex
-                            velit, voluptatum beatae animi reiciendis dolorum voluptate at.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 col-xl-3">
-                    <h6>Quicks Links</h6>
-                    <ul class="footer-quick-link mt-4">
-                        <li>
-                            <a href="#">home</a>
-                        </li>
-                        <li>
-                            <a href="#">about us</a>
-                        </li>
-                        <li>
-                            <a href="#">news</a>
-                        </li>
-                        <li>
-                            <a href="#">events</a>
-                        </li>
-                        <li>
-                            <a href="#">executive members</a>
-                        </li>
-                        <li>
-                            <a href="#">gallery</a>
-                        </li>
-                        <li>
-                            <a href="#">contact us</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-6 col-lg-3 col-xl-3">
-                    <h6>Social Media</h6>
-                    <div class="d-flex footer-social gap-3 mt-4">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 col-xl-3">
-                    <h6>Contact Us</h6>
-                    <ul class="footer-contact-info mt-4">
-                        <li>
-                            <div class="info-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <p class="mb-0 fw-medium">123 Street, City, Country</p>
-                        </li>
-                        <li>
-                            <div class="info-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <a href="tel:+1234567890">+123 456 7890</a>
-                        </li>
-                        <li>
-                            <div class="info-icon">
-                                <i class="far fa-envelope"></i>
-                            </div>
-                            <a href="mailto:info@example.com">info@example.com</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="./assets/vendors/venobox/venobox.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendors/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendors/slicknav/jquery.slicknav.min.js"></script>
-    <script src="assets/js/script.js"></script>
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row g-4">
+				<div class="col-md-6 col-lg-3 col-xl-3">
+					<div class="site-logo d-flex align-items-center gap-3">
+						<a href="./index.html"><img
+							src="./assets/image/tamang-samaj-uk-rooter-logo.png"
+							alt="Charity-logo"></a>
+						<h3 class="mb-0">
+							<a href="./index.html">Tamang Samaj UK<span
+								class="mt-1 d-block">Charity Reg No:12342434</span></a>
+						</h3>
+					</div>
+					<div class="footer-content mt-4">
+						<p class="mb-0 text-white">Lorem ipsum, dolor sit amet
+							consectetur adipisicing elit. Voluptates architecto neque dolor
+							atque ullam labore! Amet ad deleniti assumenda non voluptates ex
+							velit, voluptatum beatae animi reiciendis dolorum voluptate at.</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 col-xl-3">
+					<h6>Quicks Links</h6>
+					<ul class="footer-quick-link mt-4">
+						<li><a href="#">home</a></li>
+						<li><a href="#">about us</a></li>
+						<li><a href="#">news</a></li>
+						<li><a href="#">events</a></li>
+						<li><a href="#">executive members</a></li>
+						<li><a href="#">gallery</a></li>
+						<li><a href="#">contact us</a></li>
+					</ul>
+				</div>
+				<div class="col-md-6 col-lg-3 col-xl-3">
+					<h6>Social Media</h6>
+					<div class="d-flex footer-social gap-3 mt-4">
+						<a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i
+							class="fa-brands fa-x-twitter"></i></a> <a href="#"><i
+							class="fab fa-instagram"></i></a> <a href="#"><i
+							class="fab fa-youtube"></i></a>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 col-xl-3">
+					<h6>Contact Us</h6>
+					<ul class="footer-contact-info mt-4">
+						<li>
+							<div class="info-icon">
+								<i class="fas fa-map-marker-alt"></i>
+							</div>
+							<p class="mb-0 fw-medium">123 Street, City, Country</p>
+						</li>
+						<li>
+							<div class="info-icon">
+								<i class="fas fa-phone"></i>
+							</div> <a href="tel:+1234567890">+123 456 7890</a>
+						</li>
+						<li>
+							<div class="info-icon">
+								<i class="far fa-envelope"></i>
+							</div> <a href="mailto:info@example.com">info@example.com</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="./assets/vendors/venobox/venobox.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/vendors/swiper/swiper-bundle.min.js"></script>
+	<script src="assets/vendors/slicknav/jquery.slicknav.min.js"></script>
+	<script src="assets/js/script.js"></script>
 </body>
 
 </html>

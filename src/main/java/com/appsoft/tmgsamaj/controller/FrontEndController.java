@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.appsoft.tmgsamaj.constants.EventStatus;
 import com.appsoft.tmgsamaj.constants.EventType;
+import com.appsoft.tmgsamaj.repository.CondolenceRepository;
 import com.appsoft.tmgsamaj.repository.EventRepository;
 import com.appsoft.tmgsamaj.service.DonorService;
 import com.appsoft.tmgsamaj.service.EventService;
@@ -22,11 +23,14 @@ public class FrontEndController {
 	EventRepository eventRepo;
 	@Autowired
 	DonorService donorService;
+	@Autowired 
+	CondolenceRepository condolenceRepo;
 	
 	@GetMapping("/fHome")
 	private String getHome(Model model) {
 		model.addAttribute("upcommingEventList" ,eventRepo.findClosestEventsByStatus());
 		model.addAttribute("donorList",donorService.getAllDonor());
+		model.addAttribute("condolenceList", condolenceRepo.findRecentCondolenceByStatus());
 		return"frontend/index";
 	}
 	@GetMapping("/fAbout")
