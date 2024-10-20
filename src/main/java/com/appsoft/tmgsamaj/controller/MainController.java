@@ -21,7 +21,7 @@ public class MainController {
 	private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10);
 
 //	@GetMapping({"/","dashboard"})
-	@GetMapping("dashboard")
+	@GetMapping("/dashboard")
 
     public String homePage(HttpServletRequest request) {
     	  HttpSession session = request.getSession(false);

@@ -35,7 +35,7 @@ public class PaymentController {
 	@Autowired
 	private MailUtils mailUtils;
 
-	@GetMapping("/payment")
+	@GetMapping("/fpayment")
 	private String getPayment() {
 		return "Payment";
 	}
