@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<div class="container-scroller">
+		<th:block th:insert="AdminHeader.html"></th:block>
+		<div class="container-fluid page-body-wrapper">
+			<th:block th:insert="AdminSideNav.html"></th:block>
+			<div class="main-panel">
+				<div class="content-wrapper">
+
+
+					<!-- Page header -->
+					<div class="d-flex justify-content-between align-items-center mb-4">
+						<h1 class="h3 text-dark"></h1>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+							<li class="breadcrumb-item active">Home Slider List</li>
+						</ol>
+					</div>
+						<h1 class="h3 text-dark text-center">Home Slider List</h1>
+
+							<div class="grid-margin stretch-card">
+								<div class="card">
+									<div class="card-body">
+										<h4 class="card-title">Home Slider Details</h4>
+										<div class="table-responsive">
+											<table class="table table-striped lemon-padding-top textWrap8th" id="datatablesSimple" >
+												<thead>
+													<tr>
+														<th>Image</th>
+														<th>Title</th>
+														<th>Description</th>
+														<th>Actions</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr th:each="h:${homeSliderList}">
+													<td><img
+															th:src="@{'homeSliderImages/'+ ${h.imageName}}"
+															width="45px" style="border-radius: 50%;" alt="No Image" onclick="showImageModal(this)"></td>
+														<td>[[${h.title}]]</td>
+														<td >[[${h.description}]]</td>
+														<td>
+															
+															<a th:href="@{/editHomeSlicer(id=${h.id})}">
+																	<button class=" btn btn-warning btn-sm">Edit</button>
+																</a> <a th:href="@{/deleteHomeSlider(id=${h.id})}" >
+																	<button class="btn btn-danger btn-sm">Delete</button>
+																</a> 
+														</td>
+													</tr>
+
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+		
+
+
+
+
+
+
+				</div>
+			</div>
+		</div>
+			<!-- Modal for Image Preview -->
+	<div class="modal fade" id="imageModal" tabindex="-1" role="dialog"
+		aria-labelledby="imageModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="imageModalLabel">Home Slider Image</h5>
+				
+				</div>
+				<div class="modal-body">
+					<img id="modalImage" src="" alt="Full-size Image"
+						style="width: 100%;">
+				</div>
+			</div>
+		</div>
+	</div>
+		<th:block th:insert="AdminFooter.html"></th:block>
+	</div>
+	<!-- Bootstrap JS and dependencies for modal functionality in payment List -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<!-- JavaScript to show modal and set image src in homeslider List -->
+	<script src="lemonCss/paymentList.js"></script>
+
+</body>
+</html>

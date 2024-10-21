@@ -60,6 +60,8 @@ public class AdminErrorController implements ErrorController {
 	                                      requestUri.startsWith("/revoke") ||
 	                                      requestUri.startsWith("/approve") ||
 	                                      requestUri.startsWith("/reject") ||
+	                                      requestUri.startsWith("/home") ||
+
 	                                      requestUri.startsWith("/gallery"));
 	    }
 

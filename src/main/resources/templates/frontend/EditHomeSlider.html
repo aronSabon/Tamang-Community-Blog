@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container-scroller">
+		<th:block th:insert="AdminHeader.html"></th:block>
+		<div class="container-fluid page-body-wrapper">
+			<th:block th:insert="AdminSideNav.html"></th:block>
+			<div class="main-panel">
+				<div class="content-wrapper">
+
+					<div class="d-flex justify-content-between align-items-center mb-4">
+						<h1 class="h3 text-dark"></h1>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+														<li class="breadcrumb-item"><a href="/homeSliderList">Home Slider List</a></li>
+							
+							<li class="breadcrumb-item active">Edit Home Slider</li>
+						</ol>
+					</div>
+					<h1 class="h3 text-dark text-center">Edit Home Slider</h1>
+
+					<!-- Faculty form card -->
+					<div class="card shadow-sm">
+						<div class="card-body">
+
+
+							<div class="formContainer">
+								<form action="/updateHomeSlider" method="post" enctype="multipart/form-data" th:object="${homeSliderModel}">
+									<!-- Personal Information -->
+									<h4>Home Slider Details</h4>
+
+									<div class="row">
+										<div class="form-group">
+											<label for="lastName">Title</label> <input id="title"
+												type="text" placeholder="Title" th:field="*{title}" />
+										</div>
+										<div class="form-group">
+											<label for="homeSliderImage">Image</label> <input id="homeSliderImage"
+												type="file" placeholder="Home Slider Image" name="homeSliderImage" />
+										</div>
+									</div>
+										<div class="row">
+										<div class="form-group">
+											<label for="description">Description</label> <input
+												id="description" type="text" placeholder="Description"
+												th:field="*{title}"  />
+										</div>
+									</div>
+									<input type ="hidden" th:field="*{id}">
+									<!-- Submit Button -->
+									<button type="submit" class="submit-btn">Submit</button>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+	</div>
+
+	<th:block th:insert="AdminFooter.html"></th:block>
+
+</body>
+</html>
