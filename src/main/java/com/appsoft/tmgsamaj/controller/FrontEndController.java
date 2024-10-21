@@ -24,6 +24,7 @@ import com.appsoft.tmgsamaj.service.CommitteeMemberService;
 import com.appsoft.tmgsamaj.service.DonorService;
 import com.appsoft.tmgsamaj.service.EventService;
 import com.appsoft.tmgsamaj.service.MemberService;
+import com.appsoft.tmgsamaj.service.Front.HomeSliderService;
 
 @Controller
 //@RequestMapping("/user")
@@ -41,6 +42,8 @@ public class FrontEndController {
 	MemberService memberService;
 	@Autowired
 	EventService eventService;
+	@Autowired
+	HomeSliderService homeSliderService;
 	
 	
 	@GetMapping("/fHome")
@@ -48,6 +51,7 @@ public class FrontEndController {
 		model.addAttribute("upcommingEventList" ,eventRepo.findClosestEventsByStatus());
 		model.addAttribute("donorList",donorService.getAllDonor());
 		model.addAttribute("condolenceList", condolenceRepo.findRecentCondolenceByStatus());
+		model.addAttribute("homeSliderList",homeSliderService.getAllHomeSlider());
 		return"frontend/index";
 	}
 	@GetMapping("/fAbout")

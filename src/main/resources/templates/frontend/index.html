@@ -101,45 +101,37 @@
 		<div class="container">
 			<div class="swiper banner-swiper">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide">
+					<div class="swiper-slide" th:each="homeSlider:${homeSliderList}">
 						<div class="row justify-content-center align-items-center">
 							<div class="col-md-5">
 								<div class="banner-content">
 									<span>The importance of stretching</span>
-									<h1 class="text-white">Welcome to Tamang Samaj UK</h1>
-									<p class="text-white lead">Lorem, ipsum dolor sit amet
-										consectetur adipisicing elit. Explicabo expedita consequuntur
-										blanditiis necessitatibus nisi minus mollitia officiis. Nemo
-										dicta doloremque suscipit delectus rem sit, deserunt, nobis
-										reprehenderit enim cum adipisci?</p>
+									<h1 class="text-white">[[${homeSlider.title}]]</h1>
+									<p class="text-white lead">[[${homeSlider.description}]]</p>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<figure class="banner-img">
 									<img
-										src="./assets/image/452382967_896594009179479_778188078247314881_n.jpg"
+										th:src="@{'homeSliderImages/' + ${homeSlider.imageName}}"
 										alt="banner image">
 								</figure>
 							</div>
 						</div>
 					</div>
-					<div class="swiper-slide">
+					<div class="swiper-slide" th:each="homeSlider:${homeSliderList}">
 						<div class="row justify-content-center align-items-center">
 							<div class="col-md-5">
 								<div class="banner-content">
 									<span>The importance of stretching</span>
-									<h1 class="text-white">Welcome to Tamang Samaj UK</h1>
-									<p class="text-white lead">Lorem, ipsum dolor sit amet
-										consectetur adipisicing elit. Explicabo expedita consequuntur
-										blanditiis necessitatibus nisi minus mollitia officiis. Nemo
-										dicta doloremque suscipit delectus rem sit, deserunt, nobis
-										reprehenderit enim cum adipisci?</p>
+									<h1 class="text-white">[[${homeSlider.title}]]</h1>
+									<p class="text-white lead">[[${homeSlider.description}]]</p>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<figure class="banner-img">
 									<img
-										src="./assets/image/428140362_797927059046175_97442968347571838_n.jpg"
+										src="homeSliderImages/do.jfif"
 										alt="banner image">
 								</figure>
 							</div>

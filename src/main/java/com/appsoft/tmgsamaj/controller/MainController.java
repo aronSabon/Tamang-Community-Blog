@@ -33,7 +33,7 @@ public class MainController {
     }
 	@GetMapping ("/")
 	public String frontend() {
-		return"frontend/index";
+		return"redirect:/fHome";
 	}
 
 	@GetMapping("/login")
