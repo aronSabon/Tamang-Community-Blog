@@ -61,6 +61,7 @@ public class AdminErrorController implements ErrorController {
 	                                      requestUri.startsWith("/approve") ||
 	                                      requestUri.startsWith("/reject") ||
 	                                      requestUri.startsWith("/home") ||
+	                                      requestUri.startsWith("/notification") ||
 
 	                                      requestUri.startsWith("/gallery"));
 	    }

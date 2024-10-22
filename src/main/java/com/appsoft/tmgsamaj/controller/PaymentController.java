@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.appsoft.tmgsamaj.constants.EventType;
 import com.appsoft.tmgsamaj.constants.MemberStatus;
 import com.appsoft.tmgsamaj.constants.PaymentStatus;
 import com.appsoft.tmgsamaj.model.CommitteeMember;
@@ -68,8 +69,21 @@ public class PaymentController {
 	}
 	@GetMapping("/paymentList")
 	private String getPaymentList(Model model) {
-		model.addAttribute("paymentList", paymentInfoService.getAllPaymentInfo());
+		List<PaymentInfo> membershipPaymentInfoList =paymentInfoService.getAllPaymentInfo()
+				.stream()
+				.filter(x -> x.getPaymentType().equals("Membership"))
+				.collect(Collectors.toList());
+		model.addAttribute("paymentList", membershipPaymentInfoList);
 		return "PaymentList";
+	}
+	@GetMapping("/renewList")
+	private String renewList(Model model) {
+		List<PaymentInfo> renewPaymentInfoList =paymentInfoService.getAllPaymentInfo()
+				.stream()
+				.filter(x -> x.getPaymentType().equals("Renew"))
+				.collect(Collectors.toList());
+		model.addAttribute("renewList", renewPaymentInfoList);
+		return "RenewList";
 	}
 	
 	@GetMapping("/approvePayment")
@@ -91,9 +105,10 @@ public class PaymentController {
 		member.setStatus(MemberStatus.ACTIVE);
 		memberService.updateMember(member);
 		//send mail
-				String subject ="Membership Payment Success";
-				 String message = "Your membership has been approved.\nThankyou for joining us.";
-				mailUtils.sendEmail(paymentInfo.getEmail(), subject, message);
+			String subject ="Membership Payment Success";
+			 String message = "Your membership has been approved.\nThankyou for joining us.";
+			mailUtils.sendEmail(paymentInfo.getEmail(), subject, message);
+		
 		return "redirect:/paymentList";
 	}
 	@GetMapping("/rejectPayment")
@@ -106,10 +121,50 @@ public class PaymentController {
 		paymentInfoService.updatePaymentInfo(paymentInfo);
 		
 		//send mail
-		String subject ="Membership Payment Error";
-		 String message = "Please resend your Payment Slip.";
-		mailUtils.sendEmail(paymentInfo.getEmail(), subject, message);
+		
+			String subject ="Membership Payment Error";
+			 String message = "Please resend your Payment Slip. Thankyou";
+			mailUtils.sendEmail(paymentInfo.getEmail(), subject, message);
+		
 	
 		return "redirect:paymentList";
+	}
+	
+	@GetMapping("/approveRenew")
+	private String approveRenew(@RequestParam int id) {
+		PaymentInfo paymentInfo = paymentInfoService.getPaymentInfoById(id);
+		paymentInfo.setStatus(PaymentStatus.APPROVED);
+		paymentInfoService.updatePaymentInfo(paymentInfo);
+		Member member = memberService.getMemberByEmail(paymentInfo.getEmail());
+		
+			member.setRenewDate(LocalDate.now());
+			member.setExpiryDate(member.getExpiryDate().plusYears(2));
+		
+		member.setStatus(MemberStatus.ACTIVE);
+		memberService.updateMember(member);
+		//send mail
+	
+				String subject ="Membership Renew Payment Success";
+				 String message = "Your membership has been renewed.\nThankyou for joining us.";
+				mailUtils.sendEmail(paymentInfo.getEmail(), subject, message);
+		
+		return "redirect:/renewList";
+	}
+	@GetMapping("/rejectRenew")
+	private String rejectRenew(@RequestParam int id) {
+
+		PaymentInfo paymentInfo = paymentInfoService.getPaymentInfoById(id);
+		paymentInfo.setStatus(PaymentStatus.DECLINED);
+		paymentInfoService.updatePaymentInfo(paymentInfo);
+		
+		//send mail
+		
+		
+				String subject ="Membership Renew Payment Error";
+				 String message = "Please resend your renew Payment Slip. Thankyou";
+				mailUtils.sendEmail(paymentInfo.getEmail(), subject, message);
+		
+	
+		return "redirect:/renewList";
 	}
 }

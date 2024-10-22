@@ -65,12 +65,23 @@
             </a>
           </li>
           
-              <li class="nav-item">
-            <a class="nav-link" href="/paymentList">
-              <i class="icon-grid menu-icon"></i>
+         
+          
+           
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#payment" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Payment</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="payment">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/paymentList">Membership Payment</a></li>                
+                <li class="nav-item"> <a class="nav-link" href="/renewList">Renew Payment</a></li>                
+              </ul>
+            </div>
           </li>
+          
           
             <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#donors" aria-expanded="false" aria-controls="ui-basic">
@@ -114,6 +125,12 @@
             </div>
           </li>
       
+           <li class="nav-item">
+            <a class="nav-link" href="/notificationList">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Notification</span>
+            </a>
+          </li>
          
         </ul>
       </nav>

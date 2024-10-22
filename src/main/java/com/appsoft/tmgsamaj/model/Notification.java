@@ -1,12 +1,11 @@
 package com.appsoft.tmgsamaj.model;
 
-
 import java.time.LocalDate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
-import com.appsoft.tmgsamaj.constants.PaymentStatus;
+import com.appsoft.tmgsamaj.constants.NotificationStatus;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -18,16 +17,17 @@ import lombok.Data;
 
 @Data
 @Entity
-public class PaymentInfo {
+public class Notification {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String email;
-	private String paymentReceiptImageName;
+	private String imageName;
+	private String name;
+	private String message;
 	@DateTimeFormat(iso = ISO.DATE)
-	private LocalDate date;
+	private LocalDate expiryDate;
+	@DateTimeFormat(iso = ISO.DATE)
+	private LocalDate notificationDate;
 	@Enumerated(EnumType.STRING)
-	private PaymentStatus status;
-	private String paymentType;
-
+	private NotificationStatus status;
 }

@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 
 
-<!-- //for modal in payment list-->
+   <!-- //for modal in payment list-->
 <link
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 	rel="stylesheet" />
@@ -25,10 +25,10 @@
 						<h1 class="h3 text-dark"></h1>
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-							<li class="breadcrumb-item active">Payment List</li>
+							<li class="breadcrumb-item active">Renew List</li>
 						</ol>
 					</div>
-					<h1 class="h3 text-dark text-center">Payment List</h1>
+					<h1 class="h3 text-dark text-center">Renew List</h1>
 
 
 					<div class="grid-margin stretch-card">
@@ -42,7 +42,7 @@
 											<tr>
 												<th>Id</th>
 												<th>Email</th>
-												<th>Payment Slip</th>
+												<th>Renew Slip</th>
 												<th>Date</th>
 												<th>Status</th>
 												<th>Payment Type</th>
@@ -50,7 +50,7 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr th:each="p:${paymentList}">
+											<tr th:each="p:${renewList}">
 												<td>[[${p.id}]]</td>
 												<td>[[${p.email}]]</td>
 												<td><img
@@ -61,14 +61,14 @@
 												<td>[[${p.status}]]</td>
 												<td>[[${p.paymentType}]]</td>
 
-												<td><a th:href="@{/approvePayment(id=${p.id})}">
+												<td><a th:href="@{/approveRenew(id=${p.id})}">
 														<button class="btn btn-success btn-sm approve-btn"
-															th:disabled="${p.status.equals(T(com.appsoft.tmgsamaj.constants.PaymentStatus).APPROVED) or 
-    															p.status.equals(T(com.appsoft.tmgsamaj.constants.PaymentStatus).DECLINED)}">Approve</button>
-												</a> <a th:href="@{/rejectPayment(id=${p.id})}">
+    th:disabled="${p.status.equals(T(com.appsoft.tmgsamaj.constants.PaymentStatus).APPROVED) or 
+    p.status.equals(T(com.appsoft.tmgsamaj.constants.PaymentStatus).DECLINED)}">Approve</button>
+												</a> <a th:href="@{/rejectRenew(id=${p.id})}">
 														<button class="btn btn-danger btn-sm decline-btn"
-															th:disabled="${p.status.equals(T(com.appsoft.tmgsamaj.constants.PaymentStatus).APPROVED) or 
-   																 p.status.equals(T(com.appsoft.tmgsamaj.constants.PaymentStatus).DECLINED)}">Decline</button>
+    th:disabled="${p.status.equals(T(com.appsoft.tmgsamaj.constants.PaymentStatus).APPROVED) or 
+    p.status.equals(T(com.appsoft.tmgsamaj.constants.PaymentStatus).DECLINED)}">Decline</button>
 												</a></td>
 											</tr>
 
@@ -88,38 +88,42 @@
 				</div>
 			</div>
 		</div>
-
-
-		<!-- Modal for Image Preview -->
-		<div class="modal fade" id="imageModal" tabindex="-1" role="dialog"
-			aria-labelledby="imageModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="imageModalLabel">Payment Receipt</h5>
-
-					</div>
-					<div class="modal-body">
-						<img id="modalImage" src="" alt="Full-size Image"
-							style="width: 100%;">
-					</div>
+		
+	
+	<!-- Modal for Image Preview -->
+	<div class="modal fade" id="imageModal" tabindex="-1" role="dialog"
+		aria-labelledby="imageModalLabel" aria-hidden="true" >
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="imageModalLabel">Renew Receipt</h5>
+				
+				</div>
+				<div class="modal-body">
+					<img id="modalImage" src="" alt="Full-size Image"
+						style="width: 100%;">
 				</div>
 			</div>
 		</div>
-
+	</div>
+	
 		<th:block th:insert="AdminFooter.html"></th:block>
 	</div>
 
-	<!-- Bootstrap JS and dependencies for modal functionality in payment List -->
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- Bootstrap JS and dependencies for modal functionality in payment List -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<!-- bootstrap min.js already loaded -->
+	<!-- <script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+		
 
 	<!-- JavaScript to show modal and set image src in payment List -->
 	<script src="lemonCss/paymentList.js"></script>
-		<!-- //disable anchor tag default action -->
+	
+	<!-- //disable anchor tag default action -->
 	<script src="lemonCss/disableATag.js"></script>
+
 </body>
 </html>
