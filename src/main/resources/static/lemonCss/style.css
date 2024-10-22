@@ -271,8 +271,43 @@ table td *,
     max-width: 200px; /* Optional: Control the column width */
 }
 
-
-
+ /* for admin header notification */
+.flex{
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap:15px;
+}
+.flex p{
+	padding: 0;
+	margin: 0;
+	color: gray;
+	font-size: 14px;
+}
+.align-right {
+    text-align: right;
+}
+.flex .p-color{
+	color: #045126;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+a:hover{
+	text-decoration:none;
+	color:black;
+}
+.abc {
+	display: flex; 
+		justify-content: space-between;
+		gap:15px;
+	
+	align-items: center;
+}
+.margin-left{
+	margin-left: auto;
+}
 
 
 

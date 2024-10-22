@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,7 +26,7 @@ public class NotificationController {
 	
 	@GetMapping("/notificationList")
 	public String getNotificationList(Model model) {
-		model.addAttribute("notificationList", notificationService.getAllNotification());
+		model.addAttribute("notificationListAll", notificationService.getAllNotification());
 		return"Notification";
 				}
 
@@ -64,5 +65,14 @@ public class NotificationController {
 		notificationService.updateNotification(notification);
 		return "redirect:/dashboard";
 	}
+	
+	/* this allows the model to be accessible in all the pages */
+	/*
+	 * @ModelAttribute public void addNotifications(Model model) {
+	 * System.out.println("not check"); List<Notification> notificationList =
+	 * notificationService.getAllNotification() .stream() .filter(x -> x.getStatus()
+	 * == NotificationStatus.UNSEEN) .collect(Collectors.toList());
+	 * model.addAttribute("notificationList", notificationList); }
+	 */
 	
 }

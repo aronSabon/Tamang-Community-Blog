@@ -36,9 +36,19 @@ public class MainController {
     	    if (session != null) {
     	        System.out.println("Session ID: " + session.getId());
     	    }
-    	    List<Notification> notificationList = notificationService.getAllNotification().stream().filter(x -> x.getStatus() == NotificationStatus.UNSEEN).collect(Collectors.toList());
-    	    System.out.println(notificationList);
-    	    model.addAttribute("notificationList",notificationList);
+			/*
+			 * List<Notification> notificationList =
+			 * notificationService.getAllNotification().stream().filter(x -> x.getStatus()
+			 * == NotificationStatus.UNSEEN).collect(Collectors.toList());
+			 * System.out.println(notificationList);
+			 * model.addAttribute("notificationList",notificationList);
+			 */
+    	      List<Notification> notificationList = notificationService.getAllNotification()
+    	              .stream()
+    	              .filter(x -> x.getStatus() == NotificationStatus.UNSEEN)
+    	              .collect(Collectors.toList());
+    	          model.addAttribute("notificationList", notificationList);
+    	    session.setAttribute("notificationList", notificationList);
     	    
         return "AdminDashboard";
     }

@@ -59,61 +59,25 @@
 						class="icon-bell mx-0"></i> <span class="count"></span>
 				</a>
 					<div
-						class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+						class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list "
 						aria-labelledby="notificationDropdown">
 						<p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-						<p class="mb-0 font-weight-normal float-left dropdown-header">
-							<a href="/clearAll" style="cursor: pointer;">Clear All</a>
+						<p class="mb-0 font-weight-normal float-left dropdown-header margin-left ">
+							<a href="/clearAll" style="cursor: pointer;" >Clear All</a>
 						</p>
-						<div th:each="notification:${notificationList}">
-							<a class="dropdown-item preview-item">
-								<div class="preview-thumbnail">
-									<div class="preview-icon bg-success">
-										<img alt="" src="eventImages/444.jfif">
-									</div>
-								</div>
-								<div class="preview-item-content">
-									<h6 class="preview-subject font-weight-normal">Membership
-										Status</h6>
-									<p class="font-weight-light small-text mb-0 text-muted">[[${notification.name}]]</p>
-									<p class="font-weight-light small-text mb-0 text-muted">[[${notification.message}]]</p>
-									<p
-										th:text="${T(java.time.LocalDate).now().isEqual(notification.notificationDate) ? 'Today' : T(java.time.temporal.ChronoUnit).DAYS.between(notification.notificationDate, T(java.time.LocalDate).now()) + ' days ago.'}"
-										class="font-weight-light small-text mb-0 text-muted"></p>
-
-
-								</div>
-								<div class="">
-										<a th:href="@{/clear/{id}(id=${notification.id})}"><img alt="" src="images/icons8-cross-48.png" width="25px"></a> 
-								</div>
-							</a>
-						</div>
-
-
-						<a class="dropdown-item preview-item">
-							<div class="preview-thumbnail">
-								<div class="preview-icon bg-warning">
-									<i class="ti-settings mx-0"></i>
-								</div>
-							</div>
-							<div class="preview-item-content">
-								<h6 class="preview-subject font-weight-normal">Settings</h6>
-								<p class="font-weight-light small-text mb-0 text-muted">
-									Private message</p>
-							</div>
-						</a> <a class="dropdown-item preview-item">
-							<div class="preview-thumbnail">
-								<div class="preview-icon bg-info">
-									<i class="ti-user mx-0"></i>
-								</div>
-							</div>
-							<div class="preview-item-content">
-								<h6 class="preview-subject font-weight-normal">New user
-									registration</h6>
-								<p class="font-weight-light small-text mb-0 text-muted">2
-									days ago</p>
-							</div>
-						</a>
+						
+						<a href="/notificationList" class="abc"  >
+						<div class="flex dropdown-item" th:each="notification:${notificationList}">
+										<img alt="" src="eventImages/444.jfif" width="50px" height="50px" style="border-radius:50%;">
+										<div>
+										<h6>Membership Status</h6>
+										<p>[[${notification.name}]]</p>
+										<p>[[${notification.message}]]</p>
+										<p class="align-right p-color" th:text="${T(java.time.LocalDate).now().isEqual(notification.notificationDate) ? 'Today' : T(java.time.temporal.ChronoUnit).DAYS.between(notification.notificationDate, T(java.time.LocalDate).now()) + ' days ago'}"></p>
+										</div>
+										<a th:href="@{/clear/{id}(id=${notification.id})}"><img alt="" src="images/icons8-cross-48.png" width="25px"></a>
+						</div></a>
+						
 					</div></li>
 				<li class="nav-item nav-profile dropdown"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
