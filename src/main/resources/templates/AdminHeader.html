@@ -171,8 +171,7 @@
 	// Clear a specific notification
 	$('.clear-notification').on('click', function(e) {
 	    e.preventDefault();
-     //   e.stopPropagation(); // Prevent the dropdown from closing
-
+	    e.stopPropagation(); // Prevent the dropdown from closing
 
 	    var notificationId = $(this).data('id');
 	    console.log("Notification ID:", notificationId); // Log the ID to check
@@ -181,18 +180,26 @@
 	        alert('Invalid notification ID.');
 	        return; // Exit if the ID is undefined
 	    }
-	    var notificationsLeft = $('.dropdown-item').length; // Count remaining notifications
-
 
 	    $.ajax({
 	        url: '/clear/' + notificationId,
 	        type: 'GET', // or 'POST' if you switch to POST in the controller
 	        success: function(response) {
-	            $(e.target).closest('.dropdown-item').remove(); // Remove the specific notification
-	            if (notificationsLeft > 1) {
-	                e.stopPropagation(); // Prevent the dropdown from closing
+	            // Remove the specific notification from the UI
+	            $(e.target).closest('.dropdown-item').remove();
+	            
+	            // Update notification count from response
+	            var newCount = response.notificationCount;
+	            if (newCount === 0) {
+	                // If no notifications left, hide the count
+	                $('.count').text('');
+	            } else {
+	                // Otherwise, update the displayed count
+	                $('.count').text(newCount > 9 ? '9+' : newCount);
 	            }
-	        //    alert(response); // Show success message
+
+	            // Optionally, update the dropdown with the new notification list
+	            updateNotificationList(response.notificationList);
 	        },
 	        error: function(xhr, status, error) {
 	            console.error('Error clearing notification:', error);
@@ -200,6 +207,7 @@
 	        }
 	    });
 	});
+
 
 	</script>
 </body>
