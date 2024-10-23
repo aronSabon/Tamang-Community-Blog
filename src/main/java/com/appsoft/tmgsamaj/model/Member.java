@@ -12,6 +12,7 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -34,7 +35,7 @@ private String title;
 	private Address address;
 	@OneToOne(cascade = CascadeType.ALL)
 	private Contact contact;
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Family> family;
 	@OneToOne(cascade = CascadeType.ALL)
 	private PaymentInfo paymentInfo;

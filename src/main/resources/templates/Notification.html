@@ -44,13 +44,13 @@
 												<tbody>
 													<tr th:each="n:${notificationListAll}">
 													<td><img
-															th:src="@{'memberImages'+ ${n.imageName}}"
+															th:src="@{'memberImages'+ ${n.member.imageName}}"
 															width="45px" style="border-radius: 50%;" alt="No Image"></td>
-														<td>[[${n.name}]]</td>
+														<td>[[${n.member.firstName}]]</td>
 														<td>[[${n.message}]]</td>	
 													<td>[[${n.notificationDate}]]</td>
 														
-														<td>[[${n.expiryDate}]]</td>
+														<td>[[${n.member.expiryDate}]]</td>
 														<td>[[${n.status}]]</td>
 														<td>
 														<a th:href="@{/deleteNotification(id=${n.id})}" >

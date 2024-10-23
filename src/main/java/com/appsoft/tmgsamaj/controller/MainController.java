@@ -3,6 +3,7 @@ package com.appsoft.tmgsamaj.controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -30,7 +31,6 @@ public class MainController {
 
 //	@GetMapping({"/","dashboard"})
 	@GetMapping("/dashboard")
-
     public String homePage(HttpServletRequest request,Model model) {
     	  HttpSession session = request.getSession(false);
     	    if (session != null) {
@@ -47,7 +47,11 @@ public class MainController {
     	              .stream()
     	              .filter(x -> x.getStatus() == NotificationStatus.UNSEEN)
     	              .collect(Collectors.toList());
-    	          model.addAttribute("notificationList", notificationList);
+//    	          model.addAttribute("notificationList", notificationList);
+    	          // Initialize the member's family collection for each notification
+    	          for (Notification notification : notificationList) {
+    	              Hibernate.initialize(notification.getMember().getFamily());
+    	          }
     	    session.setAttribute("notificationList", notificationList);
     	    
         return "AdminDashboard";

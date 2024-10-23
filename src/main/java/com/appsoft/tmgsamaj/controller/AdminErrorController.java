@@ -57,6 +57,8 @@ public class AdminErrorController implements ErrorController {
 	                                      requestUri.startsWith("/view") ||
 	                                      requestUri.startsWith("/add") ||
 	                                      requestUri.startsWith("/payment") ||
+	                                      requestUri.startsWith("/member") ||
+
 	                                      requestUri.startsWith("/revoke") ||
 	                                      requestUri.startsWith("/approve") ||
 	                                      requestUri.startsWith("/reject") ||
