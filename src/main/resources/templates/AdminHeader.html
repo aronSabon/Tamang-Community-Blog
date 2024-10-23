@@ -30,7 +30,44 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
 	rel="stylesheet" />
+<style>
+.nav-item {
+    position: relative;
+}
 
+
+.count {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    background-color: #4b49ac; /* Blue color */
+    color: white;
+    border-radius: 50%; /* Make it perfectly circular */
+    width: 20px !important; /* Fixed width */
+    height: 20px !important; /* Fixed height - same as width for perfect circle */
+    font-size: 12px;
+    font-weight: bold;
+    
+    /* Centering the number using flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Remove any default padding */
+    padding: 0;
+
+/* Style for the bell icon container */
+.count-indicator {
+    position: relative;
+    display: inline-block;
+}
+
+/* Adjust bell icon size if needed */
+.icon-bell {
+    font-size: 25px !important;
+    color: #6c757d; /* Gray color for the bell */
+}
+</style>
 
 
 
@@ -53,32 +90,38 @@
 			</button>
 
 			<ul class="navbar-nav navbar-nav-right">
-				<li class="nav-item dropdown"><a
-					class="nav-link count-indicator dropdown-toggle"
-					id="notificationDropdown" href="#" data-toggle="dropdown"> <i
-						class="icon-bell mx-0"></i> <span class="count"></span>
-				</a>
-					<div
-						class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list "
-						aria-labelledby="notificationDropdown">
-						<p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-						<p class="mb-0 font-weight-normal float-left dropdown-header margin-left ">
-							<a class="clear-all" href="/clearAll" style="cursor: pointer;" >Clear All</a>
-						</p>
-						
-						<a href="/notificationList" class="abc"  >
-						<div class="flex dropdown-item" th:each="notification:${session['notificationList']}">
-										<img alt="" src="eventImages/444.jfif" width="50px" height="50px" style="border-radius:50%;">
-										<div>
-										<h6>Membership Status</h6>
-										<p>[[${notification.member.firstName}]]</p>
-										<p>[[${notification.message}]]</p>
-										<p class="align-right p-color" th:text="${T(java.time.LocalDate).now().isEqual(notification.notificationDate) ? 'Today' : T(java.time.temporal.ChronoUnit).DAYS.between(notification.notificationDate, T(java.time.LocalDate).now()) + ' days ago'}"></p>
-										</div>
-										<a class="clear-notification" th:data-id="${notification.id}" th:href="@{/clear/{id}(id=${notification.id})}"><img alt="" src="images/icons8-cross-48.png" width="25px"></a>
-						</div></a>
-						
-					</div></li>
+			<li class="nav-item dropdown">
+    <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+        <i class="icon-bell mx-0"></i>
+        <span class="count" th:if="${session.notificationList != null && !session.notificationList.empty}"
+            th:text="${session.notificationList.size() > 9 ? '9+' : session.notificationList.size()}">
+        </span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown" 
+         style="max-height: 500px; overflow-y: auto;">
+        <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+        <p class="mb-0 font-weight-normal float-left dropdown-header margin-left">
+            <a class="clear-all" href="/clearAll" style="cursor: pointer;">Clear All</a>
+        </p>
+        
+        <a href="/notificationList" class="abc">
+            <div class="flex dropdown-item" th:each="notification : ${session['notificationList']}">
+                <img alt="" src="eventImages/444.jfif" width="50px" height="50px" style="border-radius:50%;">
+                <div>
+                    <h6>Membership Status</h6>
+                    <p>[[${notification.member.firstName}]]</p>
+                    <p>[[${notification.message}]]</p>
+                    <p class="align-right p-color" th:text="${T(java.time.LocalDate).now().isEqual(notification.notificationDate) ? 'Today' : T(java.time.temporal.ChronoUnit).DAYS.between(notification.notificationDate, T(java.time.LocalDate).now()) + ' days ago'}"></p>
+                </div>
+                <a class="clear-notification" th:data-id="${notification.id}" th:href="@{/clear/{id}(id=${notification.id})}">
+                    <img alt="" src="images/icons8-cross-48.png" width="25px">
+                </a>
+            </div>
+        </a>
+        
+    </div>
+</li>
+
 				<li class="nav-item nav-profile dropdown"><a
 					class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
 					id="profileDropdown"> <img src="logo.jpeg" alt="profile" />

@@ -53,6 +53,7 @@ public class MainController {
     	              Hibernate.initialize(notification.getMember().getFamily());
     	          }
     	    session.setAttribute("notificationList", notificationList);
+    	    session.setAttribute("notificationCount", notificationList.size());
     	    
         return "AdminDashboard";
     }

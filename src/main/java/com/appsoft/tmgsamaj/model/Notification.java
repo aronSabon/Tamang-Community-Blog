@@ -13,6 +13,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
@@ -28,6 +29,6 @@ public class Notification {
 	private LocalDate notificationDate;
 	@Enumerated(EnumType.STRING)
 	private NotificationStatus status;
-	@OneToOne
-	private Member member;
+@ManyToOne
+private Member member;
 }

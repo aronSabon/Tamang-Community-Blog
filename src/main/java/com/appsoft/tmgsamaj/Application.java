@@ -62,13 +62,14 @@ public class Application {
 		}
 	}
 
-	@Scheduled(cron = "0 3 14 * * ?",zone = "Asia/Kathmandu")
+	@Scheduled(cron = "0 37 16 * * ?",zone = "Asia/Kathmandu")
 	public void notification() {
 		System.out.println("notification Added");
 		List<Member> members = memberService.getAllMember();
 		for(Member m : members) {
 
 			if( LocalDate.now().equals(m.getExpiryDate().minusDays(15))) {
+				System.out.println("notification Addedhhh");
 
 				Notification notification = new Notification();
 				notification.setMember(m);
