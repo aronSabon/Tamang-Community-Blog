@@ -36,8 +36,8 @@ public class NotificationController {
 	@GetMapping("/notificationList")
 	public String getNotificationList(Model model,HttpServletRequest request) {
 		model.addAttribute("notificationListAll", notificationService.getAllNotification());
-		HttpSession session = request.getSession(false);
-		System.out.println(session.getAttribute("notificationList"));
+//		HttpSession session = request.getSession(false);
+//		System.out.println(session.getAttribute("notificationList"));
 
 		return"Notification";
 	}

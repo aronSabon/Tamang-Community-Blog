@@ -2,12 +2,15 @@ package com.appsoft.tmgsamaj;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.ui.Model;
 
 import com.appsoft.tmgsamaj.constants.EventStatus;
 import com.appsoft.tmgsamaj.constants.MemberStatus;
@@ -19,6 +22,9 @@ import com.appsoft.tmgsamaj.service.EventService;
 import com.appsoft.tmgsamaj.service.MemberService;
 import com.appsoft.tmgsamaj.service.NotificationService;
 import com.appsoft.tmgsamaj.utils.MailUtils;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 @EnableScheduling
 @SpringBootApplication
 public class Application {
@@ -118,4 +124,21 @@ public class Application {
 			}
 		}
 	}
+	
+	/*
+	 * @Scheduled(cron = "0 36 14 * * ?",zone = "Asia/Kathmandu") public void
+	 * refreshNotification(HttpServletRequest request,Model model) { HttpSession
+	 * session = request.getSession(false);
+	 * 
+	 * if (session != null) { List<Notification> notificationList =
+	 * notificationService.getAllNotification() .stream() .filter(x -> x.getStatus()
+	 * == NotificationStatus.UNSEEN) .collect(Collectors.toList()); // Initialize
+	 * the member's family collection for each notification for (Notification
+	 * notification : notificationList) {
+	 * Hibernate.initialize(notification.getMember().getFamily()); }
+	 * session.setAttribute("notificationList", notificationList);
+	 * session.setAttribute("notificationCount", notificationList.size()); }
+	 * 
+	 * }
+	 */
 }
