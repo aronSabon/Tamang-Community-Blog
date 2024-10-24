@@ -106,7 +106,7 @@ public class MemberController {
 		 		+ "Tamu Samaj UK\n"
 		 		+ "AC No: 93052087\n"
 		 		+ "Sort Code: 20-37-16 \n"
-		 		+ "Please provide Your Payment Slip in this Link \n http://localhost/fpayment";
+		 		+ "Please provide Your Payment Slip in this Link \n http://localhost:7080/fMembershipPayment";
 
 
 		mailUtils.sendEmail(member.getContact().getEmail(), subject, message);

@@ -68,7 +68,7 @@ public class Application {
 		}
 	}
 
-	@Scheduled(cron = "0 37 16 * * ?",zone = "Asia/Kathmandu")
+	@Scheduled(cron = "0 48 15 * * ?",zone = "Asia/Kathmandu")
 	public void notification() {
 		System.out.println("notification Added");
 		List<Member> members = memberService.getAllMember();
@@ -87,7 +87,7 @@ public class Application {
 				String subject ="Membership Renew";
 				String message = "Your membership for Tamang Community will expire in 15 days.\n"
 						+"Please renew your membership.\n"
-						+ "Please provide Your Payment Slip in this Link \n http://localhost/fpayment";
+						+ "Please provide Your Payment Slip in this Link \n http://localhost:7080/fMembershipRenewPayment";
 
 				mailUtils.sendEmail(m.getContact().getEmail(), subject, message);
 			}
@@ -103,7 +103,7 @@ public class Application {
 				String subject ="Membership Expired";
 				String message = "Your membership for Tamang Community has expired.\n"
 						+"Please renew your membership to continue being a part of us.\n"
-						+ "Please provide Your Payment Slip in this Link \n http://localhost/fpayment";
+						+ "Please provide Your Payment Slip in this Link \n http://localhost:7080/fMembershipRenewPayment";
 
 				mailUtils.sendEmail(m.getContact().getEmail(), subject, message);
 			}

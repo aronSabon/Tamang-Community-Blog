@@ -36,13 +36,18 @@ public class PaymentController {
 	@Autowired
 	private MailUtils mailUtils;
 
-	@GetMapping("/fpayment")
+	@GetMapping("/fMembershipPayment")
 	private String getPayment() {
-		return "Payment";
+		return "MembershipPayment";
 	}
+	@GetMapping("/fMembershipRenewPayment")
+	private String getPaymentRenew() {
+		return "MembershipRenewPayment";
+	}
+	
 
 
-	@PostMapping("/payment")
+	@PostMapping("/fMembershipPayment")
 	private String postPayment(@ModelAttribute PaymentInfo paymentInfo,@RequestParam MultipartFile paymentSlip,Model model) {
 		Member member= memberService.getMemberByEmail(paymentInfo.getEmail());
 		if(member != null) {
@@ -59,13 +64,40 @@ public class PaymentController {
 			}
 			paymentInfo.setStatus(PaymentStatus.PENDING);
 			paymentInfo.setDate(LocalDate.now());
+			paymentInfo.setPaymentType("Membership");
 			paymentInfoService.addPaymentInfo(paymentInfo);
-			return "redirect:http://tamusamajuk.com";
+			return "redirect:/fHome";
 		}
 		else {
 			model.addAttribute("message" , "Email doesnot match!!!");
 		}
-		return"Payment";
+		return"MembershipPayment";
+	}
+	@PostMapping("/fMembershipRenewPayment")
+	private String postrenewPayment(@ModelAttribute PaymentInfo paymentInfo,@RequestParam MultipartFile paymentSlip,Model model) {
+		Member member= memberService.getMemberByEmail(paymentInfo.getEmail());
+		if(member != null) {
+			
+			try {
+				Files.copy(paymentSlip.getInputStream(), 
+						Path.of("src/main/resources/static/paymentImages/"+ paymentSlip.getOriginalFilename()), 
+						StandardCopyOption.REPLACE_EXISTING);
+				paymentInfo.setPaymentReceiptImageName(paymentSlip.getOriginalFilename());
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			paymentInfo.setStatus(PaymentStatus.PENDING);
+			paymentInfo.setDate(LocalDate.now());
+			paymentInfo.setPaymentType("Renew");
+			paymentInfoService.addPaymentInfo(paymentInfo);
+			return "redirect:/fHome";
+		}
+		else {
+			model.addAttribute("message" , "Email doesnot match!!!");
+		}
+		return"MembershipRenewPayment";
 	}
 	@GetMapping("/paymentList")
 	private String getPaymentList(Model model) {
@@ -74,6 +106,9 @@ public class PaymentController {
 				.filter(x -> x.getPaymentType().equals("Membership"))
 				.collect(Collectors.toList());
 		model.addAttribute("paymentList", membershipPaymentInfoList);
+		model.addAttribute("APPROVED", PaymentStatus.APPROVED);
+		model.addAttribute("DECLINED", PaymentStatus.DECLINED);
+
 		return "PaymentList";
 	}
 	@GetMapping("/renewList")

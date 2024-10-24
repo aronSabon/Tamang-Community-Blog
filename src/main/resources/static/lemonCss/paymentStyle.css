@@ -1,0 +1,55 @@
+
+        .aa {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+     
+          .paymentbox {
+            width: 400px;
+            height: auto;
+            margin: auto;
+            padding: 50px;
+            box-shadow: 0 5px 10px grey;
+            border-radius: 25px;
+            background-color: #e6e6e6; /* 10% grey */
+        }
+        .input-group {
+            margin-top: 10px;
+        }
+        .email-div {
+            margin: 20px 0;
+        }
+        .payment-slip {
+            margin-bottom: 10px;
+        }
+        .p-submitbtn {
+            margin: 50px 0;
+        }
+        .input-group-text{
+            background-color: rgba(0, 0, 0, 0.266) ;
+            border: 1px solid #6c757d;
+            border-radius: 4px;
+            z-index: 4;
+
+        }
+       
+        input{
+            background-color: rgba(0, 0, 0, 0.092) !important;
+        }
+        /* New styles for file input */
+        .choose-file {
+            background-color: rgba(0, 0, 0, 0.092) !important;
+            cursor: pointer;
+        }
+        .choose-file::file-selector-button {
+            background-color: rgba(0, 0, 0, 0.266) !important ;
+            border: 1px solid #6c757d;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 16px;
+        }
+        .choose-file::file-selector-button:hover {
+            background-color: rgba(0, 0, 0, 0.266) ;
+        }
